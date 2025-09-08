@@ -156,6 +156,9 @@
       <button class="btn" id="prevBtn">Anterior</button>
       <button class="btn" id="flipBtn">Ver idea clave</button>
       <button class="btn" id="nextBtn">Siguiente</button>
+      <button class="btn" id="randomBtn" title="Pregunta aleatoria" style="font-size:1.4rem;display:flex;align-items:center;gap:.5rem;">
+        <span aria-hidden="true">🎲</span> Aleatoria
+      </button>
       <a href="index.html" class="btn" id="backBtn" style="text-decoration:none;">Regresar a notas de lectura</a>
     </div>
   </div>
@@ -223,21 +226,33 @@
 
   // Preguntas e ideas clave
   const preguntas = [
+    // Tarjeta 1 preguntas
     linkifyWalzer("Walzer sostiene que la libre movilidad interna se sostiene en la presunción de cierre en las fronteras nacionales. Durante la pandemia, sin embargo, el Estado canadiense extendió su soberanía al control de todos los movimientos —desde el cruce internacional hasta los desplazamientos cotidianos—, generando una situación de stasis casi total. ¿En este contexto, la experiencia canadiense confirma o desmiente la hipótesis de Walzer? ¿Qué nos revela sobre la capacidad del Estado de redefinir la movilidad como un privilegio permitido más que como un derecho?"),
     "¿Qué actores decidieron qué era “esencial” en Canadá (gobierno federal, provincias, sectores económicos, tribunales)? ¿Con qué criterios explícitos o implícitos?",
     "¿Cómo se reconfiguró la jerarquía de admisibilidad durante la pandemia? Contrasta “pasaporte privilegiado” vs. “entrada por necesidad”.",
     "Etiqueta y estigma: ¿qué efectos tuvieron narrativas como “virus chino/Wuhan”? Identifica consecuencias raciales y políticas.",
     "Comparativo México-Canadá: en México también se distinguió entre actividades esenciales y no esenciales. ¿Quién definió esas listas a nivel federal/estatal/municipal? ¿Qué negocios o trabajadores quedaron excluidos/invisibilizados?",
-    "¿Qué implica conceptualizar la movilidad como permitida y no como derecho a la libre circulación? ¿Qué riesgos permanecen post-pandemia?"
+    "¿Qué implica conceptualizar la movilidad como permitida y no como derecho a la libre circulación? ¿Qué riesgos permanecen post-pandemia?",
+    // Tarjeta 2 preguntas
+    "¿Por qué el gobierno canadiense utilizó la Quarantine Act en lugar de leyes antiterroristas? ¿Qué implicaciones tiene esto en términos de derechos y control?",
+    "¿Cómo refuerza la categoría de “esencial” estereotipos sobre quién representa peligro y quién es necesario?",
+    "¿Qué actividades quedaron fuera como “opcionales” o “discrecionales”? ¿Qué revela esto sobre el modelo económico y social canadiense?",
+    "¿Cómo se relaciona la lista de viajes discrecionales con desigualdades de clase y acceso?"
   ];
 
   const ideas = [
+    // Tarjeta 1 ideas
     linkifyWalzer("La experiencia canadiense confirma parcialmente la tesis de Walzer: al cerrarse fronteras nacionales, emergieron múltiples barreras internas (provincias, comunidades indígenas, municipios). Pero también la desmiente, porque el cierre interno no fue una reacción a fronteras abiertas, sino parte de una soberanía extendida que reguló toda movilidad. Esto muestra la capacidad del Estado para redefinir la circulación como privilegio otorgado, no como derecho garantizado."),
     "Las decisiones sobre lo esencial se tomaron en varios niveles: el gobierno federal fijó reglas generales, las provincias adaptaron medidas según contextos locales, y sectores económicos presionaron para clasificar actividades como esenciales (p. ej. agricultura, transporte, salud). Los criterios mezclaron urgencia económica, necesidades básicas y legitimidad política, más que un principio único coherente.",
     "Antes del COVID, la jerarquía favorecía a poseedores de pasaportes del Norte Global. Durante la pandemia, esa lógica se desplazó por la noción de necesidad inmediata: trabajadores agrícolas temporales, personal médico o transportistas podían ingresar aunque fueran del Sur Global. El pasaporte privilegiado perdió fuerza frente a la utilidad percibida en el momento.",
     "Narrativas como “virus chino” o “Wuhan virus” reforzaron estigmas raciales, asociando enfermedad con nacionalidad o etnia. En Canadá y otros países, esto alimentó sinofobia, violencia verbal y física contra comunidades asiáticas, y legitimó políticas de exclusión bajo la lógica de proteger a la nación del ‘otro peligroso’.",
     "En México, las listas de lo esencial se definieron a nivel federal, pero con variaciones estatales y municipales. Comercios como papelerías, gimnasios o pequeños negocios de barrio quedaron fuera, mientras sectores industriales con peso económico fueron clasificados como esenciales. Esto visibiliza cómo criterios económicos y de poder político pesaron más que la equidad social.",
-    "Considerar la movilidad como un permiso socava la idea de ciudadanía y de derechos universales de circulación. El riesgo post-pandemia es que el Estado conserve o reactive con facilidad mecanismos de control, legitimando nuevas formas de vigilancia y restricción bajo argumentos de seguridad o salud pública."
+    "Considerar la movilidad como un permiso socava la idea de ciudadanía y de derechos universales de circulación. El riesgo post-pandemia es que el Estado conserve o reactive con facilidad mecanismos de control, legitimando nuevas formas de vigilancia y restricción bajo argumentos de seguridad o salud pública.",
+    // Tarjeta 2 ideas / posibles respuestas
+    "El uso de la Quarantine Act buscó minimizar protecciones jurídicas y maximizar capacidad de control, replicando patrones post-11S pero bajo una narrativa sanitaria.",
+    "La etiqueta de “esencial” no solo organizó el acceso, también reforzó prejuicios: lo extranjero como amenaza y lo útil económicamente como legítimo.",
+    "Al considerar turismo o recreación como “opcionales”, se privilegió la lógica productiva sobre la social o cultural, mostrando la jerarquía económica en la movilidad.",
+    "La clasificación de viajes discrecionales refleja desigualdad: quienes podían costear turismo internacional quedaron fuera, mientras trabajadores esenciales del Sur Global fueron admitidos."
   ];
 
   let current = 0;
@@ -248,9 +263,10 @@
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
   const flipBtn = document.getElementById('flipBtn');
+  const randomBtn = document.getElementById('randomBtn');
 
   function renderSlide(idx) {
-    frontFace.innerHTML = `<h2>Pregunta para discusión</h2><div style="margin-top:2.5rem;font-size:2.1rem;">${preguntas[idx]}</div>`;
+    frontFace.innerHTML = `<h2>Pregunta ${idx + 1}</h2><div style="margin-top:2.5rem;font-size:2.1rem;">${preguntas[idx]}</div>`;
     backFace.innerHTML = `<h2>Idea clave</h2><div style="margin-top:2.5rem;font-size:2.1rem;">${ideas[idx]}</div>`;
     prevBtn.disabled = idx === 0;
     nextBtn.disabled = idx === preguntas.length - 1;
@@ -283,6 +299,15 @@
       flipped = false;
       renderSlide(current);
     }
+  };
+  randomBtn.onclick = () => {
+    let rand;
+    do {
+      rand = Math.floor(Math.random() * preguntas.length);
+    } while (rand === current);
+    current = rand;
+    flipped = false;
+    renderSlide(current);
   };
 
   renderSlide(current);

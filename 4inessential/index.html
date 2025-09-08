@@ -108,6 +108,43 @@
             <p class="muted">Nota: Esta tarjeta resume y adapta la introducción y la sección “The Unexceptional Border” de Macklin (2022), integrando un ángulo comparativo con México para el trabajo en clase.</p>
           </div>
         </article>
+
+        <!-- Botón para mostrar/ocultar la tarjeta 2 -->
+        <button id="toggleCard2Btn" class="add" style="margin-bottom:1.5rem;">
+          Mostrar Tarjeta 2
+        </button>
+        <!-- Tarjeta 2 oculta por defecto -->
+        <article class="card" id="t2" style="display:none;">
+          <div class="card-header">
+            <span class="pill">Tarjeta 2</span>
+            Notas pp. 27–28
+          </div>
+          <div class="card-body">
+            <h3 class="h3">Citas destacadas</h3>
+            <ul>
+              <li>“Exercising state power via the Quarantine Act… echoes a similar choice made by the federal government after 9/11 to address national security and terrorism…” (p.27)</li>
+              <li>“Reliance on the Quarantine Act and IRPA also have the effect of reinforcing a stereotype of foreignness as vector of disease and danger to the body politic.” (p.27)</li>
+              <li>“The term ‘essential’ became the stamp on the notional permit that validates movement.” (p.27)</li>
+              <li>“A non-exhaustive list of examples of discretionary or optional travel includes ‘tourism, recreation, and entertainment.’” (p.28)</li>
+            </ul>
+            <div class="q-list">
+              <h3 class="h3">Preguntas</h3>
+              <ul>
+                <li>¿Por qué el gobierno canadiense utilizó la Quarantine Act en lugar de leyes antiterroristas? ¿Qué implicaciones tiene esto en términos de derechos y control?</li>
+                <li>¿Cómo refuerza la categoría de “esencial” estereotipos sobre quién representa peligro y quién es necesario?</li>
+                <li>¿Qué actividades quedaron fuera como “opcionales” o “discrecionales”? ¿Qué revela esto sobre el modelo económico y social canadiense?</li>
+                <li>¿Cómo se relaciona la lista de viajes discrecionales con desigualdades de clase y acceso?</li>
+              </ul>
+            </div>
+            <h3 class="h3">Ideas / Posibles respuestas</h3>
+            <ul>
+              <li>El uso de la Quarantine Act buscó minimizar protecciones jurídicas y maximizar capacidad de control, replicando patrones post-11S pero bajo una narrativa sanitaria.</li>
+              <li>La etiqueta de “esencial” no solo organizó el acceso, también reforzó prejuicios: lo extranjero como amenaza y lo útil económicamente como legítimo.</li>
+              <li>Al considerar turismo o recreación como “opcionales”, se privilegió la lógica productiva sobre la social o cultural, mostrando la jerarquía económica en la movilidad.</li>
+              <li>La clasificación de viajes discrecionales refleja desigualdad: quienes podían costear turismo internacional quedaron fuera, mientras trabajadores esenciales del Sur Global fueron admitidos.</li>
+            </ul>
+          </div>
+        </article>
       </section>
 
       <aside class="col-4">
@@ -139,6 +176,16 @@
       visible = !visible;
       card.style.display = visible ? 'block' : 'none';
       btn.textContent = visible ? 'Ocultar Tarjeta 1' : 'Mostrar Tarjeta 1';
+    });
+
+    // Mostrar/ocultar la tarjeta 2 al hacer click
+    const btn2 = document.getElementById('toggleCard2Btn');
+    const card2 = document.getElementById('t2');
+    let visible2 = false;
+    btn2.addEventListener('click', () => {
+      visible2 = !visible2;
+      card2.style.display = visible2 ? 'block' : 'none';
+      btn2.textContent = visible2 ? 'Ocultar Tarjeta 2' : 'Mostrar Tarjeta 2';
     });
   </script>
 </body>
