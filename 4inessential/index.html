@@ -216,6 +216,44 @@
             </ul>
           </div>
         </article>
+
+        <!-- Botón para mostrar/ocultar la tarjeta 5 -->
+        <button id="toggleCard5Btn" class="add" style="margin-bottom:1.5rem;">
+          Mostrar Tarjeta 5
+        </button>
+        <article class="card" id="t5" style="display:none;">
+          <div class="card-header">
+            <span class="pill">Tarjeta 5</span>
+            Seasonal Agricultural Workers (SAWP) · Notas pp. 34
+          </div>
+          <div class="card-body">
+            <h3 class="h3">Citas destacadas</h3>
+            <ul>
+              <li>“Canada operates a Seasonal Agricultural Worker Program (SAWP) via bilateral agreements between the governments of Canada as destination state and Mexico and Jamaica as sending states.” (p.34)</li>
+              <li>“The Canadian government subsidises the agricultural employers’ labour costs by furnishing migrant workers who work in greenhouses, orchards, and other industrial agriculture operations under working conditions below what Canadians will accept.” (p.34)</li>
+              <li>“The workers can never transition to permanent residence and must perform the annual ritual of returning ‘home’ for some period of time in order to affirm their designation as merely temporary.” (p.34)</li>
+              <li>“Because of their precarious immigration status… they experience wage-theft, overwork, unhealthy and dangerous working conditions, overcrowded and inadequate shelter, poor sanitation, and restricted access to food, healthcare, and liberty.” (p.34)</li>
+            </ul>
+            <div class="q-list">
+              <h3 class="h3">Preguntas</h3>
+              <ul>
+                <li>¿Cómo funciona el SAWP y qué países participan en este esquema?</li>
+                <li>¿Por qué se considera que los trabajadores agrícolas migrantes ocupan condiciones laborales “debajo de lo que los canadienses aceptarían”?</li>
+                <li>¿Qué significa el “ritual anual de retorno” y cómo refuerza la precariedad de estos trabajadores?</li>
+                <li>¿Qué implicaciones sociales y éticas tiene que los trabajadores agrícolas temporales no puedan acceder a la residencia permanente?</li>
+                <li>¿Qué paralelismos podemos encontrar entre el caso canadiense y las condiciones de trabajadores agrícolas en México o Estados Unidos?</li>
+              </ul>
+            </div>
+            <h3 class="h3">Ideas / Posibles respuestas</h3>
+            <ul>
+              <li>El SAWP es un acuerdo bilateral que facilita la migración temporal desde México y Jamaica hacia Canadá, garantizando mano de obra barata para el sector agrícola.</li>
+              <li>Los empleadores canadienses se benefician de costos laborales reducidos al contratar a migrantes que aceptan condiciones que los trabajadores locales rechazarían.</li>
+              <li>El requisito de regresar cada año a sus países de origen reafirma su estatus como “temporales” y niega la posibilidad de integración o permanencia.</li>
+              <li>La imposibilidad de acceder a la residencia perpetúa la vulnerabilidad, consolidando una jerarquía laboral basada en origen nacional y estatus migratorio.</li>
+              <li>Las condiciones de sobreexplotación, hacinamiento y falta de derechos laborales reflejan patrones comunes en sistemas agrícolas globalizados, donde los migrantes son esenciales pero desechables.</li>
+            </ul>
+          </div>
+        </article>
       </section>
 
       <aside class="col-4">
@@ -277,6 +315,16 @@
       visible4 = !visible4;
       card4.style.display = visible4 ? 'block' : 'none';
       btn4.textContent = visible4 ? 'Ocultar Tarjeta 4' : 'Mostrar Tarjeta 4';
+    });
+
+    // Mostrar/ocultar la tarjeta 5 al hacer click
+    const btn5 = document.getElementById('toggleCard5Btn');
+    const card5 = document.getElementById('t5');
+    let visible5 = false;
+    btn5.addEventListener('click', () => {
+      visible5 = !visible5;
+      card5.style.display = visible5 ? 'block' : 'none';
+      btn5.textContent = visible5 ? 'Ocultar Tarjeta 5' : 'Mostrar Tarjeta 5';
     });
 
     // Información de CBSA para el popup
