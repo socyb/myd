@@ -293,6 +293,49 @@
             </ul>
           </div>
         </article>
+
+        <!-- Botón para mostrar/ocultar la tarjeta 7 -->
+        <button id="toggleCard7Btn" class="add" style="margin-bottom:1.5rem;">
+          Mostrar Tarjeta 7
+        </button>
+        <article class="card" id="t7" style="display:none;">
+          <div class="card-header">
+            <span class="pill">Tarjeta 7</span>
+            Inmigración permanente: ¿qué revelan los datos de 2025 frente a la coyuntura pandémica? · Notas pp. 39–40
+          </div>
+          <div class="card-body">
+            <h3 class="h3">Citas destacadas (Macklin)</h3>
+            <ul>
+              <li>“The pessimistic view is that these initiatives will become another example of short-term, ad-hoc policies … [by Dec 2020] there were over 80,000 refugee claimants in Canada and over a million people on temporary work permits.”</li>
+              <li>“It is too early to predict or theorise the future of mobility as free (versus permitted) movement in an era of surveillance, internal borders, and lockdowns.”</li>
+              <li>“Each state has its own set of factors … whose entry and what kind of labour was legally, economically, and politically essential during the pandemic.”</li>
+            </ul>
+            <h3 class="h3">Datos actualizados (2025)</h3>
+            <ul>
+              <li>En el primer trimestre de 2025, Canadá admitió 104,256 inmigrantes permanentes, cifra récord para ese período.</li>
+              <li>El Plan de Niveles de Inmigración 2025-2027 proyecta una reducción gradual de admisiones permanentes: 395,000 en 2025, 380,000 en 2026, y 365,000 en 2027.</li>
+              <li>En 2024, se habían admitido unos 483,640 residentes permanentes, el número más alto registrado.</li>
+              <li>A inicios de 2025 también se reportó una baja notable de residentes temporales (estudiantes, trabajadores), en una medida sin precedentes desde 2020.</li>
+            </ul>
+            <h3 class="h3">Comparativa México – EE.UU.</h3>
+            <ul>
+              <li>En EE.UU., la política migratoria pandémica incluyó restricciones Covid-19 (proclamaciones de salud) y priorización de categorías laborales específicas, aunque sus niveles de residencia permanente no alcanzaron los aumentos observados en Canadá.</li>
+              <li>México, por su parte, no implementó un programa nacional equivalente de ampliación de residencia permanente; su política migratoria se enfocó más en temporaneidad (refugiados, visitantes, trabajadores agrícolas) y menos en construir rutas estructurales hacia la residencia. Esto contrastó con Canadá, donde la pandemia impulsó —al menos temporalmente— una flexibilización migratoria más amplia.</li>
+            </ul>
+            <h3 class="h3">Reflexión sobre Migración y Desarrollo</h3>
+            <ul>
+              <li>El caso canadiense muestra cómo una crisis puede acelerar políticas migratorias expansivas, alineadas con necesidades económicas inmediatas y una visión de desarrollo basada en movilidad.</li>
+              <li>Sin embargo, la posterior reversión —reducción de admisiones y control de residentes temporales— evidencia la fragilidad de estas medidas ante presiones internas (vivienda, infraestructura, opinión pública).</li>
+              <li>La migración puede ser una vía poderosa de desarrollo si se integra con planificación urbana, social y laboral, pero sin políticas sostenibles, corre el riesgo de ser reactiva y limitada.</li>
+            </ul>
+            <h3 class="h3">Artículos recientes</h3>
+            <ul>
+              <li><a href="https://www.reuters.com/world/americas/canada-cut-immigration-numbers-2024-10-23/?utm_source=chatgpt.com" target="_blank" rel="noopener">Canada to cut immigration numbers, government source says</a></li>
+              <li><a href="https://www.reuters.com/world/americas/canada-cut-immigration-ease-housing-social-services-strain-2024-10-24/?utm_source=chatgpt.com" target="_blank" rel="noopener">Canada's immigration cuts could hurt labor pool, industry groups say</a></li>
+              <li><a href="https://www.news.com.au/finance/economy/canada-shows-australia-how-to-solve-rental-crisis-clear-lessons-here/news-story/dc19bbb2f19ca8c210296e1717a0af43?utm_source=chatgpt.com" target="_blank" rel="noopener">Canada gives Aus a 'clear lesson' on housing</a></li>
+            </ul>
+          </div>
+        </article>
       </section>
 
       <aside class="col-4">
@@ -377,6 +420,16 @@
       visible6 = !visible6;
       card6.style.display = visible6 ? 'block' : 'none';
       btn6.textContent = visible6 ? 'Ocultar Tarjeta 6' : 'Mostrar Tarjeta 6';
+    });
+
+    // Mostrar/ocultar la tarjeta 7 al hacer click
+    const btn7 = document.getElementById('toggleCard7Btn');
+    const card7 = document.getElementById('t7');
+    let visible7 = false;
+    btn7.addEventListener('click', () => {
+      visible7 = !visible7;
+      card7.style.display = visible7 ? 'block' : 'none';
+      btn7.textContent = visible7 ? 'Ocultar Tarjeta 7' : 'Mostrar Tarjeta 7';
     });
 
     // Información de CBSA para el popup
