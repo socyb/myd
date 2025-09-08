@@ -3,133 +3,61 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Actividad 4 · (In)Essential Bordering: Canadá, COVID y movilidad</title>
+  <title>Migración y Desarrollo · Actividades del curso</title>
   <style>
     :root{
-      /* Paleta inspirada en la portada del libro */
-      --teal:#0b8a8f; /* fondo principal */
+      --teal:#0b8a8f;
       --teal-dark:#086b6f;
-      --sun:#ffb64d;  /* acentos cálidos */
-      --coral:#ff4b4b;/* ribete lateral rojo */
-      --cream:#fff7ec;/* fondo suave para tarjetas */
-      --ink:#103338;  /* texto principal */
+      --sun:#ffb64d;
+      --coral:#ff4b4b;
+      --cream:#fff7ec;
+      --ink:#103338;
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#f6fcfc}
     a{color:var(--teal-dark);text-decoration:none}
     a:hover{text-decoration:underline}
-
-    /* Header */
     header{position:relative;overflow:hidden;color:white}
     .hero{
       padding:3.5rem 1.25rem 2.75rem;
-      background: linear-gradient(135deg, rgba(255,75,75,.92), rgba(255,182,77,.90) 35%, rgba(11,138,143,.95) 85%), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="%23ffb64d"/><stop offset="100%" stop-color="%230b8a8f"/></linearGradient></defs><rect width="1200" height="400" fill="url(%23g)" opacity="0.25"/></svg>');
+      background: linear-gradient(135deg, rgba(255,75,75,.92), rgba(255,182,77,.90) 35%, rgba(11,138,143,.95) 85%);
       background-size:cover;
       border-bottom:8px solid var(--coral);
     }
     .hero-inner{max-width:1000px;margin:0 auto}
-    .kicker{letter-spacing:.08em;text-transform:uppercase;font-weight:800;font-size:.9rem;opacity:.95}
-    .title{margin:.35rem 0 0;font-size:clamp(1.6rem,4.2vw,2.8rem);font-weight:900;line-height:1.1}
+    .title{margin:.35rem 0 0;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.1}
     .subtitle{margin:.5rem 0 0;font-size:clamp(1rem,2.3vw,1.2rem);opacity:.95}
-
-    /* Layout */
-    .container{max-width:1000px;margin:0 auto;padding:1rem 1.25rem}
-    .grid{display:grid;gap:1.2rem}
-    @media (min-width:760px){
-      .grid{grid-template-columns:repeat(12,1fr)}
-      .col-8{grid-column:span 8}
-      .col-4{grid-column:span 4}
-    }
-
-    /* Card */
-    .card{background:var(--cream);border-radius:18px;border:1px solid #e3efef;box-shadow:0 6px 18px rgba(11,138,143,.10);overflow:hidden}
-    .card-header{display:flex;align-items:center;gap:.6rem;padding:.9rem 1rem;background:linear-gradient(90deg,var(--coral),var(--sun));color:#1b1b1b;font-weight:800}
-    .pill{background:rgba(255,255,255,.92);padding:.2rem .6rem;border-radius:999px;font-size:.8rem;letter-spacing:.02em}
-    .card-body{padding:1.1rem 1rem 1.2rem}
-    .h3{margin:.2rem 0 .65rem;font-size:1.15rem}
-    .muted{color:#44676c}
-    ul{margin:.4rem 0 .8rem;padding-left:1.2rem}
-    li{margin:.25rem 0}
-    .q-list{border-top:1px dashed #cbe3e5;padding-top:.75rem;margin-top:.75rem}
-
-    /* Side panel (meta) */
-    .panel{background:white;border:1px solid #e3efef;border-radius:16px;padding:1rem;position:sticky;top:1rem}
-    .badge{display:inline-block;background:var(--teal);color:white;border-radius:999px;padding:.28rem .55rem;font-size:.78rem;font-weight:700}
-    .meta{font-size:.92rem;color:#33585c}
-
-    /* Footer */
+    .container{max-width:1000px;margin:0 auto;padding:2rem 1.25rem}
+    .activity-list{margin:2.5rem 0 0 0;padding:0;list-style:none;}
+    .activity-list li{margin-bottom:1.5rem;}
+    .activity-link{display:inline-flex;align-items:center;gap:.5rem;border:2px solid var(--teal);border-radius:999px;padding:.7rem 1.3rem;font-weight:700;background:white;font-size:1.15rem;}
+    .activity-link:hover{background:#ebfffe}
     footer{margin-top:2rem;background:var(--teal-dark);color:#e6ffff}
     .footer-inner{max-width:1000px;margin:0 auto;padding:1rem 1.25rem;display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;justify-content:space-between}
     .brand{display:flex;align-items:center;gap:.6rem}
     .brand .stripe{width:8px;height:28px;background:var(--coral);border-radius:3px}
-
-    /* Add button */
-    .add{display:inline-flex;align-items:center;gap:.5rem;border:2px solid var(--teal);border-radius:999px;padding:.5rem .9rem;font-weight:700;background:white}
-    .add:hover{background:#ebfffe}
   </style>
 </head>
 <body>
   <header>
     <div class="hero">
       <div class="hero-inner">
-        <div class="kicker">Actividad 4.</div>
-        <h1 class="title">(In)Essential Bordering: Canadá, COVID y movilidad</h1>
-        <p class="subtitle">Migración y Desarrollo · Guía de lectura y discusión basada en <em>Macklin (2022)</em> del volumen <em>Migration and Pandemics</em>.</p>
+        <h1 class="title">Migración y Desarrollo</h1>
+        <p class="subtitle">Actividades del curso · Facultad de Contaduría y Administración, UNAM</p>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <div class="grid">
-      <section class="col-8">
-        <!-- Enlace a la actividad 4 modo presentación -->
-        <p>
-          <a href="4inessential/index.html" class="add" style="margin-bottom:1.5rem;display:inline-block;">
-            Actividad 4: (In)Essential Bordering: Canadá, COVID y movilidad
-          </a>
-        </p>
-        <!-- TARJETA 1 -->
-        <article class="card" id="t1">
-          <div class="card-header">
-            <span class="pill">Tarjeta 1</span>
-            Introducción y “La frontera no excepcional”
-          </div>
-          <div class="card-body">
-            <h3 class="h3">Ideas clave</h3>
-            <ul>
-              <li><strong>Choque de movilidades:</strong> el cruce transfronterizo del virus trastocó el cruce de personas, bienes e ideas; se alteró la jerarquía de admisibilidad y surgió sospecha social (p.ej., placas de EE.&nbsp;UU. en Canadá en 2020).</li>
-              <li><strong>Vínculo entre control en la frontera y dentro del territorio:</strong> COVID-19 hizo visible que el Estado puede regular la movilidad <em>interna</em> con similar intensidad—desde el hogar hasta provincias—difuminando la supuesta diferencia entre “frontera” y “adentro”.</li>
-              <li><strong>Walzer y los “mil fortines”:</strong> la libre circulación interna suele apoyarse en la presunción de fronteras nacionales cerradas; con la pandemia emergieron múltiples barreras subnacionales, confirmando y a la vez tensionando esa tesis.</li>
-              <li><strong>De la deseabilidad al carácter “esencial”:</strong> la clasificación tradicional (privilegio de pasaporte del Norte Global) fue temporalmente sustituida por una tipología de lo <em>esencial</em> (trabajo, interés, necesidad) definida por criterios econo‑legales‑políticos.</li>
-              <li><strong>Movilidad “permitida”, no “libre”:</strong> bajo COVID, toda movilidad se volvió sospechosa; la función de la frontera se integró en un aparato general de inmovilización para proteger la salud pública.</li>
-            </ul>
-
-            <div class="q-list">
-              <h3 class="h3">Preguntas para detonar discusión</h3>
-              <ul>
-                <li>Según Walzer, ¿por qué la libre movilidad interna depende de la presunción de cierre en la frontera? ¿La experiencia de Canadá durante COVID confirma o contradice esta idea?</li>
-                <li>¿Qué <em>actores</em> decidieron qué era “esencial” en Canadá (gobierno federal, provincias, sectores económicos, tribunales)? ¿Con qué criterios explícitos o implícitos?</li>
-                <li>¿Cómo se reconfiguró la jerarquía de admisibilidad durante la pandemia? Contrasta “pasaporte privilegiado” vs. “entrada por necesidad”.</li>
-                <li>Etiqueta y estigma: ¿qué efectos tuvieron narrativas como “virus chino/Wuhan”? Identifica consecuencias raciales y políticas.</li>
-                <li><strong>Comparativo México‑Canadá:</strong> en México también se distinguió entre actividades esenciales y no esenciales. ¿Quién definió esas listas a nivel federal/estatal/municipal? ¿Qué negocios o trabajadores quedaron excluidos/invisibilizados?</li>
-                <li>¿Qué implica conceptualizar la movilidad como <em>permitida</em> y no como derecho a la libre circulación? ¿Qué riesgos permanecen post‑pandemia?</li>
-              </ul>
-            </div>
-
-            <p class="muted">Nota: Esta tarjeta resume y adapta la introducción y la sección “The Unexceptional Border” de Macklin (2022), integrando un ángulo comparativo con México para el trabajo en clase.</p>
-          </div>
-        </article>
-      </section>
-
-      <aside class="col-4">
-        <div class="panel">
-          <span class="badge">Guía de lectura</span>
-          <h3 style="margin:.5rem 0 0">Migración y Pandemias</h3>
-          <p class="meta"><strong>Referencia:</strong> Macklin, A. (2022). (In)Essential Bordering: Canada, COVID, and Mobility. En A. Triandafyllidou (ed.), <em>Migration and Pandemics</em> (IMISCOE Research Series). Springer.</p>
-          <p class="meta"><strong>Objetivo de clase:</strong> comprender cómo la pandemia reconfiguró las jerarquías de admisibilidad y el control de movilidad dentro y fuera del Estado, y discutir la noción de “esencial”.</p>
-        </div>
-      </aside>
-    </div>
+    <h2 style="margin-top:0;">Actividades</h2>
+    <ul class="activity-list">
+      <li>
+        <a href="4inessential/index.html" class="activity-link">
+          Actividad 4: (In)Essential Bordering: Canadá, COVID y movilidad
+        </a>
+      </li>
+      <!-- Aquí puedes agregar más actividades en el futuro -->
+    </ul>
   </main>
 
   <footer>
