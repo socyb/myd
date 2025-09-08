@@ -180,6 +180,42 @@
             </ul>
           </div>
         </article>
+
+        <!-- Botón para mostrar/ocultar la tarjeta 4 -->
+        <button id="toggleCard4Btn" class="add" style="margin-bottom:1.5rem;">
+          Mostrar Tarjeta 4
+        </button>
+        <article class="card" id="t4" style="display:none;">
+          <div class="card-header">
+            <span class="pill">Tarjeta 4</span>
+            Estudiantes Internacionales · Notas pp. 31–32
+          </div>
+          <div class="card-body">
+            <h3 class="h3">Citas destacadas</h3>
+            <ul>
+              <li>“Historically, the education of international students was framed as a form of quasi-international development assistance… By the turn of the twenty-first century, this neo-colonial model of international students as aid recipients had evolved into a neo-liberal model of international students as revenue stream.” (p.31)</li>
+              <li>“Today, Canadian universities depend heavily on tuition fees charged to international students; international tuition across Canadian universities averages 4.5 times the fees charged to domestic students (Statistics Canada, 2020).” (p.31)</li>
+              <li>“Universities found themselves in a quandary: the physical presence of international students is economically essential… The economic imperative to enable international students to enter Canada thus collided with the bar on entry for ‘discretionary’ or ‘optional’ purposes.” (p.32)</li>
+              <li>“Even with a study permit in hand, actual admission remained subject to CBSA officers’ exercise of discretion at the port of entry.” (p.32)</li>
+            </ul>
+            <div class="q-list">
+              <h3 class="h3">Preguntas</h3>
+              <ul>
+                <li>¿Qué paradoja revela el papel de los estudiantes internacionales en Canadá durante la pandemia?</li>
+                <li>¿Cómo pasó la figura del estudiante internacional de ser vista como “beneficiario de ayuda” a convertirse en “fuente de ingresos”?</li>
+                <li>¿Por qué se consideraba “económicamente esencial” su presencia física, incluso cuando existía la alternativa de educación en línea?</li>
+                <li>¿Qué riesgos implica dejar en manos de oficiales fronterizos la decisión final sobre la entrada de estudiantes con permisos válidos?</li>
+              </ul>
+            </div>
+            <h3 class="h3">Ideas / Posibles respuestas</h3>
+            <ul>
+              <li>La paradoja está en que los estudiantes internacionales eran tratados como actores “opcionales” a nivel migratorio, pero “esenciales” para la economía universitaria.</li>
+              <li>La educación internacional pasó de un discurso de cooperación y desarrollo a un régimen neoliberal, donde los estudiantes del Sur Global sostienen financieramente a las universidades canadienses.</li>
+              <li>La insistencia en la presencia física revela cómo el valor económico pesaba más que el pedagógico: la matrícula internacional (4.5 veces la nacional) se volvió insustituible por la enseñanza en línea.</li>
+              <li>La discrecionalidad en la frontera muestra la precariedad jurídica de los estudiantes internacionales: aun con permisos, podían ser rechazados, lo que genera inseguridad y vulnerabilidad.</li>
+            </ul>
+          </div>
+        </article>
       </section>
 
       <aside class="col-4">
@@ -231,6 +267,16 @@
       visible3 = !visible3;
       card3.style.display = visible3 ? 'block' : 'none';
       btn3.textContent = visible3 ? 'Ocultar Tarjeta 3' : 'Mostrar Tarjeta 3';
+    });
+
+    // Mostrar/ocultar la tarjeta 4 al hacer click
+    const btn4 = document.getElementById('toggleCard4Btn');
+    const card4 = document.getElementById('t4');
+    let visible4 = false;
+    btn4.addEventListener('click', () => {
+      visible4 = !visible4;
+      card4.style.display = visible4 ? 'block' : 'none';
+      btn4.textContent = visible4 ? 'Ocultar Tarjeta 4' : 'Mostrar Tarjeta 4';
     });
   </script>
 </body>
