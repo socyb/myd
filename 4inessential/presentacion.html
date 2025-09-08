@@ -219,9 +219,72 @@
     };
   }
 
+  // Información de CBSA para el popup
+  const cbsaInfo = `
+    <strong>CBSA</strong> es la <strong>Canada Border Services Agency</strong> (Agencia de Servicios Fronterizos de Canadá).<br><br>
+    Es el organismo federal encargado de:
+    <ul style="text-align:left; font-size:1.15rem; margin-top:1rem;">
+      <li>Controlar la entrada y salida de personas y bienes en Canadá.</li>
+      <li>Aplicar leyes de inmigración y aduanas, incluyendo inspecciones en aeropuertos, puertos y fronteras terrestres.</li>
+      <li>Ejecutar detenciones y deportaciones en casos de incumplimiento de la ley migratoria.</li>
+      <li>Recaudar aranceles y tarifas aduaneras.</li>
+      <li>Proteger la seguridad nacional, colaborando con otras agencias en temas de contrabando, terrorismo y crimen organizado.</li>
+    </ul>
+    <br>
+    En <em>Macklin, 2020</em> se menciona que, aun teniendo un <em>study permit</em> válido, la admisión final de los estudiantes internacionales quedaba a discreción de los oficiales del CBSA en el punto de entrada. Es decir, eran ellos quienes decidían en la práctica si el estudiante podía entrar o no.
+  `;
+
+  // Función para abrir el popup de CBSA
+  function showCBSAPopup() {
+    const popup = document.createElement('div');
+    popup.id = 'cbsa-popup';
+    popup.style.position = 'fixed';
+    popup.style.top = '50%';
+    popup.style.left = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+    popup.style.background = 'rgba(255,247,236,0.98)';
+    popup.style.color = 'var(--ink)';
+    popup.style.border = '2px solid var(--teal-dark)';
+    popup.style.borderRadius = '18px';
+    popup.style.boxShadow = '0 8px 32px rgba(11,138,143,.18)';
+    popup.style.padding = '2.2rem 2rem 1.5rem 2rem';
+    popup.style.zIndex = '9999';
+    popup.style.maxWidth = '90vw';
+    popup.style.width = '480px';
+    popup.style.fontSize = '1.15rem';
+    popup.style.maxHeight = '80vh';
+    popup.style.overflowY = 'auto';
+    popup.innerHTML = `
+      <div style="font-size:1.35rem; font-weight:700; margin-bottom:.7rem; color:var(--teal-dark);">¿Qué es el CBSA?</div>
+      ${cbsaInfo}
+      <div style="text-align:right; margin-top:1.5rem;">
+        <button id="closeCBSABtn" style="background:var(--sun);color:var(--ink);border:none;border-radius:999px;padding:.5rem 1.2rem;font-size:1rem;font-weight:700;cursor:pointer;">Cerrar</button>
+      </div>
+    `;
+    document.body.appendChild(popup);
+
+    function resizePopup() {
+      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+      popup.style.width = vw < 520 ? '96vw' : '480px';
+      popup.style.maxHeight = vw < 520 ? '90vh' : '80vh';
+    }
+    resizePopup();
+    window.addEventListener('resize', resizePopup);
+
+    document.getElementById('closeCBSABtn').onclick = () => {
+      window.removeEventListener('resize', resizePopup);
+      popup.remove();
+    };
+  }
+
   // Función para insertar el link en cada mención de Walzer
   function linkifyWalzer(text) {
     return text.replace(/Walzer/g, `<a href="#" onclick="showWalzerPopup();return false;" style="color:var(--coral);text-decoration:underline;font-weight:700;">Walzer</a>`);
+  }
+
+  // Función para insertar el link en cada mención de CBSA
+  function linkifyCBSA(text) {
+    return text.replace(/CBSA/g, `<a href="#" onclick="showCBSAPopup();return false;" style="color:var(--coral);text-decoration:underline;font-weight:700;">CBSA</a>`);
   }
 
   // Preguntas e ideas clave
@@ -285,9 +348,10 @@
   const flipBtn = document.getElementById('flipBtn');
   const randomBtn = document.getElementById('randomBtn');
 
+  // Aplica linkifyCBSA a cada idea y pregunta antes de mostrar
   function renderSlide(idx) {
-    frontFace.innerHTML = `<h2>Pregunta ${idx + 1}</h2><div style="margin-top:2.5rem;font-size:2.1rem;">${preguntas[idx]}</div>`;
-    backFace.innerHTML = `<h2>Idea clave</h2><div style="margin-top:2.5rem;font-size:2.1rem;">${ideas[idx]}</div>`;
+    frontFace.innerHTML = `<h2>Pregunta ${idx + 1}</h2><div style="margin-top:2.5rem;font-size:2.1rem;">${linkifyCBSA(preguntas[idx])}</div>`;
+    backFace.innerHTML = `<h2>Idea clave</h2><div style="margin-top:2.5rem;font-size:2.1rem;">${linkifyCBSA(ideas[idx])}</div>`;
     prevBtn.disabled = idx === 0;
     nextBtn.disabled = idx === preguntas.length - 1;
     if (flipped) {
@@ -333,6 +397,7 @@
   renderSlide(current);
 
   window.showWalzerPopup = showWalzerPopup;
+  window.showCBSAPopup = showCBSAPopup;
 </script>
 </body>
 </html>
