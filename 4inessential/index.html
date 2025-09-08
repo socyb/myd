@@ -254,6 +254,45 @@
             </ul>
           </div>
         </article>
+
+        <!-- Botón para mostrar/ocultar la tarjeta 6 -->
+        <button id="toggleCard6Btn" class="add" style="margin-bottom:1.5rem;">
+          Mostrar Tarjeta 6
+        </button>
+        <article class="card" id="t6" style="display:none;">
+          <div class="card-header">
+            <span class="pill">Tarjeta 6</span>
+            Seasonal Agricultural Workers – Exclusión estructural y reconocimiento ambiguo · Notas pp. 35–36
+          </div>
+          <div class="card-body">
+            <h3 class="h3">Citas destacadas</h3>
+            <ul>
+              <li>“Although frequently denigrated as ‘unskilled’ and thus undeserving of permanent residence, employers now emphasised the skill, experience, and efficiency of seasonal agricultural workers.” (p.35)</li>
+              <li>“And so, to sustain the food supply in Canada, the entry of seasonal agricultural workers was facilitated as an exception because their admission was economically essential to Canada.” (p.35)</li>
+              <li>“But upgrading the work to essential did not make the workers essential. Rather, it exposed the extent to which migrant agricultural labour is essential because the workers themselves are dispensable.” (p.35)</li>
+              <li>“This is not a paradox: slave labour is essential to a slave economy but, and because, enslaved people have no intrinsic worth in that economy.” (p.35)</li>
+              <li>“Migrant worker organisations drew attention to the essential services these workers provide to a Canadian economy in crisis, and the heightened risk of infection, illness, and death they faced because of the nature of the work they perform.” (p.36)</li>
+            </ul>
+            <div class="q-list">
+              <h3 class="h3">Preguntas</h3>
+              <ul>
+                <li>¿Cómo se genera una exclusión estructural mediante el esquema de renovación continua de permisos temporales?</li>
+                <li>¿Qué significa que antes fueran considerados “unskilled” y, durante la pandemia, se les reconociera como trabajadores con “skills, experience and efficiency”?</li>
+                <li>¿Qué nos revela la afirmación de que “hacer el trabajo esencial no hace esencial al trabajador”?</li>
+                <li>¿Cómo se relaciona esta lógica con la noción de trabajo esclavo en economías dependientes?</li>
+                <li>¿Qué papel tuvieron las organizaciones de trabajadores migrantes al visibilizar los riesgos sanitarios y las omisiones del gobierno y empleadores?</li>
+              </ul>
+            </div>
+            <h3 class="h3">Ideas / Posibles respuestas</h3>
+            <ul>
+              <li>El sistema de renovación perpetua de permisos temporales crea una exclusión estructural: los trabajadores nunca acceden a residencia permanente, aunque su presencia sea continua y necesaria.</li>
+              <li>La narrativa cambió de “unskilled” a valorar sus “habilidades y eficiencia”, pero sin modificar su estatus precario, lo que muestra un reconocimiento instrumental, no de derechos.</li>
+              <li>La frase sobre lo esencial del trabajo pero no del trabajador evidencia que lo que se valora es la función económica, no la dignidad del sujeto.</li>
+              <li>Comparar con la lógica del trabajo esclavo permite ver cómo se explota el carácter indispensable del trabajo mientras se niega valor intrínseco a las personas.</li>
+              <li>Las organizaciones de migrantes denunciaron la falta de medidas sanitarias, el hacinamiento y la explotación laboral, revelando cómo la vulnerabilidad estructural se agravó con la pandemia.</li>
+            </ul>
+          </div>
+        </article>
       </section>
 
       <aside class="col-4">
@@ -325,6 +364,16 @@
       visible5 = !visible5;
       card5.style.display = visible5 ? 'block' : 'none';
       btn5.textContent = visible5 ? 'Ocultar Tarjeta 5' : 'Mostrar Tarjeta 5';
+    });
+
+    // Mostrar/ocultar la tarjeta 6 al hacer click
+    const btn6 = document.getElementById('toggleCard6Btn');
+    const card6 = document.getElementById('t6');
+    let visible6 = false;
+    btn6.addEventListener('click', () => {
+      visible6 = !visible6;
+      card6.style.display = visible6 ? 'block' : 'none';
+      btn6.textContent = visible6 ? 'Ocultar Tarjeta 6' : 'Mostrar Tarjeta 6';
     });
 
     // Información de CBSA para el popup
