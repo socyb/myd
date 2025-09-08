@@ -23,167 +23,271 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
     }
     .presentation-container {
       width: 100vw;
-      min-height: 80vh;
+      min-height: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-top: 2.5vh;
+      margin-bottom: 0;
+    }
+    .card-flip {
+      width: 100%;
+      max-width: 900px;
+      min-width: 0;
+      min-height: 220px;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
       justify-content: center;
     }
-    .slide {
+    .flip-inner {
+      width: 100%;
+      min-height: 220px;
+      position: relative;
+      transition: transform 0.7s cubic-bezier(.4,2,.3,1);
+      transform-style: preserve-3d;
+    }
+    .slide-face {
+      width: 100%;
+      max-width: 900px;
+      box-sizing: border-box;
       background: rgba(255,247,236,0.97);
       color: var(--ink);
       border-radius: 24px;
       box-shadow: 0 8px 32px rgba(11,138,143,.18);
-      padding: 3rem 2.5rem;
-      max-width: 900px;
-      min-width: 320px;
-      min-height: 320px;
+      padding: 2rem 1.2rem;
       font-size: 2.2rem;
       text-align: center;
-      margin-bottom: 2rem;
       display: none;
-      transition: all .3s;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-y: auto;
+      word-break: break-word;
     }
-    .slide.active {
-      display: block;
+    .slide-face.active {
+      display: flex;
+      animation: fadeIn .4s;
     }
-    .slide h1, .slide h2 {
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .slide-face h1, .slide-face h2 {
       color: var(--teal-dark);
       margin-bottom: 1.2rem;
-      font-size: 2.5rem;
+      font-size: 2.1rem;
       font-weight: 900;
       letter-spacing: .03em;
     }
-    .slide ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-size: 2rem;
-    }
-    .slide li {
-      margin: 1.2rem 0;
-      font-size: 2rem;
-    }
     .controls {
       display: flex;
-      gap: 2rem;
+      gap: 1rem;
+      flex-wrap: wrap;
       justify-content: center;
       margin-bottom: 2rem;
+      margin-top: 1.2rem;
+      position: static;
+      z-index: auto;
     }
     .btn {
       background: var(--sun);
       color: var(--ink);
       border: none;
       border-radius: 999px;
-      padding: 1rem 2.5rem;
-      font-size: 1.5rem;
+      padding: 1rem 2.2rem;
+      font-size: 1.2rem;
       font-weight: bold;
       cursor: pointer;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       transition: background .2s;
+      margin-bottom: .5rem;
     }
     .btn:disabled {
       background: #ffe6b3;
       color: #aaa;
       cursor: not-allowed;
     }
+    @media (max-width: 950px) {
+      .card-flip, .slide-face {
+        max-width: 98vw;
+      }
+    }
+    @media (max-width: 600px) {
+      .card-flip {
+        max-width: 100vw;
+        min-height: 160px;
+      }
+      .slide-face {
+        font-size: 1.15rem;
+        padding: 1rem .5rem;
+        min-height: 160px;
+      }
+      .slide-face h1, .slide-face h2 {
+        font-size: 1.2rem;
+      }
+      .controls {
+        flex-direction: column;
+        gap: .5rem;
+        margin-bottom: 1.2rem;
+        margin-top: 1rem;
+      }
+    }
+    @media (max-width: 400px) {
+      .slide-face {
+        font-size: 1rem;
+        padding: .5rem .2rem;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="presentation-container">
-    <!-- Slides generadas dinámicamente -->
+    <div class="card-flip">
+      <div class="flip-inner" id="flipInner">
+        <div class="slide-face front active" id="frontFace"></div>
+        <div class="slide-face back" id="backFace"></div>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="btn" id="prevBtn">Anterior</button>
+      <button class="btn" id="flipBtn">Ver idea clave</button>
+      <button class="btn" id="nextBtn">Siguiente</button>
+      <a href="index.html" class="btn" id="backBtn" style="text-decoration:none;">Regresar a notas de lectura</a>
+    </div>
   </div>
-  <div class="controls">
-    <button class="btn" id="prevBtn">Anterior</button>
-    <button class="btn" id="nextBtn">Siguiente</button>
-    <a href="index.html" class="btn" id="backBtn" style="text-decoration:none;">Regresar a notas de lectura</a>
-  </div>
-  <script>
-    // Ideas clave y preguntas COMPLETAS
-    const ideas = [
-      {
-        title: "Introducción y “La frontera no excepcional”",
-        text: "<strong>Choque de movilidades:</strong> El cruce transfronterizo del virus trastocó el cruce de personas, bienes e ideas; se alteraron los patrones de movilidad y surgió sospecha social (por ejemplo, placas de EE. UU. en Canadá en 2020)."
-      },
-      {
-        title: "Control fronterizo y territorial",
-        text: "<strong>Vínculo entre control en la frontera y dentro del territorio:</strong> COVID-19 hizo visible que el Estado puede regular la movilidad interna con similar intensidad—desde el hogar hasta provincias—difuminando la supuesta diferencia entre “frontera” y “adentro”."
-      },
-      {
-        title: "Walzer y los “mil fortines”",
-        text: "<strong>Walzer y los “mil fortines”:</strong> La libre circulación interna suele apoyarse en la presunción de fronteras nacionales cerradas; con la pandemia emergieron múltiples barreras subnacionales, confirmando y a la vez tensionando esa tesis."
-      },
-      {
-        title: "De la deseabilidad al carácter “esencial”",
-        text: "<strong>De la deseabilidad al carácter “esencial”:</strong> La clasificación tradicional (privilegio de pasaporte del Norte Global) fue temporalmente sustituida por una tipología de lo esencial (trabajo, interés, necesidad) definida por criterios económicos, legales y políticos."
-      },
-      {
-        title: "Movilidad “permitida”, no “libre”",
-        text: "<strong>Movilidad “permitida”, no “libre”:</strong> Bajo COVID, toda movilidad se volvió sospechosa; la función de la frontera se integró en un aparato general de inmovilización para proteger la salud pública."
-      }
-    ];
+<script>
+  // Información de Walzer para el popup
+  const walzerInfo = `
+    <strong>Michael Walzer (n. 1935)</strong> es un filósofo político estadounidense, profesor emérito en el Institute for Advanced Study (Princeton, EE. UU.), conocido por sus trabajos sobre justicia, guerra, ética y ciudadanía.<br><br>
+    <u>Algunos puntos clave sobre él:</u>
+    <ul style="text-align:left; font-size:1.15rem; margin-top:1rem;">
+      <li><strong>Obra más influyente:</strong> <em>Spheres of Justice</em> (1983), donde desarrolla la idea de que la justicia no es universal ni uniforme, sino que debe entenderse en “esferas” diferenciadas (economía, política, comunidad, etc.), cada una con sus propios criterios de distribución.</li>
+      <li><strong>Teoría de la guerra justa:</strong> En <em>Just and Unjust Wars</em> (1977), ofrece una defensa moderna del concepto de guerra justa, analizando cómo deben ser evaluadas las guerras y la conducta de los combatientes.</li>
+      <li><strong>Comunitarismo:</strong> Es una de las figuras centrales del comunitarismo político, corriente que resalta la importancia de la pertenencia comunitaria y de los valores compartidos frente a visiones más individualistas de la política.</li>
+      <li><strong>Sobre fronteras y movilidad:</strong> Walzer argumenta que la libre movilidad dentro de un Estado (ciudadanos circulando sin restricciones) depende de que existan fronteras nacionales relativamente cerradas. Si estas se abrieran por completo, comunidades más pequeñas tenderían a erigir sus propias barreras internas —lo que él llamó un mundo de “mil pequeños fortines” (<em>a thousand petty fortresses</em>).</li>
+    </ul>
+  `;
 
-    const preguntas = [
-      "Walzer sostiene que la libre movilidad interna se sostiene en la presunción de cierre en las fronteras nacionales. Durante la pandemia, sin embargo, el Estado canadiense extendió su soberanía al control de todos los movimientos —desde el cruce internacional hasta los desplazamientos cotidianos—, generando una situación de stasis casi total. ¿En este contexto, la experiencia canadiense confirma o desmiente la hipótesis de Walzer? ¿Qué nos revela sobre la capacidad del Estado de redefinir la movilidad como un privilegio permitido más que como un derecho?",
-      "¿Qué actores decidieron qué era “esencial” en Canadá (gobierno federal, provincias, sectores económicos, tribunales)? ¿Con qué criterios explícitos o implícitos?",
-      "¿Cómo se reconfiguró la jerarquía de admisibilidad durante la pandemia? Contrasta “pasaporte privilegiado” vs. “entrada por necesidad”.",
-      "Etiqueta y estigma: ¿qué efectos tuvieron narrativas como “virus chino/Wuhan”? Identifica consecuencias raciales y políticas.",
-      "Comparativo México‑Canadá: en México también se distinguió entre actividades esenciales y no esenciales. ¿Quién definió esas listas a nivel federal/estatal/municipal? ¿Qué negocios o trabajadores quedaron excluidos/invisibilizados?",
-      "¿Qué implica conceptualizar la movilidad como permitida y no como derecho a la libre circulación? ¿Qué riesgos permanecen post‑pandemia?"
-    ];
+  // Función para abrir el popup
+  function showWalzerPopup() {
+    const popup = document.createElement('div');
+    popup.id = 'walzer-popup';
+    popup.style.position = 'fixed';
+    popup.style.top = '50%';
+    popup.style.left = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+    popup.style.background = 'rgba(255,247,236,0.98)';
+    popup.style.color = 'var(--ink)';
+    popup.style.border = '2px solid var(--teal-dark)';
+    popup.style.borderRadius = '18px';
+    popup.style.boxShadow = '0 8px 32px rgba(11,138,143,.18)';
+    popup.style.padding = '2.2rem 2rem 1.5rem 2rem';
+    popup.style.zIndex = '9999';
+    popup.style.maxWidth = '90vw';
+    popup.style.width = '480px';
+    popup.style.fontSize = '1.15rem';
+    popup.style.maxHeight = '80vh';
+    popup.style.overflowY = 'auto';
+    popup.innerHTML = `
+      <div style="font-size:1.35rem; font-weight:700; margin-bottom:.7rem; color:var(--teal-dark);">¿Quién es Walzer?</div>
+      ${walzerInfo}
+      <div style="text-align:right; margin-top:1.5rem;">
+        <button id="closeWalzerBtn" style="background:var(--sun);color:var(--ink);border:none;border-radius:999px;padding:.5rem 1.2rem;font-size:1rem;font-weight:700;cursor:pointer;">Cerrar</button>
+      </div>
+    `;
+    document.body.appendChild(popup);
 
-    // Generar slides
-    const slides = [];
-    ideas.forEach(idea => {
-      slides.push(`
-        <div class="slide">
-          <h1>${idea.title}</h1>
-          <h2>Idea clave</h2>
-          <div style="margin-top:2.5rem;font-size:2.1rem;">${idea.text}</div>
-        </div>
-      `);
-    });
-    preguntas.forEach((pregunta, i) => {
-      slides.push(`
-        <div class="slide">
-          <h2>Pregunta para discusión</h2>
-          <div style="margin-top:2.5rem;font-size:2.1rem;">${pregunta}</div>
-        </div>
-      `);
-    });
-
-    // Render slides
-    const container = document.querySelector('.presentation-container');
-    container.innerHTML = slides.join('');
-    const slideEls = document.querySelectorAll('.slide');
-    let current = 0;
-
-    function showSlide(idx) {
-      slideEls.forEach((el, i) => {
-        el.classList.toggle('active', i === idx);
-      });
-      document.getElementById('prevBtn').disabled = idx === 0;
-      document.getElementById('nextBtn').disabled = idx === slideEls.length - 1;
+    // Ajustar tamaño si la ventana es pequeña
+    function resizePopup() {
+      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+      popup.style.width = vw < 520 ? '96vw' : '480px';
+      popup.style.maxHeight = vw < 520 ? '90vh' : '80vh';
     }
+    resizePopup();
+    window.addEventListener('resize', resizePopup);
 
-    document.getElementById('prevBtn').onclick = () => {
-      if (current > 0) {
-        current--;
-        showSlide(current);
-      }
+    document.getElementById('closeWalzerBtn').onclick = () => {
+      window.removeEventListener('resize', resizePopup);
+      popup.remove();
     };
-    document.getElementById('nextBtn').onclick = () => {
-      if (current < slideEls.length - 1) {
-        current++;
-        showSlide(current);
-      }
-    };
+  }
 
-    showSlide(current);
-  </script>
+  // Función para insertar el link en cada mención de Walzer
+  function linkifyWalzer(text) {
+    return text.replace(/Walzer/g, `<a href="#" onclick="showWalzerPopup();return false;" style="color:var(--coral);text-decoration:underline;font-weight:700;">Walzer</a>`);
+  }
+
+  // Preguntas e ideas clave
+  const preguntas = [
+    linkifyWalzer("Walzer sostiene que la libre movilidad interna se sostiene en la presunción de cierre en las fronteras nacionales. Durante la pandemia, sin embargo, el Estado canadiense extendió su soberanía al control de todos los movimientos —desde el cruce internacional hasta los desplazamientos cotidianos—, generando una situación de stasis casi total. ¿En este contexto, la experiencia canadiense confirma o desmiente la hipótesis de Walzer? ¿Qué nos revela sobre la capacidad del Estado de redefinir la movilidad como un privilegio permitido más que como un derecho?"),
+    "¿Qué actores decidieron qué era “esencial” en Canadá (gobierno federal, provincias, sectores económicos, tribunales)? ¿Con qué criterios explícitos o implícitos?",
+    "¿Cómo se reconfiguró la jerarquía de admisibilidad durante la pandemia? Contrasta “pasaporte privilegiado” vs. “entrada por necesidad”.",
+    "Etiqueta y estigma: ¿qué efectos tuvieron narrativas como “virus chino/Wuhan”? Identifica consecuencias raciales y políticas.",
+    "Comparativo México-Canadá: en México también se distinguió entre actividades esenciales y no esenciales. ¿Quién definió esas listas a nivel federal/estatal/municipal? ¿Qué negocios o trabajadores quedaron excluidos/invisibilizados?",
+    "¿Qué implica conceptualizar la movilidad como permitida y no como derecho a la libre circulación? ¿Qué riesgos permanecen post-pandemia?"
+  ];
+
+  const ideas = [
+    linkifyWalzer("La experiencia canadiense confirma parcialmente la tesis de Walzer: al cerrarse fronteras nacionales, emergieron múltiples barreras internas (provincias, comunidades indígenas, municipios). Pero también la desmiente, porque el cierre interno no fue una reacción a fronteras abiertas, sino parte de una soberanía extendida que reguló toda movilidad. Esto muestra la capacidad del Estado para redefinir la circulación como privilegio otorgado, no como derecho garantizado."),
+    "Las decisiones sobre lo esencial se tomaron en varios niveles: el gobierno federal fijó reglas generales, las provincias adaptaron medidas según contextos locales, y sectores económicos presionaron para clasificar actividades como esenciales (p. ej. agricultura, transporte, salud). Los criterios mezclaron urgencia económica, necesidades básicas y legitimidad política, más que un principio único coherente.",
+    "Antes del COVID, la jerarquía favorecía a poseedores de pasaportes del Norte Global. Durante la pandemia, esa lógica se desplazó por la noción de necesidad inmediata: trabajadores agrícolas temporales, personal médico o transportistas podían ingresar aunque fueran del Sur Global. El pasaporte privilegiado perdió fuerza frente a la utilidad percibida en el momento.",
+    "Narrativas como “virus chino” o “Wuhan virus” reforzaron estigmas raciales, asociando enfermedad con nacionalidad o etnia. En Canadá y otros países, esto alimentó sinofobia, violencia verbal y física contra comunidades asiáticas, y legitimó políticas de exclusión bajo la lógica de proteger a la nación del ‘otro peligroso’.",
+    "En México, las listas de lo esencial se definieron a nivel federal, pero con variaciones estatales y municipales. Comercios como papelerías, gimnasios o pequeños negocios de barrio quedaron fuera, mientras sectores industriales con peso económico fueron clasificados como esenciales. Esto visibiliza cómo criterios económicos y de poder político pesaron más que la equidad social.",
+    "Considerar la movilidad como un permiso socava la idea de ciudadanía y de derechos universales de circulación. El riesgo post-pandemia es que el Estado conserve o reactive con facilidad mecanismos de control, legitimando nuevas formas de vigilancia y restricción bajo argumentos de seguridad o salud pública."
+  ];
+
+  let current = 0;
+  let flipped = false;
+
+  const frontFace = document.getElementById('frontFace');
+  const backFace = document.getElementById('backFace');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const flipBtn = document.getElementById('flipBtn');
+
+  function renderSlide(idx) {
+    frontFace.innerHTML = `<h2>Pregunta para discusión</h2><div style="margin-top:2.5rem;font-size:2.1rem;">${preguntas[idx]}</div>`;
+    backFace.innerHTML = `<h2>Idea clave</h2><div style="margin-top:2.5rem;font-size:2.1rem;">${ideas[idx]}</div>`;
+    prevBtn.disabled = idx === 0;
+    nextBtn.disabled = idx === preguntas.length - 1;
+    if (flipped) {
+      frontFace.classList.remove('active');
+      backFace.classList.add('active');
+      flipBtn.textContent = "Ver pregunta";
+    } else {
+      frontFace.classList.add('active');
+      backFace.classList.remove('active');
+      flipBtn.textContent = "Ver idea clave";
+    }
+  }
+
+  flipBtn.onclick = () => {
+    flipped = !flipped;
+    renderSlide(current);
+  };
+
+  prevBtn.onclick = () => {
+    if (current > 0) {
+      current--;
+      flipped = false;
+      renderSlide(current);
+    }
+  };
+  nextBtn.onclick = () => {
+    if (current < preguntas.length - 1) {
+      current++;
+      flipped = false;
+      renderSlide(current);
+    }
+  };
+
+  renderSlide(current);
+
+  window.showWalzerPopup = showWalzerPopup;
+</script>
 </body>
 </html>
