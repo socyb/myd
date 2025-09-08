@@ -71,7 +71,12 @@
   <main class="container">
     <div class="grid">
       <section class="col-8">
-        <article class="card" id="t1">
+        <!-- Botón para mostrar/ocultar la tarjeta -->
+        <button id="toggleCardBtn" class="add" style="margin-bottom:1.5rem;">
+          Mostrar Tarjeta 1
+        </button>
+        <!-- Tarjeta 1 oculta por defecto -->
+        <article class="card" id="t1" style="display:none;">
           <div class="card-header">
             <span class="pill">Tarjeta 1</span>
             Introducción y “La frontera no excepcional”
@@ -122,5 +127,17 @@
       <div>Colores inspirados en <em>Migration and Pandemics</em> (IMISCOE · Springer).</div>
     </div>
   </footer>
+
+  <script>
+    // Mostrar/ocultar la tarjeta al hacer click
+    const btn = document.getElementById('toggleCardBtn');
+    const card = document.getElementById('t1');
+    let visible = false;
+    btn.addEventListener('click', () => {
+      visible = !visible;
+      card.style.display = visible ? 'block' : 'none';
+      btn.textContent = visible ? 'Ocultar Tarjeta 1' : 'Mostrar Tarjeta 1';
+    });
+  </script>
 </body>
 </html>
