@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MyD · Actividad 7 — Mosaico de videos</title>
+  <meta name="description" content="Mosaico responsive con videos de YouTube embebidos para la Actividad 7 de Migración y Desarrollo."/>
+  <style>
+    :root{
+      --bg:#0b1220;         /* deep slate */
+      --text:#e5e7eb;       /* gray-200 */
+      --muted:#9aa3b2;      /* slate-400 */
+      --card:#0f172a;       /* slate-900 */
+      --accent:#22d3ee;     /* cyan-400 */
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --max:1200px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f7fafc; --text:#0f172a; --muted:#475569; --card:#ffffff; --shadow:0 8px 24px rgba(2,6,23,.08) }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    .wrap{max-width:var(--max);margin:0 auto;padding:22px}
+    header{display:flex;gap:14px;align-items:center;justify-content:space-between;background:linear-gradient(135deg,var(--card),#0a1022 55%,#0d1736);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 16px;margin-bottom:18px}
+    h1{font-size:clamp(1.1rem,3vw,1.6rem);margin:0}
+    .badge{font-size:.8rem;color:var(--muted);border:1px solid rgba(255,255,255,.18);padding:.22rem .55rem;border-radius:999px}
+    .grid{display:grid;gap:14px}
+    /* Column layout scales smoothly */
+    @media(min-width:520px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+    @media(min-width:1300px){.grid{grid-template-columns:repeat(4,1fr)}}
+    .tile{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+    .media{position:relative;width:100%}
+    .media::before{content:"";display:block;aspect-ratio:16/9}
+    .media iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .meta{padding:10px 12px;color:var(--muted);font-size:.9rem;display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .actions{display:flex;gap:8px}
+    .btn{appearance:none;border:1px solid rgba(255,255,255,.18);background:transparent;color:var(--text);border-radius:10px;padding:.35rem .6rem;font-size:.82rem}
+    .btn:hover{border-color:var(--accent)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    footer{opacity:.8;text-align:center;margin:18px 0 6px;font-size:.92rem}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header role="banner">
+      <div>
+        <span class="badge">MyD · Actividad 7</span>
+        <h1>Mosaico de videos</h1>
+      </div>
+      <button id="toggleCaptions" class="btn" aria-pressed="false">CC: off</button>
+    </header>
+
+    <main class="grid" id="grid" aria-label="Mosaico de videos">
+      <!-- Video tiles -->
+      <article class="tile">
+        <div class="media">
+          <iframe loading="lazy" title="Video 1" src="https://www.youtube-nocookie.com/embed/cl4Uv9_7KJE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="meta"><span>Video 1</span><div class="actions"><button class="btn" data-copy="https://youtu.be/cl4Uv9_7KJE">Copiar enlace</button></div></div>
+      </article>
+      <article class="tile">
+        <div class="media">
+          <iframe loading="lazy" title="Video 2" src="https://www.youtube-nocookie.com/embed/co5uywe-1Z8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="meta"><span>Video 2</span><div class="actions"><button class="btn" data-copy="https://youtu.be/co5uywe-1Z8">Copiar enlace</button></div></div>
+      </article>
+      <article class="tile">
+        <div class="media">
+          <iframe loading="lazy" title="Video 3" src="https://www.youtube-nocookie.com/embed/pO18pM9ZLj4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="meta"><span>Video 3</span><div class="actions"><button class="btn" data-copy="https://youtu.be/pO18pM9ZLj4">Copiar enlace</button></div></div>
+      </article>
+      <article class="tile">
+        <div class="media">
+          <iframe loading="lazy" title="Video 4" src="https://www.youtube-nocookie.com/embed/A3AuCQml7IQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="meta"><span>Video 4</span><div class="actions"><button class="btn" data-copy="https://youtu.be/A3AuCQml7IQ">Copiar enlace</button></div></div>
+      </article>
+      <article class="tile">
+        <div class="media">
+          <iframe loading="lazy" title="Video 5" src="https://www.youtube-nocookie.com/embed/ywgb59eJqsY" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="meta"><span>Video 5</span><div class="actions"><button class="btn" data-copy="https://youtu.be/ywgb59eJqsY">Copiar enlace</button></div></div>
+      </article>
+      <article class="tile">
+        <div class="media">
+          <iframe loading="lazy" title="Video 6" src="https://www.youtube-nocookie.com/embed/QOVCZr9Umpw" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="meta"><span>Video 6</span><div class="actions"><button class="btn" data-copy="https://youtu.be/QOVCZr9Umpw">Copiar enlace</button></div></div>
+      </article>
+    </main>
+
+    <footer>
+      Armado por Jorge Cardiel y ChatGPT · 28/09/2025 · <span style="color:var(--muted)">YouTube nocookie embeds</span>
+    </footer>
+  </div>
+
+  <script>
+    // Copiar enlace rápido
+    document.querySelectorAll('[data-copy]').forEach(btn=>{
+      btn.addEventListener('click', async ()=>{
+        try{ await navigator.clipboard.writeText(btn.dataset.copy); btn.textContent='Copiado'; setTimeout(()=>btn.textContent='Copiar enlace',1400);}catch(e){ alert('No se pudo copiar'); }
+      });
+    });
+
+    // Alternar subtítulos por defecto (cc_load_policy=1)
+    const toggle = document.getElementById('toggleCaptions');
+    const grid = document.getElementById('grid');
+    let captionsOn = false;
+    function setCaptions(on){
+      grid.querySelectorAll('iframe').forEach(f=>{
+        const url = new URL(f.src);
+        if(on){ url.searchParams.set('cc_load_policy','1'); } else { url.searchParams.delete('cc_load_policy'); }
+        f.src = url.toString();
+      });
+      toggle.setAttribute('aria-pressed', on ? 'true':'false');
+      toggle.textContent = on ? 'CC: on' : 'CC: off';
+    }
+    toggle.addEventListener('click', ()=>{ captionsOn = !captionsOn; setCaptions(captionsOn); });
+  </script>
+</body>
+</html>
