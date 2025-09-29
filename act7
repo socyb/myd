@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MyD · Actividad 7 — Migración y Desarrollo</title>
+  <meta name="description" content="Actividad 7 de la asignatura Migración y Desarrollo: objetivos, lecturas, consignas, entregables y rúbrica." />
+  <style>
+    :root{
+      --bg:#0f172a;          /* slate-900 */
+      --card:#111827;        /* gray-900 */
+      --muted:#94a3b8;       /* slate-400 */
+      --text:#e5e7eb;        /* gray-200 */
+      --accent:#22d3ee;      /* cyan-400 */
+      --accent-2:#a78bfa;    /* violet-400 */
+      --ok:#10b981;          /* emerald-500 */
+      --warn:#f59e0b;        /* amber-500 */
+      --danger:#ef4444;      /* red-500 */
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f8fafc; --card:#ffffff; --text:#0f172a; --muted:#475569; --shadow: 0 8px 24px rgba(2,6,23,.08); }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    a{color:var(--accent)}
+    .wrap{max-width:var(--max);margin:0 auto;padding:24px}
+    header.hero{position:relative;border-radius:var(--radius);padding:28px 20px 64px;background:linear-gradient(135deg,var(--card),#0b1022 50%,#0e1738);box-shadow:var(--shadow)}
+    .badge{display:inline-block;padding:.25rem .6rem;border:1px solid rgba(255,255,255,.2);border-radius:999px;color:var(--muted);font-size:.8rem}
+    h1{font-size:clamp(1.6rem,2.5vw,2.2rem);margin:.4rem 0 0}
+    .sub{color:var(--muted)}
+    .grid{display:grid;gap:18px;margin-top:-40px}
+    @media(min-width:900px){.grid{grid-template-columns: 280px 1fr}}
+
+    /* Sidebar */
+    .sidebar{position:sticky;top:16px;align-self:start;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px}
+    .sidebar h3{margin:0 0 .25rem;font-size:1rem;color:var(--accent)}
+    .sidebar nav a{display:block;padding:.45rem .6rem;border-radius:10px;color:var(--text);text-decoration:none}
+    .sidebar nav a:hover,.sidebar nav a:focus{background:rgba(255,255,255,.06)}
+    .toggle-nav{display:none}
+    @media(max-width:899px){
+      .sidebar{position:relative}
+      .toggle-nav{display:inline-flex;gap:.5rem;align-items:center;margin-bottom:.6rem;border:1px solid rgba(255,255,255,.15);padding:.35rem .6rem;border-radius:10px;background:transparent;color:var(--text)}
+      .sidebar nav{display:none}
+      .sidebar nav.open{display:block}
+    }
+
+    /* Cards */
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+    .card h2{margin-top:0;color:var(--accent-2)}
+    .pill{display:inline-block;font-size:.78rem;padding:.2rem .5rem;border-radius:999px;background:rgba(255,255,255,.06);color:var(--muted)}
+
+    /* Details blocks */
+    details{border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:12px 14px;background:rgba(255,255,255,.02)}
+    summary{cursor:pointer;font-weight:600}
+    summary::marker{color:var(--accent)}
+
+    /* List styles */
+    ul,ol{padding-left:1.2rem}
+    li+li{margin-top:.35rem}
+
+    /* Callouts */
+    .callout{border-left:4px solid var(--ok);padding:.6rem .8rem;margin:.8rem 0;background:rgba(16,185,129,.08);border-radius:8px}
+    .warn{border-left-color:var(--warn);background:rgba(245,158,11,.08)}
+
+    .footer{opacity:.8;font-size:.9rem;margin:30px auto 10px;text-align:center}
+    .chips{display:flex;flex-wrap:wrap;gap:.5rem}
+    .chip{border:1px solid rgba(255,255,255,.15);padding:.25rem .5rem;border-radius:999px;font-size:.78rem;color:var(--muted)}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:.5rem;border:none;border-radius:12px;padding:.6rem .9rem;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#00121c;text-decoration:none;font-weight:700}
+    .btn:focus{outline:2px solid var(--accent)}
+
+    /* Search */
+    .toolbar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin:8px 0 14px}
+    .search{flex:1 1 260px;display:flex;gap:.5rem}
+    .search input{flex:1;border-radius:12px;border:1px solid rgba(255,255,255,.15);padding:.55rem .7rem;background:transparent;color:var(--text)}
+    .hidden{display:none!important}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero" role="banner">
+      <span class="badge">MyD · Actividad 7</span>
+      <h1>Movilidad, clima y políticas públicas</h1>
+      <p class="sub">Objetivos, lecturas, consignas y criterios de evaluación para la séptima actividad.</p>
+    </header>
+
+    <div class="grid" role="presentation">
+      <aside class="sidebar" aria-label="Índice de la página">
+        <button class="toggle-nav" aria-expanded="false" aria-controls="toc">☰ Menú</button>
+        <nav id="toc">
+          <h3>Secciones</h3>
+          <a href="#objetivos">1. Objetivos</a>
+          <a href="#lecturas">2. Lecturas base</a>
+          <a href="#consignas">3. Consignas</a>
+          <a href="#entregables">4. Entregables</a>
+          <a href="#rubrica">5. Rúbrica</a>
+          <a href="#recursos">6. Recursos</a>
+          <a href="#faq">7. Preguntas frecuentes</a>
+        </nav>
+      </aside>
+
+      <main>
+        <section id="objetivos" class="card" aria-labelledby="h-obj">
+          <h2 id="h-obj">Objetivos de aprendizaje</h2>
+          <ul>
+            <li>Distinguir cómo se ha definido la <em>migración ambiental/climática</em> en el debate internacional y sus implicaciones de política.</li>
+            <li>Aplicar un esquema de <strong>causa–problema–consecuencia–solución</strong> para analizar un caso real.</li>
+            <li>Redactar un breve <strong>policy memo</strong> con recomendaciones situadas (municipio/estado) que integren adaptación y movilidad.</li>
+          </ul>
+          <div class="chips" aria-label="Competencias">
+            <span class="chip">Análisis de marcos</span>
+            <span class="chip">Lectura crítica</span>
+            <span class="chip">Síntesis estratégica</span>
+          </div>
+        </section>
+
+        <section id="lecturas" class="card" aria-labelledby="h-lec">
+          <h2 id="h-lec">Lecturas base (obligatorias)</h2>
+          <ol>
+            <li>Vlassopoulos, C. A. (2013). <em>Defining Environmental Migration in the Climate Change Era: Problem, Consequence or Solution?</em> En Faist & Schade (eds.), <em>Disentangling Migration and Climate Change</em>, Springer. (Cap. 6)</li>
+          </ol>
+          <p class="pill">Sugeridas para ampliar: UNDP 2009 (movilidad humana), IOM 2009 (migración y cambio climático).</p>
+          <div class="callout">Tip: toma notas con cuatro columnas: <strong>Causa</strong> · <strong>Problema</strong> · <strong>Consecuencia</strong> · <strong>Solución</strong>.</div>
+        </section>
+
+        <section id="consignas" class="card" aria-labelledby="h-con">
+          <h2 id="h-con">Consignas</h2>
+          <details open>
+            <summary>1) Mapa rápido de definiciones (15–20 min)</summary>
+            <p>En parejas, armen un esquema con los tres enfoques descritos por Vlassopoulos: (a) <em>migrantes ambientales</em> como problema autónomo; (b) <em>migración climática</em> como consecuencia; (c) <em>migración</em> como solución de adaptación. Anoten actores clave, riesgos y oportunidades de política para cada uno.</p>
+          </details>
+          <details>
+            <summary>2) Caso local (30–40 min)</summary>
+            <p>Elijan un caso (sequía, inundaciones, olas de calor, pérdida de medios de vida) en un municipio de México. Completen el cuadro causa–problema–consecuencia–solución con evidencias mínimas (notas periodísticas, datos abiertos, documentos oficiales).</p>
+          </details>
+          <details>
+            <summary>3) Memo de política (individual, 400–600 palabras)</summary>
+            <ul>
+              <li><strong>Destinatario:</strong> Dirección municipal/estatal de protección civil o desarrollo social.</li>
+              <li><strong>Propuesta:</strong> Dos acciones concretas de <em>adaptación con movilidad</em> (p. ej., reubicación planificada, movilidad estacional, formación y canales de empleo temporal, apoyos a remesas para adaptación).</li>
+              <li><strong>Ética y derechos:</strong> Menciona salvaguardas (consulta, consentimiento, no discriminación, protección de medios de vida).</li>
+            </ul>
+          </details>
+        </section>
+
+        <section id="entregables" class="card" aria-labelledby="h-ent">
+          <h2 id="h-ent">Entregables y formato</h2>
+          <ul>
+            <li><strong>Cuadro</strong> causa–problema–consecuencia–solución (1 página, puede ser tabla o esquema).</li>
+            <li><strong>Policy memo</strong> (400–600 palabras, PDF, tipografía legible, referencias breves APA). Nombra: <code>MyD_A7_ApellidoNombre.pdf</code></li>
+          </ul>
+          <p class="warn callout">Entrega en Moodle antes de las <strong>23:59</strong> del día indicado por la profesora/ el profesor.</p>
+          <div class="toolbar">
+            <div class="search" role="search">
+              <input id="q" type="search" placeholder="Busca en esta página (títulos, palabras clave)…" aria-label="Buscar" />
+              <button class="btn" id="btnSearch" type="button" aria-label="Ejecutar búsqueda">Buscar</button>
+            </div>
+            <a class="btn" href="#top" id="toTop" aria-label="Volver arriba">↑ Arriba</a>
+          </div>
+        </section>
+
+        <section id="rubrica" class="card" aria-labelledby="h-rub">
+          <h2 id="h-rub">Rúbrica (10 pts)</h2>
+          <ul>
+            <li><strong>Marco analítico</strong> (3 pts): identifica correctamente las tres definiciones y sus implicaciones.</li>
+            <li><strong>Aplicación al caso</strong> (3 pts): evidencia local pertinente y bien integrada al cuadro.</li>
+            <li><strong>Propuestas viables</strong> (3 pts): acciones claras, factibles, con salvaguardas.</li>
+            <li><strong>Claridad y forma</strong> (1 pt): redacción, formato y referencias.</li>
+          </ul>
+        </section>
+
+        <section id="recursos" class="card" aria-labelledby="h-rec">
+          <h2 id="h-rec">Recursos útiles</h2>
+          <ul>
+            <li>Atlas de Riesgos municipal/estatal (protección civil).</li>
+            <li>CONAGUA: sequía, presas y precipitación.</li>
+            <li>INEGI y CONEVAL: indicadores socioeconómicos.</li>
+            <li>FAO y OIM: guías de <em>adaptación con movilidad</em>.</li>
+          </ul>
+        </section>
+
+        <section id="faq" class="card" aria-labelledby="h-faq">
+          <h2 id="h-faq">Preguntas frecuentes</h2>
+          <details>
+            <summary>¿Cuenta como “migración” el desplazamiento interno temporal?</summary>
+            <p>Sí, y de hecho será el más frecuente en escenarios climáticos. Considéralo explícitamente en tu análisis y propuestas.</p>
+          </details>
+          <details>
+            <summary>¿Debo usar el término “refugiado climático”?</summary>
+            <p>Evítalo salvo cuando analices debates legales. Prefiere “personas migrantes/desplazadas por factores climáticos”.</p>
+          </details>
+        </section>
+
+        <p class="footer">Armado por Jorge Cardiel y ChatGPT · 28/09/2025 · MyD · <span class="pill">v1.0</span></p>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // Toggle sidebar (mobile)
+    const toggle = document.querySelector('.toggle-nav');
+    const toc = document.getElementById('toc');
+    if(toggle){
+      toggle.addEventListener('click',()=>{
+        toc.classList.toggle('open');
+        const open = toc.classList.contains('open');
+        toggle.setAttribute('aria-expanded', open ? 'true':'false');
+      });
+    }
+
+    // Simple in-page search (titles + details text)
+    const q = document.getElementById('q');
+    const btn = document.getElementById('btnSearch');
+    const blocks = Array.from(document.querySelectorAll('main .card, main details'));
+
+    function runSearch(){
+      const term = (q.value||'').trim().toLowerCase();
+      blocks.forEach(el=>{
+        if(!term){ el.classList.remove('hidden'); return; }
+        const txt = el.textContent.toLowerCase();
+        if(txt.includes(term)) el.classList.remove('hidden'); else el.classList.add('hidden');
+      });
+    }
+    if(btn){ btn.addEventListener('click', runSearch); }
+    if(q){ q.addEventListener('input', runSearch); }
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const dest = document.getElementById(id);
+        if(dest){ e.preventDefault(); dest.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+  </script>
+</body>
+</html>
