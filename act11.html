@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Los campos y sus configuraciones sociopolíticas emergentes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg: #050813;
+      --bg-alt: #0b1220;
+      --card: #121929;
+      --accent: #4fa3d1;
+      --accent-soft: #9ad5ff;
+      --text: #f5f7fb;
+      --muted: #a6b2c9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #192646, var(--bg));
+      color: var(--text);
+      overflow: hidden;
+    }
+
+    .deck {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      position: relative;
+    }
+
+    .slide {
+      width: 100%;
+      height: 100%;
+      padding: clamp(1.5rem, 3vw, 3rem);
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .slide.active {
+      display: flex;
+    }
+
+    header.slide-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .title-block h1,
+    .title-block h2,
+    .title-block h3 {
+      line-height: 1.2;
+    }
+
+    .title-block h1 {
+      font-size: clamp(1.5rem, 3vw, 2.3rem);
+      font-weight: 700;
+    }
+
+    .title-block h2 {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 500;
+      color: var(--accent-soft);
+      margin-top: 0.35rem;
+    }
+
+    .title-block h3 {
+      font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+      font-weight: 400;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    .svg-wrap {
+      flex-shrink: 0;
+    }
+
+    .svg-wrap img {
+      width: min(28vw, 140px);
+      max-width: 160px;
+      filter: drop-shadow(0 0 18px rgba(154, 213, 255, 0.4));
+    }
+
+    main.slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.1rem;
+    }
+
+    .lead {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+
+    ul.points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: clamp(0.98rem, 1.6vw, 1.05rem);
+    }
+
+    ul.points li {
+      position: relative;
+      padding-left: 1.5rem;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    ul.points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.45em;
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, var(--accent-soft), var(--accent));
+      box-shadow: 0 0 10px rgba(79, 163, 209, 0.8);
+    }
+
+    ul.points li.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .note {
+      font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+      color: var(--muted);
+      margin-top: 0.35rem;
+    }
+
+    footer.slide-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+      font-size: clamp(0.78rem, 1.2vw, 0.9rem);
+      color: var(--muted);
+      gap: 1rem;
+    }
+
+    .pager {
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hint {
+      text-align: right;
+    }
+
+    .controls {
+      position: fixed;
+      inset-inline: 0.8rem;
+      bottom: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .control-chip {
+      pointer-events: auto;
+      background: rgba(12, 19, 41, 0.9);
+      border-radius: 999px;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid rgba(79, 163, 209, 0.6);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+    }
+
+    .control-chip span.key {
+      border-radius: 4px;
+      border: 1px solid rgba(166, 178, 201, 0.6);
+      padding: 0.05rem 0.35rem;
+      font-size: 0.7rem;
+      color: var(--accent-soft);
+    }
+
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0); }
+    }
+
+    @media (max-width: 720px) {
+      header.slide-header {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+      .svg-wrap img {
+        width: 96px;
+      }
+      main.slide-body {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 520px) {
+      header.slide-header {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+      .svg-wrap img {
+        width: 90px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck">
+
+    <!-- Slide 1: Portada -->
+    <section class="slide active" data-slide="1">
+      <header class="slide-header">
+        <div class="title-block">
+          <h1>Los campos y sus configuraciones sociopolíticas emergentes</h1>
+          <h2>Migración y Desarrollo · Discusión de lectura</h2>
+          <h3>Síntesis de hallazgos</h3>
+        </div>
+        <div class="svg-wrap">
+          <img class="floating"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZzEiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNGM2ZCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzI2ODZhOCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5YWQ1ZmYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMGIxYjJiIi8+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI3MCIgZmlsbD0idXJsKCNnMSkiIC8+CiAgPGNpcmNsZSBjeD0iNzAiIGN5PSI4MCIgcj0iOCIgc3R5bGU9ImZpbGw6I2ZmZjtvcGFjaXR5OjAuOCIgcng9IjgiLz4KICA8Y2lyY2xlIGN4PSIxMzAiIGN5PSIxMjAiIHI9IjUiIHN0eWxlPSJmaWxsOiNmZmY7b3BhY2l0eTowLjYiLz4KICA8cGF0aCBkPSJNNDAgMTUwIFE5MCAxMjAgMTYwIDE1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWFkNWZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIvPgo8L3N2Zz4=" alt="Icono campo" />
+        </div>
+      </header>
+      <main class="slide-body">
+        <p class="lead">Objetivo de esta síntesis</p>
+        <ul class="points">
+          <li>Recuperar los puntos centrales de la lectura sobre campos de refugiados y la excepcionalidad del Sur de Asia.</li>
+          <li>Visibilizar los aspectos subrayados en la lectura: sorpresas, tensiones y preguntas abiertas.</li>
+          <li>Organizar los hallazgos como insumos para seguir trabajando Migración y Desarrollo más allá del caso específico.</li>
+        </ul>
+      </main>
+      <footer class="slide-footer">
+        <span class="pager">1 / 13</span>
+        <span class="hint">Navega con ← → o haz clic en “Siguiente”</span>
+      </footer>
+    </section>
+
+    <!-- Slide 2: Descentrar la mirada -->
+    <section class="slide" data-slide="2">
+      <header class="slide-header">
+        <div class="title-block">
+          <h1>1. Descentrar el eurocentrismo</h1>
+          <h2>¿Desde dónde se han pensado los campos?</h2>
+        </div>
+        <div class="svg-wrap">
+          <img class="floating"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMjAiIGhlaWdodD0iMTYwIj4KICA8cmVjdCB3aWR0aD0iMjIwIiBoZWlnaHQ9IjE2MCIgZmlsbD0iIzEwMTUyNSIvPgogIDxyZWN0IHg9IjIwIiB5PSIzMCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxMDAiIHJ4PSIxMCIgcnk9IjEwIiBmaWxsPSIjMTcyNjNhIiBzdHJva2U9IiM0ZmEzZDEiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxsaW5lIHgxPSIzNSIgeTE9IjYwIiB4Mj0iMTg1IiB5Mj0iNjAiIHN0cm9rZT0iIzRmYTNkMSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtZGFzaGFycmF5PSI1IDQiLz4KICA8bGluZSB4MT0iMzUiIHkxPSI4NSIgeDI9IjE2NSIgeTI9Ijg1IiBzdHJva2U9IiM5YWQ1ZmYiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxjaXJjbGUgY3g9IjU1IiBjeT0iMTEwIiByPSI2IiBmaWxsPSIjNGZhM2QxIi8+CiAgPGNpcmNsZSBjeD0iOTUiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiM5YWQ1ZmYiLz4KICA8Y2lyY2xlIGN4PSIxMzUiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiM0ZmEzZDEiLz4KICA8Y2lyY2xlIGN4PSIxNzUiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiM5YWQ1ZmYiLz4KPC9zdmc+" alt="Icono lista" />
+        </div>
+      </header>
+      <main class="slide-body">
+        <p class="lead">Lo que se identifica en la lectura:</p>
+        <ul class="points">
+          <li>Gran parte de la teoría sobre campamentos se construyó desde la experiencia europea de las guerras mundiales.</li>
+          <li>Sin embargo, la mayoría de los campos de refugiados actuales se encuentran en el Sur Global (África, Asia del Sur).</li>
+          <li>Se percibe la necesidad de "descentrar Europa" para entender la complejidad histórica, colonial y poscolonial de estos espacios.</li>
+          <li>La lectura funciona como corrección de perspectiva: no se puede analizar migración forzada solo con marcos del Norte Global.</li>
+        </ul>
+      </main>
+      <footer class="slide-footer">
+        <span class="pager">2 / 13</span>
+        <span class="hint">Tema: crítica al marco eurocéntrico</span>
+      </footer>
+    </section>
+
+    <!-- Slide 3: Origen colonial -->
+    <section class="slide" data-slide="3">
+      <header class="slide-header">
+        <div class="title-block">
+          <h1>2. Origen colonial de los campos</h1>
+          <h2>De la contención militar al dispositivo humanitario</h2>
+        </div>
+        <div class="svg-wrap">
+          <img class="floating"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZzEiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNGM2ZCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzI2ODZhOCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5YWQ1ZmYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMGIxYjJiIi8+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI3MCIgZmlsbD0idXJsKCNnMSkiIC8+CiAgPGNpcmNsZSBjeD0iNzAiIGN5PSI4MCIgcj0iOCIgc3R5bGU9ImZpbGw6I2ZmZjtvcGFjaXR5OjAuOCIgcng9IjgiLz4KICA8Y2lyY2xlIGN4PSIxMzAiIGN5PSIxMjAiIHI9IjUiIHN0eWxlPSJmaWxsOiNmZmY7b3BhY2l0eTowLjYiLz4KICA8cGF0aCBkPSJNNDAgMTUwIFE5MCAxMjAgMTYwIDE1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWFkNWZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIvPgo8L3N2Zz4=" alt="Icono campo" />
+        </div>
+      </header>
+      <main class="slide-body">
+        <p class="lead">Puntos centrales del análisis:</p>
+        <ul class="points">
+          <li>Los primeros campos no fueron pensados para "proteger" refugiados, sino como herramientas coloniales de control poblacional.</li>
+          <li>Campos de prisioneros de guerra, cuarentenas, trabajo forzado y concentración funcionaron como laboratorios de segregación.</li>
+          <li>El Imperio británico usó el cercado con alambre de púas para gestionar "poblaciones problemáticas" en India, Sudáfrica y otras colonias.</li>
+          <li>El dispositivo humanitario actual arrastra ese ADN colonial: separar, clasificar y administrar cuerpos en nombre de la protección.</li>
+        </ul>
+      </main>
+      <footer class="slide-footer">
+        <span class="pager">3 / 13</span>
+        <span class="hint">Del laboratorio colonial al campo contemporáneo</span>
+      </footer>
+    </section>
+
+    <!-- Slide 4: Campo ambivalente -->
+    <section class="slide" data-slide="4">
+      <header class="slide-header">
+        <div class="title-block">
+          <h1>3. El campo como espacio ambivalente</h1>
+          <h2>Refugio y encierro al mismo tiempo</h2>
+        </div>
+        <div class="svg-wrap">
+          <img class="floating"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMjAiIGhlaWdodD0iMTYwIj4KICA8cmVjdCB3aWR0aD0iMjIwIiBoZWlnaHQ9IjE2MCIgZmlsbD0iIzEwMTUyNSIvPgogIDxyZWN0IHg9IjIwIiB5PSIzMCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxMDAiIHJ4PSIxMCIgcnk9IjEwIiBmaWxsPSIjMTcyNjNhIiBzdHJva2U9IiM0ZmEzZDEiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxsaW5lIHgxPSIzNSIgeTE9IjYwIiB4Mj0iMTg1IiB5Mj0iNjAiIHN0cm9rZT0iIzRmYTNkMSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtZGFzaGFycmF5PSI1IDQiLz4KICA8bGluZSB4MT0iMzUiIHkxPSI4NSIgeDI9IjE2NSIgeTI9Ijg1IiBzdHJva2U9IiM5YWQ1ZmYiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxjaXJjbGUgY3g9IjU1IiBjeT0iMTEwIiByPSI2IiBmaWxsPSIjNGZhM2QxIi8+CiAgPGNpcmNsZSBjeD0iOTUiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiM5YWQ1ZmYiLz4KICA8Y2lyY2xlIGN4PSIxMzUiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiM0ZmEzZDEiLz4KICA8Y2lyY2xlIGN4PSIxNzUiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiM5YWQ1ZmYiLz4KPC9zdmc+" alt="Icono lista" />
+        </div>
+      </header>
+      <main class="slide-body">
+        <p class="lead">La paradoja central:</p>
+        <ul class="points">
+          <li>El campo ofrece refugio, comida, agua, atención médica básica y cierta seguridad frente a la violencia externa.</li>
+          <li>Pero al mismo tiempo limita la movilidad, separa a los refugiados de la población nacional y los clasifica como "vulnerables" o "peligrosos".</li>
+          <li>Los campamentos se convierten en una "solución de facto" a la migración forzada: gestionan el problema sin resolverlo.</li>
+          <li>La idea clave es que el campo encarna la tensión estructural entre cuidado y control.</li>
+        </ul>
+      </main>
+      <footer class="slide-footer">
+        <span class="pager">4 / 13</span>
+        <span class="hint">Refugio ≠ integración</span>
+      </footer>
+    </section>
+
+    <!-- Slide 5: Bare life y biopolítica -->
+    <section class="slide" data-slide="5">
+      <header class="slide-header">
+        <div class="title-block">
+          <h1>4. “Bare life” y biopolítica (Agamben en diálogo)</h1>
+          <h2>Vidas reducidas a cuerpos administrados… pero no solo eso</h2>
+        </div>
+        <div class="svg-wrap">
+          <img class="floating"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZzEiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNGM2ZCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzI2ODZhOCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5YWQ1ZmYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMGIxYjJiIi8+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI3MCIgZmlsbD0idXJsKCNnMSkiIC8+CiAgPGNpcmNsZSBjeD0iNzAiIGN5PSI4MCIgcj0iOCIgc3R5bGU9ImZpbGw6I2ZmZjtvcGFjaXR5OjAuOCIgcng9IjgiLz4KICA8Y2lyY2xlIGN4PSIxMzAiIGN5PSIxMjAiIHI9IjUiIHN0eWxlPSJmaWxsOiNmZmY7b3BhY2l0eTowLjYiLz4KICA8cGF0aCBkPSJNNDAgMTUwIFE5MCAxMjAgMTYwIDE1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWFkNWZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIvPgo8L3N2Zz4=" alt="Icono círculo" />
+        </div>
+      </header>
+      <main class="slide-body">
+        <p class="lead">Ideas teóricas centrales:</p>
+        <ul class="points">
+          <li>Se retoma la noción de "bare life": el refugiado es incluido solo a través de su exclusión del cuerpo político.</li>
+          <li>La acción humanitaria se vuelve biopolítica: se administra la vida para evitar la muerte, pero sin garantizar ciudadanía ni derechos plenos.</li>
+          <li>El capítulo discute a Agamben: los campos no son solo espacios de despojo total, también hay subjetividades múltiples y disputas.</li>
+          <li>Esta matización resulta clave para no romantizar ni simplificar la condición de los refugiados.</li>
+        </ul>
+      </main>
+      <footer class="slide-footer">
+        <span class="pager">5 / 13</span>
+        <span class="hint">Teoría crítica en diálogo con la experiencia del Sur de Asia</span>
+      </footer>
+    </section>
+
+    <!-- Slide 6: Excepcionalidad del Sur de Asia -->
+    <section class="slide" data-slide="6">
+      <header class="slide-header">
+        <div class="title-block">
+          <h1>5. Excepcionalidad del Sur de Asia</h1>
+          <h2>Pertenencia, lugar y “doble excepción”</h2>
+        </div>
+        <div class="svg-wrap">
+          <img class="floating"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMjAiIGhlaWdodD0iMTYwIj4KICA8cmVjdCB3aWR0aD0iMjIwIiBoZWlnaHQ9IjE2MCIgZmlsbD0iIzEwMTUyNSIvPgogIDxyZWN0IHg9IjIwIiB5PSIzMCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxMDAiIHJ4PSIxMCIgcnk9IjEwIiBmaWxsPSIjMTcyNjNhIiBzdHJva2U9IiM0ZmEzZDEiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxsaW5lIHgxPSIzNSIgeTE9IjYwIiB4Mj0iMTg1IiB5Mj0iNjAiIHN0cm9rZT0iIzRmYTNkMSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtZGFzaGFycmF5PSI1IDQiLz4KICA8bGluZSB4MT0iMzUiIHkxPSI4NSIgeDI9IjE2NSIgeTI9Ijg1IiBzdHJva2U9IiM5YWQ1ZmYiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxjaXJjbGUgY3g9IjU1IiBjeT0iMTEwIiByPSI2IiBmaWxsPSIjNGZhM2QxIi8+CiAgPGNpcmNsZSBjeD0iOTUiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiM5YWQ1ZmYiLz4KICA8Y2lyY2xlIGN4PSIxMzUiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiM0ZmEzZDEiLz4KICA8Y2lyY2xlIGN4PSIxNzUiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiM5YWQ1ZmYiLz4KPC9zdmc+" alt="Icono mapa" />
+        </div>
+      </header>
+      <main class="slide-body">
+        <p class="lead">Aspectos centrales del caso:</p>
+        <ul class="points">
+          <li>En el Sur de Asia, los refugiados suelen compartir lengua, religión y prácticas culturales con la sociedad de acogida.</li>
+          <li>Eso cuestiona la idea del campo como "no-lugar": allí también se construyen historia, relaciones e identidad.</li>
+          <li>Los campos actúan como heterotopías: espacios que reflejan la utopía del Estado-nación homogéneo, pero donde surge pertenencia.</li>
+          <li>Se plantea una "doble excepción": cercanía cultural + exclusión legal que se prolonga en el tiempo.</li>
+        </ul>
+      </main>
+      <footer class="slide-footer">
+        <span class="pager">6 / 13</span>
+        <span class="hint">Lugar, no-lugar y heterotopía en el refugio</span>
+      </footer>
+    </section>
+
+    <!-- Slide 7: Gobernanza humanitaria y jerarquías -->
+    <section class="slide" data-slide="7">
+      <header class="slide-header">
+        <div class="title-block">
+          <h1>6. Gobernanza humanitaria y jerarquías</h1>
+          <h2>El “ciclo del refugiado” y la vida administrada</h2>
+        </div>
+        <div class="svg-wrap">
+          <img class="floating"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZzEiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNGM2ZCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzI2ODZhOCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5YWQ1ZmYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMGIxYjJiIi8+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI3MCIgZmlsbD0idXJsKCNnMSkiIC8+CiAgPGNpcmNsZSBjeD0iNzAiIGN5PSI4MCIgcj0iOCIgc3R5bGU9ImZpbGw6I2ZmZjtvcGFjaXR5OjAuOCIgcng9IjgiLz4KICA8Y2lyY2xlIGN4PSIxMzAiIGN5PSIxMjAiIHI9IjUiIHN0eWxlPSJmaWxsOiNmZmY7b3BhY2l0eTowLjYiLz4KICA8cGF0aCBkPSJNNDAgMTUwIFE5MCAxMjAgMTYwIDE1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWFkNWZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIvPgo8L3N2Zz4=" alt="Icono biopolítica" />
+        </div>
+      </header>
+      <main class="slide-body">
+        <p class="lead">Elementos de la gobernanza humanitaria:</p>
+        <ul class="points">
+          <li>El funcionamiento del campo depende de Estados receptores, ACNUR y otras organizaciones que proveen ayuda y financiamiento.</li>
+          <li>Se produce una jerarquía de vulnerabilidades que determina quién accede a educación, trabajo u otros "privilegios".</li>
+          <li>El llamado "ciclo del refugiado" (cruzar la frontera – recibir ayuda – esperar repatriación) rara vez se cierra en la práctica.</li>
+          <li>Se plantea la crítica a la ayuda como mecanismo que perpetúa dependencia y pospone soluciones políticas reales.</li>
+        </ul>
+      </main>
+      <footer class="slide-footer">
+        <span class="pager">7 / 13</span>
+        <span class="hint">Humanitarismo, administración y dependencia</span>
+      </footer>
+    </section>
+
+    <!-- Slide 8: Agencia y resistencia -->
+    <section class="slide" data-slide="8">
+      <header class="slide-header">
+        <div class="title-block">
+          <h1>7. Subjetividades y resistencia en los campos</h1>
+          <h2>Los refugiados no son actores pasivos</h2>
+        </div>
+        <div class="svg-wrap">
+          <img class="floating"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMjAiIGhlaWdodD0iMTYwIj4KICA8cmVjdCB3aWR0aD0iMjIwIiBoZWlnaHQ9IjE2MCIgZmlsbD0iIzEwMTUyNSIvPgogIDxyZWN0IHg9IjIwIiB5PSIzMCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxMDAiIHJ4PSIxMCIgcnk9IjEwIiBmaWxsPSIjMTcyNjNhIiBzdHJva2U9IiM0ZmEzZDEiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxsaW5lIHgxPSIzNSIgeTE9IjYwIiB4Mj0iMTg1IiB5Mj0iNjAiIHN0cm9rZT0iIzRmYTNkMSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtZGFzaGFycmF5PSI1IDQiLz4KICA8bGluZSB4MT0iMzUiIHkxPSI4NSIgeDI9IjE2NSIgeTI9Ijg1IiBzdHJva2U9IiM5YWQ1ZmYiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxjaXJjbGUgY3g9IjU1IiBjeT0iMTEwIiByPSI2IiBmaWxsPSIjNGZhM2QxIi8+CiAgPGNpcmNsZSBjeD0iOTUiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiM5YWQ1ZmYiLz4KICA8Y2lyY2xlIGN4PSIxMzUiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiM0ZmEzZDEiLz4KICA8Y2lyY2xlIGN4PSIxNzUiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiM5YWQ1ZmYiLz4KPC9zdmc+" alt="Icono comunidad" />
+        </div>
+      </header>
+      <main class="slide-body">
+        <p class="lead">Lo que la lectura resalta:</p>
+        <ul class="points">
+          <li>Los campos también son espacios donde se crean comunidades, economías locales y formas de organización cotidiana.</li>
+          <li>Las personas refugiadas negocian recursos, reclaman derechos y construyen un sentido de lugar incluso en condiciones de encierro.</li>
+          <li>Se habla de "múltiples subjetividades" que emergen en el día a día: redes de apoyo, prácticas culturales, vida política interna.</li>
+          <li>Resulta importante no reducir el campo a pura victimización: hay agencia, resistencia y creatividad social.</li>
+        </ul>
+      </main>
+      <footer class="slide-footer">
+        <span class="pager">8 / 13</span>
+        <span class="hint">Más allá de la imagen del refugiado pasivo</span>
+      </footer>
+    </section>
+
+    <!-- Slide 9: Europa contemporánea -->
+    <section class="slide" data-slide="9">
+      <header class="slide-header">
+        <div class="title-block">
+          <h1>8. Puente con Europa contemporánea</h1>
+          <h2>Racismo, populismo y neoliberalismo en los campamentos</h2>
+        </div>
+        <div class="svg-wrap">
+          <img class="floating"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZzEiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNGM2ZCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzI2ODZhOCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5YWQ1ZmYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMGIxYjJiIi8+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI3MCIgZmlsbD0idXJsKCNnMSkiIC8+CiAgPGNpcmNsZSBjeD0iNzAiIGN5PSI4MCIgcj0iOCIgc3R5bGU9ImZpbGw6I2ZmZjtvcGFjaXR5OjAuOCIgcng9IjgiLz4KICA8Y2lyY2xlIGN4PSIxMzAiIGN5PSIxMjAiIHI9IjUiIHN0eWxlPSJmaWxsOiNmZmY7b3BhY2l0eTowLjYiLz4KICA8cGF0aCBkPSJNNDAgMTUwIFE5MCAxMjAgMTYwIDE1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWFkNWZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIvPgo8L3N2Zz4=" alt="Icono Europa" />
+        </div>
+      </header>
+      <main class="slide-body">
+        <p class="lead">Conexiones con otros casos contemporáneos:</p>
+        <ul class="points">
+          <li>El marco de análisis se puede aplicar a los campamentos de migrantes en Europa: espacios de exclusión, vigilancia y precariedad.</li>
+          <li>Se observa el vínculo entre racismo estructural, populismo antiinmigrante y políticas de contención.</li>
+          <li>Aparece la dimensión neoliberal: empresas de seguridad y proveedores privados que "gestionan" la pobreza migrante.</li>
+          <li>Esto permite ver los campos como parte de un modelo global de control migratorio, no solo como casos aislados.</li>
+        </ul>
+      </main>
+      <footer class="slide-footer">
+        <span class="pager">9 / 13</span>
+        <span class="hint">Del Sur de Asia a la frontera europea</span>
+      </footer>
+    </section>
+
+    <!-- Slide 10: Tensiones y preguntas -->
+    <section class="slide" data-slide="10">
+      <header class="slide-header">
+        <div class="title-block">
+          <h1>9. Tensiones que el grupo quiere seguir trabajando</h1>
+          <h2>Preguntas que quedaron abiertas</h2>
+        </div>
+        <div class="svg-wrap">
+          <img class="floating"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMjAiIGhlaWdodD0iMTYwIj4KICA8cmVjdCB3aWR0aD0iMjIwIiBoZWlnaHQ9IjE2MCIgZmlsbD0iIzEwMTUyNSIvPgogIDxyZWN0IHg9IjIwIiB5PSIzMCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxMDAiIHJ4PSIxMCIgcnk9IjEwIiBmaWxsPSIjMTcyNjNhIiBzdHJva2U9IiM0ZmEzZDEiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxsaW5lIHgxPSIzNSIgeTE9IjYwIiB4Mj0iMTg1IiB5Mj0iNjAiIHN0cm9rZT0iIzRmYTNkMSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtZGFzaGFycmF5PSI1IDQiLz4KICA8bGluZSB4MT0iMzUiIHkxPSI4NSIgeDI9IjE2NSIgeTI9Ijg1IiBzdHJva2U9IiM5YWQ1ZmYiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxjaXJjbGUgY3g9IjU1IiBjeT0iMTEwIiByPSI2IiBmaWxsPSIjNGZhM2QxIi8+CiAgPGNpcmNsZSBjeD0iOTUiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiM5YWQ1ZmYiLz4KICA8Y2lyY2xlIGN4PSIxMzUiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiM0ZmEzZDEiLz4KICA8Y2lyY2xlIGN4PSIxNzUiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiM5YWQ1ZmYiLz4KPC9zdmc+" alt="Icono preguntas" />
+        </div>
+      </header>
+      <main class="slide-body">
+        <p class="lead">Tensiones y preguntas abiertas:</p>
+        <ul class="points">
+          <li>¿Puede existir un campo “humanitario” que no funcione al mismo tiempo como dispositivo de exclusión?</li>
+          <li>¿Qué alternativas hay a la lógica del campamento en la gestión de la migración forzada?</li>
+          <li>Si hay afinidad cultural entre refugiados y sociedad de acogida, ¿por qué no se traducen en derechos y ciudadanía?</li>
+          <li>¿Hasta qué punto el humanitarismo neutraliza la dimensión política de la migración al reducirla a “gestión de cuerpos vulnerables”?</li>
+        </ul>
+      </main>
+      <footer class="slide-footer">
+        <span class="pager">10 / 13</span>
+        <span class="hint">Preguntas guía para las próximas sesiones</span>
+      </footer>
+    </section>
+
+    <!-- Slide 11: Aportes al curso -->
+    <section class="slide" data-slide="11">
+      <header class="slide-header">
+        <div class="title-block">
+          <h1>10. ¿Qué aporta esta lectura a Migración y Desarrollo?</h1>
+          <h2>Claves que el grupo recuperó para el curso</h2>
+        </div>
+        <div class="svg-wrap">
+          <img class="floating"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZzEiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNGM2ZCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzI2ODZhOCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5YWQ1ZmYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMGIxYjJiIi8+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI3MCIgZmlsbD0idXJsKCNnMSkiIC8+CiAgPGNpcmNsZSBjeD0iNzAiIGN5PSI4MCIgcj0iOCIgc3R5bGU9ImZpbGw6I2ZmZjtvcGFjaXR5OjAuOCIgcng9IjgiLz4KICA8Y2lyY2xlIGN4PSIxMzAiIGN5PSIxMjAiIHI9IjUiIHN0eWxlPSJmaWxsOiNmZmY7b3BhY2l0eTowLjYiLz4KICA8cGF0aCBkPSJNNDAgMTUwIFE5MCAxMjAgMTYwIDE1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWFkNWZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIvPgo8L3N2Zz4=" alt="Icono desarrollo" />
+        </div>
+      </header>
+      <main class="slide-body">
+        <p class="lead">Aportes al marco del curso:</p>
+        <ul class="points">
+          <li>Los campos de refugiados son parte de configuraciones sociopolíticas más amplias: proyectos estatales, economías globales, legados coloniales.</li>
+          <li>Permiten ver cómo la migración forzada se cruza con desigualdades de clase, género, etnia y ciudadanía.</li>
+          <li>La excepcionalidad del Sur de Asia abre un contraste útil para pensar América Latina y otras regiones del Sur Global.</li>
+          <li>El análisis del campo como espacio de control, pero también de agencia, ayuda a complejizar la categoría de "desarrollo" en contextos de desplazamiento.</li>
+        </ul>
+      </main>
+      <footer class="slide-footer">
+        <span class="pager">11 / 13</span>
+        <span class="hint">Los campos como ventana a la geopolítica del refugio</span>
+      </footer>
+    </section>
+
+    <!-- Slide 12: Cierre conceptual -->
+    <section class="slide" data-slide="12">
+      <header class="slide-header">
+        <div class="title-block">
+          <h1>11. Frase de cierre para seguir pensando</h1>
+          <h2>El campo como espejo del orden global</h2>
+        </div>
+        <div class="svg-wrap">
+          <img class="floating"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMjAiIGhlaWdodD0iMTYwIj4KICA8cmVjdCB3aWR0aD0iMjIwIiBoZWlnaHQ9IjE2MCIgZmlsbD0iIzEwMTUyNSIvPgogIDxyZWN0IHg9IjIwIiB5PSIzMCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxMDAiIHJ4PSIxMCIgcnk9IjEwIiBmaWxsPSIjMTcyNjNhIiBzdHJva2U9IiM0ZmEzZDEiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxsaW5lIHgxPSIzNSIgeTE9IjYwIiB4Mj0iMTg1IiB5Mj0iNjAiIHN0cm9rZT0iIzRmYTNkMSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtZGFzaGFycmF5PSI1IDQiLz4KICA8bGluZSB4MT0iMzUiIHkxPSI4NSIgeDI9IjE2NSIgeTI9Ijg1IiBzdHJva2U9IiM5YWQ1ZmYiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxjaXJjbGUgY3g9IjU1IiBjeT0iMTEwIiByPSI2IiBmaWxsPSIjNGZhM2QxIi8+CiAgPGNpcmNsZSBjeD0iOTUiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiM5YWQ1ZmYiLz4KICA8Y2lyY2xlIGN4PSIxMzUiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiM0ZmEzZDEiLz4KICA8Y2lyY2xlIGN4PSIxNzUiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiM5YWQ1ZmYiLz4KPC9zdmc+" alt="Icono cierre" />
+        </div>
+      </header>
+      <main class="slide-body">
+        <p class="lead">Idea integradora:</p>
+        <ul class="points">
+          <li>Los campos de refugiados no son solo espacios físicos de asistencia, sino dispositivos políticos que condensan las contradicciones del orden global contemporáneo.</li>
+          <li>En ellos se materializan jerarquías geopolíticas, desigualdades económicas y decisiones sobre quién merece derechos y quién solo administración humanitaria.</li>
+          <li>Al mismo tiempo, los campos son escenarios donde la vida insiste: se crean redes, memorias y proyectos de futuro incluso en condiciones de exilio prolongado.</li>
+          <li>Mirar los campos desde el Sur Global permite cuestionar la neutralidad de las categorías con las que pensamos migración, frontera y desarrollo.</li>
+        </ul>
+      </main>
+      <footer class="slide-footer">
+        <span class="pager">12 / 13</span>
+        <span class="hint">Para retomar en futuras actividades y evaluaciones</span>
+      </footer>
+    </section>
+
+    <!-- Slide 13: Referencia APA -->
+    <section class="slide" data-slide="13">
+      <header class="slide-header">
+        <div class="title-block">
+          <h1>Referencia de la lectura (APA 7)</h1>
+          <h2>Cierre de la presentación</h2>
+        </div>
+        <div class="svg-wrap">
+          <img class="floating"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZzEiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNGM2ZCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzI2ODZhOCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5YWQ1ZmYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMGIxYjJiIi8+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI3MCIgZmlsbD0idXJsKCNnMSkiIC8+CiAgPGNpcmNsZSBjeD0iNzAiIGN5PSI4MCIgcj0iOCIgc3R5bGU9ImZpbGw6I2ZmZjtvcGFjaXR5OjAuOCIgcng9IjgiLz4KICA8Y2lyY2xlIGN4PSIxMzAiIGN5PSIxMjAiIHI9IjUiIHN0eWxlPSJmaWxsOiNmZmY7b3BhY2l0eTowLjYiLz4KICA8cGF0aCBkPSJNNDAgMTUwIFE5MCAxMjAgMTYwIDE1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWFkNWZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIvPgo8L3N2Zz4=" alt="Icono referencia" />
+        </div>
+      </header>
+      <main class="slide-body">
+        <p class="lead">Referencia del capítulo trabajado:</p>
+        <ul class="points">
+          <li><strong>Chowdhory, N., &amp; Poyil, S. T.</strong> (2022). Interrogating camps in forced migration studies: The exceptionality of South Asia. En N. Chowdhory &amp; P. Banerjee (Eds.), <em>Gender, identity and migration in India</em> (pp. 57–78). Palgrave Macmillan.</li>
+        </ul>
+        <p class="note">
+          Presentación elaborada a partir de la discusión en clase de la asignatura <em>Migración y Desarrollo</em>.
+        </p>
+      </main>
+      <footer class="slide-footer">
+        <span class="pager">13 / 13</span>
+        <span class="hint">Fin · Gracias por su trabajo de lectura y análisis</span>
+      </footer>
+    </section>
+
+  </div>
+
+  <div class="controls">
+    <div class="control-chip" id="prevBtn">
+      <span class="key">←</span>
+      <span>Anterior</span>
+    </div>
+    <div class="control-chip" id="nextBtn">
+      <span>Siguiente</span>
+      <span class="key">→</span>
+    </div>
+  </div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const total = slides.length;
+    let current = 0;
+
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    function showSlide(index) {
+      if (index < 0 || index >= total) return;
+      slides[current].classList.remove("active");
+      current = index;
+      slides[current].classList.add("active");
+      revealPoints(slides[current]);
+    }
+
+    function revealPoints(slide) {
+      const points = slide.querySelectorAll("ul.points li");
+      points.forEach((li) => {
+        li.classList.remove("visible");
+      });
+      points.forEach((li, i) => {
+        setTimeout(() => {
+          li.classList.add("visible");
+        }, 150 + i * 120);
+      });
+    }
+
+    // Inicializar primera diapositiva
+    revealPoints(slides[current]);
+
+    function nextSlide() {
+      if (current < total - 1) {
+        showSlide(current + 1);
+      }
+    }
+
+    function prevSlide() {
+      if (current > 0) {
+        showSlide(current - 1);
+      }
+    }
+
+    nextBtn.addEventListener("click", nextSlide);
+    prevBtn.addEventListener("click", prevSlide);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === "PageDown") {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === "ArrowLeft" || e.key === "PageUp") {
+        e.preventDefault();
+        prevSlide();
+      }
+    });
+
+    // Navegación táctil básica
+    let touchStartX = null;
+
+    document.addEventListener("touchstart", (e) => {
+      const touch = e.changedTouches[0];
+      touchStartX = touch.screenX;
+    });
+
+    document.addEventListener("touchend", (e) => {
+      if (touchStartX === null) return;
+      const touch = e.changedTouches[0];
+      const dx = touch.screenX - touchStartX;
+      const threshold = 50;
+      if (dx < -threshold) {
+        nextSlide();
+      } else if (dx > threshold) {
+        prevSlide();
+      }
+      touchStartX = null;
+    });
+  </script>
+</body>
+</html>
