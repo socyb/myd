@@ -208,6 +208,78 @@
       100% { transform: translateY(0); }
     }
 
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      max-height: 60vh;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+    }
+
+    .video-card {
+      background: var(--card);
+      border: 1px solid rgba(79, 163, 209, 0.3);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(79, 163, 209, 0.2);
+    }
+
+    .video-card iframe {
+      width: 100%;
+      height: 160px;
+      border: none;
+      display: block;
+    }
+
+    .video-link {
+      padding: 0.6rem;
+      background: rgba(79, 163, 209, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .video-link a {
+      color: var(--accent-soft);
+      text-decoration: none;
+      font-size: 0.85rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      flex: 1;
+    }
+
+    .video-link a:hover {
+      text-decoration: underline;
+    }
+
+    .copy-btn {
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .copy-btn:hover {
+      background: var(--accent-soft);
+    }
+
+    .copy-btn:active {
+      transform: scale(0.95);
+    }
+
     @media (max-width: 720px) {
       header.slide-header {
         flex-direction: row;
@@ -554,7 +626,7 @@
         </ul>
       </main>
       <footer class="slide-footer">
-        <span class="pager">12 / 13</span>
+        <span class="pager">12 / 14</span>
         <span class="hint">Para retomar en futuras actividades y evaluaciones</span>
       </footer>
     </section>
@@ -564,7 +636,7 @@
       <header class="slide-header">
         <div class="title-block">
           <h1>Referencia de la lectura (APA 7)</h1>
-          <h2>Cierre de la presentación</h2>
+          <h2>Fuentes bibliográficas</h2>
         </div>
         <div class="svg-wrap">
           <img class="floating"
@@ -581,8 +653,79 @@
         </p>
       </main>
       <footer class="slide-footer">
-        <span class="pager">13 / 13</span>
-        <span class="hint">Fin · Gracias por su trabajo de lectura y análisis</span>
+        <span class="pager">13 / 14</span>
+        <span class="hint">Videos complementarios a continuación</span>
+      </footer>
+    </section>
+
+    <!-- Slide 14: Videos complementarios -->
+    <section class="slide" data-slide="14">
+      <header class="slide-header">
+        <div class="title-block">
+          <h1>Videos complementarios</h1>
+          <h2>Materiales audiovisuales sobre campos y migración forzada</h2>
+        </div>
+        <div class="svg-wrap">
+          <img class="floating"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZzEiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNGM2ZCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzI2ODZhOCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5YWQ1ZmYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMGIxYjJiIi8+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI3MCIgZmlsbD0idXJsKCNnMSkiIC8+CiAgPGNpcmNsZSBjeD0iNzAiIGN5PSI4MCIgcj0iOCIgc3R5bGU9ImZpbGw6I2ZmZjtvcGFjaXR5OjAuOCIgcng9IjgiLz4KICA8Y2lyY2xlIGN4PSIxMzAiIGN5PSIxMjAiIHI9IjUiIHN0eWxlPSJmaWxsOiNmZmY7b3BhY2l0eTowLjYiLz4KICA8cGF0aCBkPSJNNDAgMTUwIFE5MCAxMjAgMTYwIDE1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWFkNWZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIvPgo8L3N2Zz4=" alt="Icono videos" />
+        </div>
+      </header>
+      <main class="slide-body">
+        <div class="video-grid">
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/867_5upU55o" allowfullscreen></iframe>
+            <div class="video-link">
+              <a href="https://youtu.be/867_5upU55o" target="_blank">youtu.be/867_5upU55o</a>
+              <button class="copy-btn" onclick="copyToClipboard('https://youtu.be/867_5upU55o')">Copiar</button>
+            </div>
+          </div>
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/e-TakmEvZpA" allowfullscreen></iframe>
+            <div class="video-link">
+              <a href="https://youtu.be/e-TakmEvZpA" target="_blank">youtu.be/e-TakmEvZpA</a>
+              <button class="copy-btn" onclick="copyToClipboard('https://youtu.be/e-TakmEvZpA')">Copiar</button>
+            </div>
+          </div>
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/gxOlp-nmFXg" allowfullscreen></iframe>
+            <div class="video-link">
+              <a href="https://youtu.be/gxOlp-nmFXg" target="_blank">youtu.be/gxOlp-nmFXg</a>
+              <button class="copy-btn" onclick="copyToClipboard('https://youtu.be/gxOlp-nmFXg')">Copiar</button>
+            </div>
+          </div>
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/yX32CbXizT8" allowfullscreen></iframe>
+            <div class="video-link">
+              <a href="https://youtu.be/yX32CbXizT8" target="_blank">youtu.be/yX32CbXizT8</a>
+              <button class="copy-btn" onclick="copyToClipboard('https://youtu.be/yX32CbXizT8')">Copiar</button>
+            </div>
+          </div>
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/qpevKbsiS04" allowfullscreen></iframe>
+            <div class="video-link">
+              <a href="https://youtu.be/qpevKbsiS04" target="_blank">youtu.be/qpevKbsiS04</a>
+              <button class="copy-btn" onclick="copyToClipboard('https://youtu.be/qpevKbsiS04')">Copiar</button>
+            </div>
+          </div>
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/nT1RV-NCHng" allowfullscreen></iframe>
+            <div class="video-link">
+              <a href="https://youtu.be/nT1RV-NCHng" target="_blank">youtu.be/nT1RV-NCHng</a>
+              <button class="copy-btn" onclick="copyToClipboard('https://youtu.be/nT1RV-NCHng')">Copiar</button>
+            </div>
+          </div>
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/lmvNxjMXf84" allowfullscreen></iframe>
+            <div class="video-link">
+              <a href="https://youtu.be/lmvNxjMXf84" target="_blank">youtu.be/lmvNxjMXf84</a>
+              <button class="copy-btn" onclick="copyToClipboard('https://youtu.be/lmvNxjMXf84')">Copiar</button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="slide-footer">
+        <span class="pager">14 / 14</span>
+        <span class="hint">Haz clic en "Copiar" para copiar el enlace del video</span>
       </footer>
     </section>
 
@@ -675,6 +818,24 @@
       }
       touchStartX = null;
     });
+
+    // Función para copiar enlace al portapapeles
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        // Feedback visual temporal
+        const btn = event.target;
+        const originalText = btn.textContent;
+        btn.textContent = '✓ Copiado';
+        btn.style.background = '#2d8659';
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = '';
+        }, 2000);
+      }).catch(err => {
+        console.error('Error al copiar:', err);
+        alert('No se pudo copiar el enlace');
+      });
+    }
   </script>
 </body>
 </html>
