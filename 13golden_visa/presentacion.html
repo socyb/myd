@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Modo Presentación · Golden Visa</title>
+  <title>Preguntas para discutir · Golden Visa</title>
   <link rel="stylesheet" href="css/styles.css" />
   <style>
     :root{
@@ -23,6 +23,81 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+    .view-toggle {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      margin-top: 1rem;
+    }
+    .toggle-btn {
+      background: rgba(255,250,240,0.2);
+      color: white;
+      border: 2px solid var(--amber);
+      border-radius: 999px;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .toggle-btn.active {
+      background: var(--amber);
+      color: var(--ink);
+    }
+    .toggle-btn:hover {
+      background: var(--gold);
+      color: var(--ink);
+    }
+    .macro-view {
+      display: none;
+      width: 100%;
+      max-width: 900px;
+      background: rgba(255,250,240,0.97);
+      color: var(--ink);
+      border-radius: 24px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 8px 32px rgba(212,175,55,.18);
+      margin-bottom: 1rem;
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+    .macro-view.active {
+      display: block;
+      animation: fadeIn .4s;
+    }
+    .macro-view h2 {
+      color: var(--purple);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      border-bottom: 3px solid var(--gold);
+      padding-bottom: 0.5rem;
+    }
+    .macro-view h3 {
+      color: var(--purple);
+      font-size: 1.3rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .macro-view ul {
+      list-style: none;
+      padding: 0;
+    }
+    .macro-view li {
+      margin: 0.8rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+    .macro-view li:before {
+      content: "💡";
+      position: absolute;
+      left: 0;
     }
     .presentation-container {
       width: 100vw;
@@ -124,7 +199,54 @@
 </head>
 <body>
   <div class="presentation-container">
-    <div class="card-flip">
+    <div class="view-toggle">
+      <button class="toggle-btn" id="cardViewBtn">Vista individual</button>
+      <button class="toggle-btn" id="macroViewBtn">Vista completa</button>
+    </div>
+    
+    <div class="macro-view" id="macroView">
+      <h2>🤔 Preguntas para discusión</h2>
+      
+      <h3>📍 Conceptos fundamentales</h3>
+      <ul>
+        <li>¿Por qué es importante estudiar la movilidad privilegiada?</li>
+        <li>¿Qué implica que Portugal requiera solo 7-14 días de presencia anual?</li>
+        <li>¿Qué revela el programa Golden Visa sobre las jerarquías globales de ciudadanía?</li>
+      </ul>
+      
+      <h3>🇨🇳 Inversores chinos</h3>
+      <ul>
+        <li>¿Cómo se relacionan las motivaciones de salud y educación de los chinos con las políticas de desarrollo en China?</li>
+        <li>¿Qué revela el hecho de que Portugal sea "segunda opción" para muchos inversores chinos?</li>
+      </ul>
+      
+      <h3>🇧🇷 Inversores brasileños</h3>
+      <ul>
+        <li>¿De qué manera la violencia urbana en Brasil se relaciona con procesos de desarrollo?</li>
+        <li>¿Cómo influye el contexto político brasileño en las oleadas migratorias de inversores?</li>
+      </ul>
+      
+      <h3>⚖️ Comparaciones y contrastes</h3>
+      <ul>
+        <li>¿Cómo difiere la movilidad de inversores GV de la movilidad de trabajadores temporales agrícolas?</li>
+        <li>¿Qué similitudes y diferencias existen entre las motivaciones de inversores chinos y brasileños?</li>
+      </ul>
+      
+      <h3>🏖️ Intersección migración-turismo</h3>
+      <ul>
+        <li>¿Cómo se relacionan las categorías de "migrante" y "turista" en el caso de los inversores GV?</li>
+        <li>¿Qué papel juega la promoción estatal (AICEP) en difuminar las fronteras entre turismo e inversión?</li>
+      </ul>
+      
+      <h3>💭 Reflexión teórica</h3>
+      <ul>
+        <li>¿Cómo desafía el concepto "lifestyle investors" las concepciones tradicionales de inversores?</li>
+        <li>¿De qué manera este estudio contribuye a deconstruir estereotipos sobre migrantes?</li>
+        <li>¿Qué implicaciones tiene la enmienda de 2021 que excluye áreas costeras del programa GV?</li>
+      </ul>
+    </div>
+    
+    <div class="card-flip" id="cardFlip">
       <div class="flip-inner" id="flipInner">
         <div class="slide-face front active" id="frontFace"></div>
         <div class="slide-face back" id="backFace"></div>
@@ -290,6 +412,30 @@
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
   const randomBtn = document.getElementById('randomBtn');
+  const cardViewBtn = document.getElementById('cardViewBtn');
+  const macroViewBtn = document.getElementById('macroViewBtn');
+  const macroView = document.getElementById('macroView');
+  const cardFlip = document.getElementById('cardFlip');
+  const controlsDiv = document.querySelector('.controls');
+
+  // Vista inicial: cards
+  cardViewBtn.classList.add('active');
+
+  cardViewBtn.addEventListener('click', () => {
+    macroView.classList.remove('active');
+    cardFlip.style.display = 'flex';
+    controlsDiv.style.display = 'flex';
+    cardViewBtn.classList.add('active');
+    macroViewBtn.classList.remove('active');
+  });
+
+  macroViewBtn.addEventListener('click', () => {
+    macroView.classList.add('active');
+    cardFlip.style.display = 'none';
+    controlsDiv.style.display = 'none';
+    macroViewBtn.classList.add('active');
+    cardViewBtn.classList.remove('active');
+  });
 
   function showSlide(index) {
     frontFace.classList.remove('active');
