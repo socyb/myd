@@ -1,0 +1,1023 @@
+Total de páginas: 23
+================================================================================
+
+--- PÁGINA 1 ---
+
+
+
+================================================================================
+
+--- PÁGINA 2 ---
+
+INTERSECTIONS OF
+TOURISM, MIGRATION,
+AND EXILE
+Edited by Natalia Bloch
+Kathleen M. Adams
+
+================================================================================
+
+--- PÁGINA 3 ---
+
+Cover image: Michał Sita
+First published 2023
+by Routledge
+4 Park Square, Milton Park, Abingdon, Oxon OX14 4RN
+and by Routledge
+605 Third Avenue, New York, NY 10158
+Routledge is an imprint of the Taylor & Francis Group, an informa business
+OR
+© 2023 selection and editorial matter, Natalia Bloch and Kathleen M.
+Adams; individual chapters, the contributors
+The right of Natalia Bloch and Kathleen M. Adams to be identified as the
+authors of the editorial material, and of the authors for their individual
+chapters, has been asserted in accordance with sections 77 and 78 of the
+Copyright, Designs and Patents Act 1988.
+All rights reserved. No part of this book may be reprinted or reproduced or
+utilised in any form or by any electronic, mechanical, or other means, now
+known or hereafter invented, including photocopying and recording, or in
+any information storage or retrieval system, without permission in writing
+from the publishers.
+Trademark notice: Product or corporate names may be trademarks or
+registered trademarks, and are used only for identification and explanation
+without intent to infringe.
+British Library Cataloguing-in-Publication Data
+A catalogue record for this book is available from the British Library
+ISBN: 978-1-032-02279-6 (hbk)
+ISBN: 978-1-032-02280-2 (pbk)
+ISBN: 978-1-003-18268-9 (ebk)
+DOI: 10.4324/9781003182689
+Typeset in Bembo
+by Apex CoVantage, LLC
+
+================================================================================
+
+--- PÁGINA 4 ---
+
+12
+MOBILITY THROUGH INVESTMENT
+MARIA DE FÁTIMA AMANTE AND IRENE RODRIGUESMOBILITY THROUGH INVESTMENT
+Economics, Tourism, or Lifestyle Migration?
+Narratives of Chinese and Brazilian Golden
+Visa Holders in Portugal
+Maria de Fátima Amante and Irene Rodrigues
+Introduction
+This chapter aims to contribute to the enduring discussion of the conceptual
+boundaries between migrants and tourists (Williams and Hall, 2000) by looking at
+privileged mobility (Cohen et al., 2015; Croucher, 2012) and focusing on inves-
+tors. The discussion draws from ongoing research on the motives, expectations,
+and life experiences of Chinese and Brazilian investors (and their families) hold-
+ing Golden Visas (hereafter GV) in Portugal. In contrast to economic and forced
+mobility, the movements of relatively affluent individuals and the super-rich (one
+segment of privileged mobility) have only recently begun to attract researchers’
+attention. A burgeoning literature on privileged mobility deriving from citizen-
+ship, class, and/or cultural capital (Kunz, 2016) has gradually emerged, showcasing
+how studying this underexamined form of mobility offers opportunities for “better
+highlight[ing] the nature and implications of global inequality” (Croucher, 2012).
+Furthermore, studying privileged mobility can be useful in deconstructing long-
+held notions surrounding migration, such as the “binary divide between work and
+leisure,” the dichotomies of “home” and “away” (Cohen et al., 2015, p. 156), and
+the overlapping features of various travel categories (Amit, 2007) among which we
+find that of tourists. Examining this phenomenon promises to overcome the typi-
+cally “skewed image of migrants and immigrants as predominantly non-Western,
+non-White, non-elite subjects” (Kunz, 2016, p. 89). As anthropologists, from
+where we stand, it is also an opportunity for “studying up” (Nader, 1972; Ortner,
+2010; Souleles, 2018).
+Investment as an avenue for obtaining a residence permit and eventually citi-
+zenship is a strategy used by those seeking opportunities to move abroad (Rogers
+et al., 2015; Gamlen et al., 2019). It is also embraced by many governments seeking
+capital infusions (Džankić, 2018; Parker, 2017). Since the 2008 global economic
+DOI: 10.4324/9781003182689-13
+
+================================================================================
+
+--- PÁGINA 5 ---
+
+Mobility Through Investment 219
+permits had been granted to GV family members of all nationalities (SEF, 2021).
+Most GV holders channel their investments to the real estate sector (9,170 GVs out
+of 9,767), which is the fastest and cheapest option.
+Both Chinese and Brazilians had strong migration relationships with Portu-
+gal well before the GV program, with established communities in the country.
+Brazilians form the largest group of migrants in Portugal, and the Chinese com-
+munity is the sixth-largest immigrant group in the country (SEF, 2019). Originally,
+both Brazilians and Chinese arrived in Portugal as workers driven by opportunities
+for economic security. The Chinese began arriving in the 1980s, becoming an
+important community during the 1990s and 2000s (Amante and Rodrigues, 2020;
+Gaspar, 2017). Brazil’s military dictatorship (1964–1985) produced an initial stream
+of political refugees in the 1980s followed by highly skilled migrants attracted by
+Portugal’s expanding economy after its 1986 admission into the European Eco-
+nomic Community (Padilla, 2006; Peixoto, 2002). At the dawn of the millennium,
+the “proletarianization of Brazilian migration” (Padilla, 2006) kept the numbers
+high. More recently, before the COVID-19 pandemic, we have witnessed grow-
+ing numbers of more affluent arrivals (privileged mobility) from these two nations,
+with the growth of student and investor mobility. Together, these have contributed
+to both these communities’ enlargement and diversity (Amante and Rodrigues,
+2020; França and Padilla, 2018). Portugal’s attractiveness as a place for investment
+and study has been propelled by the country’s increasing popularity as a tourist
+destination.3
+Scholars approach the well-recognized “symbiotic relationships between tour-
+ism and migration” (Williams and Hall, 2000, p. 5) from several different per-
+spectives. Generally, research has detailed how migration generates tourist flows
+(Jackson, 1990; Morrison et al., 1995), and how tourism may also generate migra-
+tion flows (Monk and Alexander, 1986). This chapter highlights a slightly different
+approach: By examining foreign investors, we seek to discern how migration and
+tourism overlap in constructing the investor category. In doing so, we follow two
+lines of inquiry: First, since the investor is a political category, we examine how the
+state’s strategy for promoting the country as an investment hotspot entails co-min-
+gling economic and tourist attractions. Second, we discuss the investor category
+from the inside by looking at how migration and tourism intertwine as investors
+subjectively construct the category of “the investor.”
+We consider this an interesting case for exploring the blurred boundaries of
+migration and tourism for several reasons beyond those mentioned earlier. First,
+the GV program coincided with a particularly favorable moment for tourism in
+Portugal. In recent years, the country has received a plethora of World Travel Awards,
+with Lisbon (2018) and Porto (2017) achieving special acclaim. Perhaps not sur-
+prisingly, GV holders invested primarily in Lisbon and Porto and adjacent regions.
+Before the COVID-19 pandemic, we anticipated the rise in investor visa grants due
+to Portugal’s growing attractiveness as a tourism destination (Mendes, 2017; Kräh-
+mer and Santangelo, 2018). But last year (2020), the grant totals decreased (from
+1,245 in 2019 to 1,182 in 2020) and the relative number of Chinese and Brazilian
+
+================================================================================
+
+--- PÁGINA 6 ---
+
+220 Maria de Fátima Amante and Irene Rodrigues
+GVs also fell slightly (SEF, 2019, 2020). Accordingly, to a certain extent, mobility
+through investment can be conceived of as consumption-led, and therefore more
+closely entangled with tourism or with a specific kind of migration, namely, life-
+style migration. Thus, we explore how the Portuguese State has promoted itself
+using not only economics and tourism but also lifestyle imaginaries to construct
+the investor category.
+Second, the policy does not require that grantees and their family members
+reside in the country to maintain their residence permits. GV holders are only
+required to visit Portugal annually, remaining seven days in the first year, and 14
+days in subsequent years. Hence, it appears the state does not expect GV holders
+to become migrants. However, the predominance of real estate investment suggests
+that GV holders may be interested in acquiring second homes abroad to access a
+particular lifestyle, valuing a esthetics over (or in tandem with) economics. In short,
+GV holders constitute a case of lifestyle migration (Benson and O’Reilly, 2009a;
+Knowles and Harper, 2009; Torkington, 2012; Benson and Osbaldiston, 2014).
+Our approach to the concept of lifestyle derives from Pierre Bourdieu (2010) for
+whom different lifestyles result from relationships between economic, cultural, and
+social capitals, and the choices available in specific social contexts. Thus, consump-
+tion (and leisure) is associated with specific lifestyles. Social class is indeed an ele-
+ment of investors’ actions. But, when examining investors’ motives for applying for
+a Portuguese GV, we choose to highlight the subjective dimension, stressing how
+these self-articulated motivations construct the idea of lifestyle itself. For Chinese
+emigrants in prior eras, political and economic uncertainty at home has been cited
+as major push factors for pursuing a desired lifestyle elsewhere, as seen with Chi-
+nese emigration from mainland China and Hong Kong in the 1990s (Li, 2005).
+Our findings, however, suggest that this is not quite the case with contemporary
+Chinese GV holders. For upper–middle-class Brazilians, lifestyle visions were seen
+as more closely tied to social class and identity mobility, which are entwined with
+ethnic and racial identity (Robins, 2019, p. 1). However, our findings complicate
+other scholars’ analyses of upper–middle-class Brazilians’ motives for pursuing life-
+style migration. Our interviews with Chinese and Brazilian GV holders suggest
+that the very notion of what constitutes lifestyle migration needs to be reassessed
+and re-envisioned to accommodate a broader range of pursuits than is classically
+portrayed in the literature.
+Privileged Mobility and the Investor
+Privileged mobility is a very broad concept and includes various categories
+of mobile people whose mobility experiences do not include the hardships –
+economic deprivation and endangered lives – usually associated with economic
+and forced mobility (Rodrigues, 2013; Sayad, 2004). Investors are but one cat-
+egory of people who can be viewed as privileged migrants, a condition shared
+with highly skilled professionals, students, sojourners, retirees, and expatriates
+(Croucher, 2012), among others. What makes all these categories of mobile
+
+================================================================================
+
+--- PÁGINA 7 ---
+
+Mobility Through Investment 221
+people privileged is, first, the conditions under which they move and settle in
+the receiving country, and second, their lifestyle in that country. Regarding the
+first, privileged mobile people have access to resources that can soften the migra-
+tory experience: they have time to travel, and they are either wealthy or enjoy
+cultural capital. These kinds of resources allow them to overcome the usual dif-
+ficulties migrants experience (securing housing, jobs, schools for their children,
+etc.). Moreover, privilege is not only shaped by affluence but by the migrants’
+citizenship, as demonstrated by research on North Americans who moved to
+South American countries and enjoyed benefits due to their passports from pow-
+erful nations (Croucher, 2012; Benson and O’Reilly, 2009b). Thus, nationality
+can also play a significant role (Benson, 2013). Finally, we must attend to how
+the divide between privileged and “regular” migrants is subjectively constructed.
+That is, people categorized as privileged mobiles do not necessarily think of
+themselves as migrants, nor are they necessarily thought of as such by the state
+(Amante and Rodrigues, 2020). The literature tends to assume those engaged in
+privileged mobility are not working; therefore, some authors argue for a close
+relationship between privileged mobility and leisure, connecting this flow with
+categories such as lifestyle migration (Benson and O’Reilly, 2009a), amenity
+migration (Moss, 2006), international retirement migration (Scuzzarello, 2020),
+or even residential tourism (Rodriguez, 2001; McWatters, 2009).
+The formal category of privileged mobility addressed in this chapter – the
+investor – was created in 2012 through an amendment to Portugal’s 2007 For-
+eigner’s Act. This amendment redefined the relationship between entrepreneur-
+ship, business, and migration in Portugal. More importantly, it also redefined how
+migration is seen, because, despite varying definitions of the concept, a persistent
+trait of migration is that the immigrant lives in the host country. As noted earlier,
+this is not mandatory for investors granted a GV in Portugal, nor for their rela-
+tives who obtain permits for family reunification. So, how do we conceptualize
+the investor? Is he/she an immigrant if he/she can choose not to live in the host
+country? Is he/she more akin to a residential tourist?4
+To understand privileged mobility and the specific case of the investor, we con-
+ceptualize the “investor” both as a category of analysis and as a category of practice
+(Brubaker and Cooper, 2000; Brubaker, 2013). In doing so, we recognize that,
+although interdependent in some ways, the two categories do not necessarily over-
+lap. What the state defines as a suitable applicant for a GV does not necessarily
+coincide with GV holders’ subjective constructions.
+Methodology
+When we began researching privileged migration, we were aware of the chal-
+lenges of “studying up” (Powdermaker, 1966). Participant observation and quali-
+tative interviews used in classic fieldwork are not always viable when researching
+the powerful within our own societies (Ortner, 2010). GV holders are part of a
+difficult-to-access economic elite: They are not only from multiple nations, but
+
+================================================================================
+
+--- PÁGINA 8 ---
+
+222 Maria de Fátima Amante and Irene Rodrigues
+they are also highly diverse and nationally and internationally delocalized. Unlike
+anthropologists studying small-scale communities via participant observation, we
+could not find a community of GV holders as such. The absence of a “definite
+community” and the challenges of accessing elites were difficulties noted by Hort-
+ense Powdermaker (1966) in her research on Hollywood power brokers, long
+before Laura Nader encouraged “studying up” (1972). As Powdermaker observed,
+these factors precluded “a constant and seemingly casual participant observation”
+(Powdermaker, 1966, p. 213). Given these challenges, we decided that qualitative
+research through interviews would be the best strategy for accessing subjective
+understandings.
+Nader’s observations that elites “don’t want to be studied; it is dangerous to
+study the powerful; they are busy people; they are not all in one place, etc.” (1972,
+p. 302) reverberated in our minds as we embarked on our study. For many months,
+we struggled to gain access to people who were granted GVs and ultimately used
+gatekeepers (real estate agents directly involved with high-profile real estate proper-
+ties, migration lawyers, and other Chinese and Brazilian migrants living in Portu-
+gal). From the outset, we had greater access to the Chinese than to the Brazilians,
+as one of us had prior experience with Chinese and we both lacked Brazilian
+networks in Portugal.
+This chapter draws on data from 18 interviews with Chinese GV holders and
+other Chinese migrants already established in Portugal, both workers and entre-
+preneurs, all involved in providing formal and informal consulting services to the
+Chinese interested in obtaining a GV in Portugal. The Chinese investors we inter-
+viewed came from Changsha (Hunan Province), Shanghai, and Beijing. Conver-
+sations were mainly conducted in Chinese Mandarin (with investors and family
+members) and some in Portuguese (through intermediaries). These interviews
+were hand recorded, with additional memories of the interview expanded after-
+ward.5 These notes were subsequently transcribed for content analysis. We gained
+access to our nine Brazilian interviewees (investors, their family members, and
+brokers) via migration lawyer offices, real estate agents, and by tracking down indi-
+viduals previously interviewed in newspapers. These participants came from the
+States of São Paulo, Rio de Janeiro, and Bahia in Brazil.
+The first interviews, conducted in 2019, occurred in participant-selected loca-
+tions, either public places (e.g., cafes, restaurants, and travel agencies), their homes,
+or offices (for the intermediaries). Due to the COVID-19 pandemic, the 2020
+interviews were conducted via online platforms (mostly WhatsApp for the Brazil-
+ians and WeChat for the Chinese). Also because of the pandemic, despite our initial
+plans, participant observation was not possible. During semi-structured interviews,
+we asked about investors’ lives in their home countries, decisions to leave, oppor-
+tunities associated with obtaining a GV, and prior expectations and life experiences
+in Portugal. We also conducted content and discursive analyses of qualitative and
+visual data from the AICEP-Portugal Global – Trade and Investment Agency’s
+(hereafter AICEP) website (this is the Portuguese government’s business develop-
+ment agency especially directed at attracting foreign investment). Finally, we drew
+
+================================================================================
+
+--- PÁGINA 9 ---
+
+Mobility Through Investment 223
+on statistical data from the Foreigner and Border’s Office (hereafter SEF) to con-
+textualize the GV policy.
+Invest in Portugal! What Does the State Want?
+Over the past 13 years, the Portuguese government has embraced different strate-
+gies to enhance foreign investments, beginning in 2009 with the Non-Habitual
+Residents Program. This program offered tax incentives for foreign investors.6 In
+2012, the state launched the GV Program to stimulate Third Country Nationals’
+(TCN) investment in the real estate sector which was in deep crisis at the time.
+This program established various investment options: in exchange for a residence
+permit, interested TCNs could invest either a minimum of half a million euros in
+real estate, make capital transfers of at least one million euros to Portuguese banks,
+or create a business with at least 30 employees.7 In addition, in 2007, the Portu-
+guese governmental agency AICEP was reconfigured as a front desk for investment
+in Portugal, charged with providing support services, counseling, and contacts for
+companies involved in investment processes. Beyond providing information about
+investment and trade in Portugal, the agency’s website is dedicated to persuading
+individuals and corporate businesses to invest in Portugal.
+Our discourse analysis of this website8 revealed five rationales aimed at draw-
+ing foreign investors to Portugal, namely: (1) economic; (2) human resources; (3)
+innovation and technology; (4) geographic, historical, and cultural; and (5) tour-
+ist attractions.9 For this chapter, we concentrate on the last two rationales, which
+highlight the intersecting terrain between tourism, migration, and elite investor
+mobility. On the site, geographic, historical, cultural, and touristic allure comprise
+almost as many reasons offered to entice potential foreign investors as the eco-
+nomic set alone. Although these geographical, historical, and cultural rationales
+are presented separately on the site, they comprise important tourist assets and the
+state combines them to present an image of Portugal as a “globally positioned”
+and “connected country” (expressions used in the promotional film), both in the
+past and today. Accordingly, the AICEP website highlights information such as the
+average temperature at noon in summer and winter and the many tourism awards
+received by the country’s primary cities (e.g., Best European Country to Visit, Best
+City in the World to Invest, and Best Place in the World to Enjoy Retirement).
+These tourist and economic “facts” are all spotlighted in the film as reasons to
+invest.
+In the AICEP’s promotional film, economics, innovation and technology, and
+manpower indicators are enfolded with touristic and cultural images and data about
+Portugal. The video opens with three young adults on a sailboat off the coast of
+Lisbon. As potentially attractive economic facts are presented, images of science,
+technology, and innovation are merged with tourist images of Praça do Comércio
+and Lisbon’s riverside. The film concludes with tourism and travel indicators and
+returns to the image of the three young adults on the sailboat berthing at Lisbon’s
+Parque das Nações dock, which is situated in an attractive, modern living and
+
+================================================================================
+
+--- PÁGINA 10 ---
+
+224 Maria de Fátima Amante and Irene Rodrigues
+working zone. In this way, by combining economy and tourism to draw investors,
+this governmental agency targets not only economic investors in general but also
+tourism, leisure, and residential investment, in particular.
+Recognizing the impossibility of competing with powerful economies in the
+contest for overseas investors, the government employs certain internationally
+widespread stereotyped images of Portugal. These tropes of Portugal as a tourist
+destination of sun, sea, and leisure become valuable assets for attracting foreign
+investors. In the next section, we draw on our interviews with GV investors, their
+family members, and intermediaries to analyze how these kinds of images of Por-
+tugal have figured into their decisions to invest in Portugal.
+Migration or Tourism? or Both? Investors’ Narratives
+Some studies have stressed economic performance as a key motivation for GV
+investments in Portugal, associating foreign investment (and the need to expa-
+triate capital) with the urban tourist boom and the growth of tourist amenities.
+Historical ties between the investors’ countries and Portugal are also considered
+relevant (Montezuma and McGarrigle, 2019). Finding an economic “safe haven” is
+reported as one reason for investing in real estate. According to some (Montezuma
+and McGarrigle, 2019), this is the primary objective for many Chinese and Turkish
+investors in Portugal. From our research with Chinese investors, the properties
+purchased are either left vacant or rented to co-nationals or others for residential
+purposes: They do not appear to be rented to tourists.10
+Since the GV is an investment visa, one would expect that GV seekers would
+highlight economic investment as a primary motivation. However, the Chinese
+GV holders and their family members we interviewed do not mention capital
+investment or China’s real estate market pressures as the key motivations driving
+their GV applications. As noted earlier, most Chinese GV applicants and holders in
+Portugal tend to apply for family reunification, thus increasing the incoming flow
+beyond that of the GV holders alone. This practice in tandem with our interviews
+suggests that the main motivations for moving are family-related (Amante and
+Rodrigues, 2020). As Xi, a male Chinese real-estate agent residing in Lisbon stated:
+“Many investors leave their children with grandparents in Portugal and spend most
+of their time in China taking care of their businesses.” The literature suggests edu-
+cation and economic investment as the primary reasons for this permit’s appeal in
+Portugal and elsewhere (Montezuma and McGarrigle, 2019; Ampudia de Haro
+and Gaspar, 2019; Robertson and Rogers, 2017). The Chinese GV intermediaries
+we interviewed indicated that Chinese families were leaving China for numerous
+reasons: To escape pollution, pursue better educational and social environments for
+their children, and avoid rising housing costs that were pushing middle-class resi-
+dents of larger Chinese cities into outlying regions. Some Chinese GV holders and
+their family members confirmed that concerns about family health and education
+were strong motivations (and a Chinese real estate agent reported that many GV
+holders were coming from China’s most polluted cities). As Huang, a male Chinese
+GV holder explained,
+
+================================================================================
+
+--- PÁGINA 11 ---
+
+Mobility Through Investment 225
+This desire to go abroad started when our second son was five years old and
+got a very serious respiratory illness. It was coincident with a period of high
+pollution levels in Beijing, so we wanted to get out and go to a healthier
+place.
+Similarly, Zhang, the wife of a Chinese GV holder told us,
+We decided to leave China because of the environment (the pollution), but
+it was mainly due to our son’s education. . . . He was suffering great anxiety
+due to the rankings pressure – Chinese children suffer very much.
+The intense social pressure to be successful was also noted as one of the causes driv-
+ing emigration from China in previous migratory flows to Portugal, long before
+the GV policy (Rodrigues, 2013). Literature on migration and social reproduc-
+tion in China has noted the growing importance of higher education certificates
+from prestigious “Western” universities in the accumulation of social capital among
+the Chinese middle class (Waters, 2006; Tsang, 2013). To overcome the intense
+competition Chinese students face when entering Chinese universities, many par-
+ents choose to send their children abroad, where they can enjoy less stressful lives:
+Chinese GV-holding parents living in Portugal feel their children need not spend
+as many hours studying to succeed. Likewise, one of the informal intermediaries
+interviewed said that her acquaintance’s Chinese parents and grandparents were
+considering applying for a GV and buying a house in Portugal to enable them to
+send their children there in the future. Although the children were still very young,
+concerns over their future education were the main motivation for the investment.
+In short, for the Chinese mainlanders we interviewed, the investment opportunity
+is not the primary motivation for applying to the GV Program: Education oppor-
+tunities and family health are the reasons that most stood out.
+The topic of leaving China for political and economic reasons is very sensitive
+among mainland Chinese. Although not a reason volunteered by investors and
+family members themselves, it is difficult to ignore these reasons when discussing
+Chinese GV holders’ rationales for leaving China. Significantly, the Portuguese GV
+program has aroused great interest among Hong Kong Chinese for overtly political
+and economic reasons.11 Rising fears of instability have emerged since the recent
+approval of the national security law in Hong Kong and Macau, which reduces
+the autonomy of these areas from China (activating laws approved during the 1997
+transfer of Hong Kong’s sovereignty and the 1999 transfer of Macau’s sovereignty).
+This may be prompting increasing numbers of Chinese GV holders to move to
+Portugal, as occurred with the Chinese relocating to Canada in the late 1990s (Li,
+2005). During our fieldwork, we heard of several Hong Kong GV holders who
+do not reside in Portugal. It seems possible that although some Hong Kong GV
+holders are not currently residing in Portugal, possessing a GV may offer a kind of
+insurance should they need to leave Hong Kong for political reasons.
+Some of our interviewees mentioned intentions to leave China, but not spe-
+cific desires to target Portugal. Rather, these Chinese GV holders were interested
+
+================================================================================
+
+--- PÁGINA 12 ---
+
+226 Maria de Fátima Amante and Irene Rodrigues
+in living in Canada, the United States, and Italy. Thus, Portugal was not the first
+choice, but the second available option. As Wang, the Chinese wife of a GV holder,
+articulated,
+We came because our only son wanted to move to the United States, though
+we could not make it. Then the emigration agency we had consulted to go
+to the US advised us to consider Portugal. We had no previous relations with
+Portugal, we came for a visit and decided to apply. . . . I feel very comfort-
+able in Portugal, the education is good, my son is very content, and he also
+has the opportunity to experience other things compatible with a European
+lifestyle.
+And Huang, a male Chinese GV holder, detailed,
+At first, we applied for Canada, but the process was too long, they asked for
+many documents and, in the end, we didn’t make it. It was rejected. Then,
+in 2013, the emigration agency told us about the possibility of Portugal. We
+didn’t know anything about Portugal, I knew Ronaldo and I knew it was
+next to Spain. So, I searched for information. Then, I realized that it was a
+European Union country and that it was part of the Schengen Agreement,
+and that it would be good for traveling and even doing business. I sought
+information from the League of Chinese in Europe and Portugal. I wanted
+to know if it was good for children and what the weather was like. Then they
+told me that the summer was long and hot and that children got much less
+sick than in China because the winter is shorter and milder. So, we thought
+it would be a good idea to come and see, and we liked it. The emigration
+agency [in China] took care of everything for us: they took care of the house
+business, all the paperwork of the purchase, the visa, as well as the school
+enrollment for our children.
+The GV holders and their family members we interviewed all came from large
+cities in China – Beijing, Shanghai, and Changsha (in Hunan Province). They
+were middle-class families, professionals, or businesspeople with ambitions to live
+outside China, but without many of the resources – including language skills – that
+would enable them to enter the United States or Canada, traditionally the most
+desired destinations for Chinese pursuing life abroad. They all came to Portugal
+as families, with children and even grandparents. Those with ongoing business
+ventures in China faced family separations, with some members in China and oth-
+ers in Portugal. However, such separations may be transitory, since many Chinese
+GV holders, once in Portugal, start looking for local business opportunities. Oth-
+ers, professionals working for private companies in China, pursued professional
+jobs upon arrival in Portugal. However, none mentioned professional ambitions
+as a motivation for applying for the GV. One GV grantee, Huang, said he and his
+wife were enjoying living in Portugal so much that they decided to enlarge the
+
+================================================================================
+
+--- PÁGINA 13 ---
+
+Mobility Through Investment 227
+family with a third child. Their interest in Portugal began while they were still
+residing in China and were introduced to Portugal by immigration agencies that
+partnered with real estate companies in Portugal. We also heard of others who were
+more informally introduced to Portugal (without immigration agencies), by Chi-
+nese individuals who had been commissioned by Portuguese real estate agencies to
+attract GV clients. In fact, the Chinese community in Portugal was very excited
+about the program back in 2013, and many Chinese migrants plunged into the real
+estate sector, viewing drumming up Chinese GV applicants as an attractive business
+opportunity (Amante and Rodrigues, 2020; Gaspar, 2019).
+Not all Chinese families invest in real estate before relocating to Portugal. For
+some families maintaining businesses in China, the investment comes after resid-
+ing in Portugal. Nevertheless, the real estate investment is what opens the door for
+them to consider acquiring a GV and a longer-term relationship with Portugal.
+Cui, the wife of a Chinese GV holder explained,
+I came to Portugal with my mother and my teenage son only, while my hus-
+band stayed in China looking after our businesses. After traveling in Europe,
+I decided that I wanted to live here. Though Portugal was not my first choice –
+I preferred Italy – we are pleased with our choice.
+For GV holders, at least initially, Portugal’s advantage is not so much its intrinsic
+appeal, but rather its geopolitical position in Europe.12 For Chinese GV holders,
+Portugal’s location in Europe and its association with the Schengen Agreement
+offer possibilities for both business and tourism. Some Chinese GV holders explore
+Portugal as tourists, often with an eye for potential investments, treating Portugal
+as a point of departure for tourism in Europe. As Cui, the already quoted wife of a
+Chinese GV holder explained,
+I had already traveled to Europe for tourism, to Italy, and I liked it very
+much. After that, I thought about coming to Europe and I found the oppor-
+tunity in Portugal. In the meantime, since our arrival, I have already traveled
+with my mother and son to various European countries for tourism.
+In contrast to the Chinese investors, Portugal offers a slightly different kind of “safe
+haven” for Brazilian investors. Research data collected by Joaquim Montezuma
+and Jennifer McGarrigle highlighted that “this group is primarily seeking a safe
+investment setting and a relocation option to exit Brazil rather than high returns”
+(2019, p. 14). Our empirical data, gathered through interviews with Brazilians’
+GVs, revealed a financially diverse group of people with desires to invest in Portu-
+gal and particular lifestyles there once settled. In this group, we find people who
+are not only extremely wealthy but also members of the upper-middle class, with
+enough money in the Brazilian banking system to acquire Portuguese GVs, which
+they use to avoid the delays generally associated with the country’s highly bureau-
+cratic migration process.
+
+================================================================================
+
+--- PÁGINA 14 ---
+
+228 Maria de Fátima Amante and Irene Rodrigues
+Brazil’s recent political turmoil, the corruption scandal that impeached Dilma
+Rousseff, Temer’s conservative government, and the election of right-wing nation-
+alist Jair Bolsonaro figure into Brazilian investors’ desires to leave the country. As
+Sandra, a Brazilian female GV holder in her early 40s recalled,
+Five years ago, when I came [to Portugal], the Golden Visa was a good
+resource. Since then, it has changed a lot . . . But I feel that, back then, the
+people coming were older than me, with more money . . . That group went
+a lot to Cascais13. In the last two years, more people of my own age are com-
+ing, with a similar lifestyle, that is not having a lot of money but wanting to
+have a different life. Five years ago, when I came, it was at the time of Dilma’s
+impeachment, which I was totally against. Those [supporting the impeach-
+ment] are precisely the group of people who now voted for Bolsonaro. It’s a
+right-wing group of people, who five years ago were running away.
+Both political and economic motivations can be inferred from our interviewee’s
+words. The super-rich she refers to as “older right-wing Brazilians” (who arrived
+during or immediately after Dilma’s impeachment) were not confident about the
+Brazilian economy and sought a “safe haven” for investments. Those who arrived
+more recently, upper-middle-class Brazilians like Sandra, are escaping a conserva-
+tive government and allude to political factors as primary reasons for leaving.
+Why did they choose Portugal? More often than not, in contrast to the Chinese
+migrants, scholars cite “lifestyle orientations, historical factors, as well as shared lin-
+guistic and cultural terrain” (Montezuma and McGarrigle, 2019, p. 14) as impor-
+tant factors. Although we concur that there is a cultural connection, it is worth
+noting that
+Portugal has never featured in the Brazilian imagination as a developed “First
+World” country. Instead, Brazilians share a general sense of superiority vis-a-vis
+the Portuguese, who are the butt of many derogatory jokes in Brazil and
+whose country was perceived as the ‘backwater’ of Europe.
+(Torresan, 2011, p. 235)
+So, beyond the cultural factors cited in the literature, for the upper-middle-
+class Brazilian GV holders, Portugal’s appeal lies in its low investment threshold
+compared to other potential destinations: The financial investment requirement
+for a Portuguese GV is more manageable than the financial thresholds required
+by other European countries with immigrant investor programs (Amante and
+Rodrigues, 2020).14
+In contrast to the Chinese migrants, Brazilian elites’ interest in Portugal, the
+“option to exit Brazil” (Montezuma and McGarrigle, 2019), is closely related to
+the search for a more carefree lifestyle and a better quality of life for themselves and
+their families. Notwithstanding the unavoidable economic dimension of invest-
+ment migration, Brazilian GV holders might be better defined as lifestyle migrants
+
+================================================================================
+
+--- PÁGINA 15 ---
+
+Mobility Through Investment 229
+because they are “relatively affluent individuals of all ages, moving either part-time
+or full-time to places that, for various reasons, signify, for the migrant, a better
+quality of life” (Benson and Reilly, 2018, p. 609). Unlike “regular” migrants who
+also seek better lives and class mobility via far-flung jobs (Torresan, 2011), Brazilian
+GV holders interviewed envision a better quality of life in tandem with a change
+of scenery not necessarily related to career prospects. Rather, the object is to real-
+ize an improved lifestyle for themselves and their families unencumbered by the
+constraints they face at home in Brazil.
+The desire for a more relaxed quality of life is reflected in comments concerning
+security and professional competition. Security is ubiquitous in the narratives of
+Brazilian immigrants in general (Schrooten et al., 2016), and the terms also pepper
+the narratives of the Brazilian GV holders and their family members as we discov-
+ered in our interviews. The anthropological work on violence in Brazil is extensive,
+and security concerns are a pervasive element of urban life in many Brazilian cities
+(e.g., Larkins, 2015; Penglase, 2011; Scheper-Hughes, 2006; Wacquant, 2003). As
+Löic Wacquant observes, “Brazilian society remains characterized by vertiginous
+social disparities and mass poverty, which together feed the inexorable growth of
+criminal violence that has become the main scourge of the big cities” (Wacquant,
+2003, p. 199). Ben Penglase’s argument that “urban violence provides Brazilians
+with a ‘map’ which they can use to interpret their daily lives and organize their
+social practices” (2011, p. 431) is also noteworthy. Penglase’s observations hint at a
+link between perceptions of urban insecurity and the drive to emigrate (Adorno,
+2002; Pinho, 2014). In a 2017 media interview about the new wave of Brazilian
+immigrants arriving in Portugal, the Brazilian Deputy Consul General highlighted
+the link between wealth and security in Brazil and the decision to leave the coun-
+try, declaring that “they come in search of a more peaceful and secure life . . .
+even though they have money they could not enjoy it due to the violence and
+the Brazilian political crisis. . . . Here, they don’t need cars with bulletproof glass
+windows.”15
+These Brazilian GV holders were critical of Brazil’s urban violence and inse-
+curity, fueled by poverty and social inequality (Wacquant, 2003; Penglase, 2011).
+Débora, a Brazilian GV holder, stated that
+The banality of violence in Brazil is absurd . . . For us, Brazilians, especially
+for those from the urban areas, like Rio de Janeiro or São Paulo, security
+is really an issue . . . I lived in Copacabana. My office was located right in
+the city center, a safe place, one might think. However, when I left work
+at night, the sidewalk in front of the building transformed into a dormitory
+for homeless people, beggars. It bothered me a lot and I started to think that
+I couldn’t live in Brazil anymore. So, you see, the best place in Brazil doesn’t
+even compare to the worst place here in Portugal.
+The individuals we interviewed repeatedly highlighted personal traumatic experi-
+ences as triggering their urgent desires to leave Brazil and prompting their decisions
+
+================================================================================
+
+--- PÁGINA 16 ---
+
+230 Maria de Fátima Amante and Irene Rodrigues
+to apply for GVs. They expected that life in Portugal would foster a safer lifestyle
+and a more relaxed future. This is even more significant in the narratives of people
+with children. Sandra, a teacher and a mother, observed that
+Many people are very afraid. Like my husband, his ex-mother-in-law was
+murdered, and since then he has been unable to live as he used to . . . living
+in Rio changed a lot after that fact. So, security is not something I deny, we
+have this . . . I was robbed at gunpoint once, but I don’t know . . . it didn’t
+scare me. That was not what brought me here but living here I recognize that
+it’s much more peaceful, and being a mother, I imagined my children walk-
+ing alone to school. I wouldn’t do that in Brazil.
+In a similar vein, Wilson, a male GV holder, commented,
+We and our daughters have been in Portugal since 2015. In these four years,
+we adapted to a calmer life. We still live in a private condominium and next
+year our daughters will leave private school to attend a public school . . . can
+you imagine? That would be impossible back home.
+Brazilian GV holders view Portugal as offering a better quality of life, which
+encompasses a less competitive environment in school and at the workplace, as
+compared to what they experienced in Brazil. As Débora observed,
+In Brazil, there are many people. For every job you want to get, there are
+millions of candidates. You have to be the first, the best, in everything. We
+are used to it. The level of competition in Brazil is higher . . . So, those who
+came here are sharks, not golden fish.
+Investors are part of a “new flow of Brazilians” coming to Portugal (França and
+Padilla, 2018). They are highly skilled, a characteristic shared with previous flows
+(França and Padilla, 2018; Torresan, 2011; Pinho, 2014). Although their privi-
+leged economic status enables them to apply for a GV, they are not rich enough
+to cease working while in Portugal. All our interviewees are professionally active
+people and enjoy successful careers in the arts, finance, media, or advertising.
+Some continue their line of work while others embraced a completely different
+professional path.
+Despite the often-negative stereotypes of Portugal mentioned earlier (Torresan,
+2011) and in keeping with Montezuma and McGarrigle’s (2019) observations, we
+find among our interviewees those for whom language, historical links, and shared
+cultural terrain were intrinsic to their decisions to invest and ultimately live in Por-
+tugal. This is not necessarily due to the past colonial relationship between Portugal
+and Brazil but rather for more pragmatic reasons. For some of our interviewees, it
+was a matter of choosing the easiest destination possible, in terms of adaptation to
+a new social, cultural, and linguistic environment. Moreover, familiarity with other
+
+================================================================================
+
+--- PÁGINA 17 ---
+
+Mobility Through Investment 231
+Brazilians living in Portugal and an imagined cultural proximity attracted them. As
+Vitória, a female GV holder from São Paulo, noted,
+When I decided to come here, as I was moving with my family, the language
+and climate were the things that mattered the most. I speak English, but my
+husband, my daughter, and my mother speak only Portuguese, so . . . this was
+important when I decided to come to Portugal. Also, in Germany, England,
+or France, in these countries they don’t have the joy of life, there is greater
+civility there, and everything works better . . . Maybe that is why we Brazil-
+ian are the way we are, we were colonized by the Portuguese.
+For Brazilian elites, moving to Lisbon is not quite the same as moving to Europe,
+despite Portugal’s European identity. Brazilians, especially the wealthy ones, con-
+sider Europe not as a geopolitical concept but as embodying a certain lifestyle
+commonly associated with northwest Europe, including France. However, for
+economic and linguistic reasons, Brazilian elites see their possibilities of living in
+Europe as limited to Portugal. Nevertheless, we found our interviewees refer-
+ring to Portugal as presenting several advantages which are relevant for our discus-
+sion of GV holders and the blurred boundaries between migration and tourism.
+Particularly, but not exclusively, retired investors were engaged in consuming the
+Portuguese past through regular travel and visits to the country’s hinterlands or by
+living in Lisbon’s historic neighborhoods: These pursuits directly link these Brazil-
+ian residents to tourism and a more consumption-driven form of migration. Karen
+O’Reilly (2003) argues that migration and tourism, which are often considered
+separately, need to be brought together within research so that we can develop a
+better understanding of the interrelations between these two types of movement.
+Among the Brazilian GV holders, some of our interviewees’ initial encounters with
+Portugal were as tourists. As Brazilian citizens do not need a visa to enter Portu-
+guese territory for short periods, some came as tourists, stayed for several weeks,
+and explored possibilities for relocation. Ultimately, they visited real estate agents
+and lawyers’ offices to help them embark on the process of moving to Portugal.
+In some cases, starting as tourists they became tourism promoters, investing in
+travel agencies. Others work as consulting agents, assisting co-nationals wanting to
+obtain Portuguese GVs. In either case, we can find here the “symbiotic relation-
+ships between tourism and migration” that Allan M. Williams and C. Michael
+Hall (2000, p. 7) refer to, namely through a “tourism entrepreneurial migration
+[which] may constitute a special case of both lifestyle seeking migration and labour
+migration” (Williams and Hall, 2002, p. 31) with individuals being, in the case of
+Brazilian GV holders, first motivated by “quality of life considerations” (Williams
+and Hall, 2002, p. 31).
+On a different level, for many Brazilians, the relationship between investment
+and tourism emerges from a perceived advantage of Portugal’s relatively central
+location, which is often understood more as a place from which they can travel
+rather than as a place in which to live. In this way, for many, it is primarily a
+
+================================================================================
+
+--- PÁGINA 18 ---
+
+232 Maria de Fátima Amante and Irene Rodrigues
+European base that maximizes travel possibilities. Sandra, a female GV holder,
+explained to us that,
+Portugal is the size of Piaui,16 for us everything is close, it’s all a matter of
+reference . . . traveling two and a half hours, and being there, far away . . .
+I think Portugal has a lot of cool places, it has a lot to offer despite being
+small, it has so many travel possibilities. And I don’t know whether travel is
+cultural in Brazil. There is an advantage, a Brazilian with higher purchasing
+power, living in Portugal, makes it easier because it’s in the center, so we
+can travel a lot. . . . Traveling from Portugal is a lot easier than from Brazil.
+My parents bought an apartment here as a way to get their residence permit.
+They travel a lot. It is great for them! Sometimes they come from Brazil and
+stay in Lisbon for long periods; when my daughter was born, they were sup-
+posed to stay for a year to help me, but during that period they also booked
+“a thousand” trips to Europe.
+When speaking Portuguese and having Portugal as their departure point, Brazilians
+usually talk about traveling “to Europe,” instead of traveling around or in Europe,
+thus expressing their perceptions of Portugal’s location: A place that allows them to
+spend more time as tourists, both in the country of residence (Portugal) and abroad
+(Europe and elsewhere). So, in a certain way, for Brazilian GV holders, investment
+allows them a path not only to migration but also to tourism.
+Conclusions
+In this chapter, we examined the case of GV holders as an avenue for highlighting
+the blurred boundaries between investment, migration, and tourism. By explor-
+ing the political reasoning behind a specific policy that created a category and an
+opportunity for mobility, we found a diverse array of motives for applying for GVs
+among Chinese and Brazilian investors extending beyond the realm of economic
+investment.
+Chinese and Brazilians have very different historical and cultural ties with Por-
+tugal. However, by centering on motivations underlying GV applications, we
+unearthed striking commonalities. Among the similarities, we found that both
+Chinese and Brazilians in Portugal expressed strong desires to exit their home
+countries and abandon certain lifestyles. The desired lifestyle is not so much for
+what Portugal offers but rather centers on the fact that Portugal does not suffer
+from the problems pushing them away from their home countries. The GV offers
+the opportunity to transform that dimension of their lives. However, in both cases,
+Portugal is generally not the first option but rather the most viable, when com-
+pared to different constraints that both groups face entering and/or living in North
+America or other European countries. Nevertheless, in both cases, Portugal’s loca-
+tion is perceived as advantageous for travel to other European countries or conti-
+nents. The very different spatial scale that both Brazilians and Chinese use when
+
+================================================================================
+
+--- PÁGINA 19 ---
+
+Mobility Through Investment 233
+thinking about their home countries and Portugal tends to drive their maximiza-
+tion of travel possibilities and therefore consumption-led mobility.
+In this sense, the search for a better, less stressful European lifestyle seems to
+exceed the desire to expatriate capital. In the Chinese case, for the mainland Chi-
+nese GV holders effectively living in Portugal, the opportunity to enjoy a certain
+educational atmosphere and a cleaner environment supersede economic concerns.
+Hence, the idea that many Chinese invest in Lisbon to expatriate capital (Mon-
+tezuma and McGarrigle, 2019) still needs further research. From the narratives
+of the GV holders – both Chinese and Brazilians – we may conclude that they
+are more interested in moving to change their lives than in investing their capital
+(although clearly capital investment is part of the picture). In fact, these people live
+in Portugal, many work there as well, and they are looking for a better quality of
+life for themselves and their families. Thus, their motivations and practices greatly
+resemble those of migrants.
+Besides these common aspects, there are also some differences between the two
+cases. Although both China and Brazil have long historical, colonial, and migratory
+ties with Portugal, the language and cultural proximity between Portugal and Brazil
+is much stronger and influences the Brazilian imaginary of Portugal. In contrast, for
+the Chinese, despite the Portuguese presence in Macau from the 16th to the end
+of the 20th century, no distinctive imaginary of Portugal was produced. The coun-
+try remained largely unknown to most Chinese. Another contrast lies in primary
+motivations for leaving. While in the Chinese case, families verbalize worries about
+educational competition and pollution but do not explicitly mention political or
+economic fears (possibly due to caution), in the Brazilian case, families are very vocal
+about the banalization of violence and the political and economic instability.
+Tourism was a common theme in both the state’s narrative and investors’ narra-
+tives. The Portuguese state’s narrative of the attractiveness of investment in Portugal
+not only encompasses economic, cultural, and geographical aspects but also high-
+lights a tourist lifestyle that resonates with the motivations and expectations of the
+GV holders who seek a new lifestyle rather than simply a place in which to invest
+economically. In fact, the Portuguese state largely promotes the country through
+tourist postcards, even though the main goal is to attract foreign investment. It is
+quite interesting to note that in the case of the GV, the Portuguese state requires
+residence in the country for just 14 days per year, meaning that the state does not
+expect investors to have an interest in living in the country. However, for our inter-
+viewees, residence in the country was revealed as more important than the capital
+investment itself. The country’s touristic attractiveness makes it a viable candidate
+for relocation not only by offering a more relaxed lifestyle but also for its location
+in Europe and thus the possibility of easy travel to tourist destinations in Europe.
+In several interviews with GV real estate investors, we found yet another connec-
+tion with tourism: Tourist activities and investments come after living in Portugal,
+boosting their economic integration in the country.
+Our data deconstruct certain stereotypical images of foreign investors held by
+the Portuguese state and public: The conception of them as super-rich and absent
+
+================================================================================
+
+--- PÁGINA 20 ---
+
+234 Maria de Fátima Amante and Irene Rodrigues
+from the country. On the contrary, the investors’ experiences we encountered defy
+conceptions of the investor as an entirely economic category and instead locate
+the investor in the blurred and intersectional territory of migration and tourism.
+Like migrants, they seek opportunities to leave their countries of origin to pursue
+a better quality of life. This does not exempt them from having professional lives,
+though they also share a tourist ethos in the sense that they choose a country that
+promises travel opportunities they did not have before. For this reason, we suggest
+that the GV investors in Portugal are more lifestyle investors than capital investors,
+as they are more interested in shifting how they and their families live than in maxi-
+mizing or hiding their capital.
+Notes
+1 In February 2021, the Portuguese government published new legislation on the GV
+Program (DR 14/2021) announcing changes starting in January 2022. The key amend-
+ment is the exclusion of all mainland coastal areas, namely, Lisbon, Porto, and the
+Algarve, as real estate investment areas eligible for GV. The archipelagos of Madeira and
+Azores remain eligible.
+2 Elsewhere, we have discussed this policy as a “governmental technology” constituting
+part of a neoliberal political project (Amante and Rodrigues, 2020; see also Rose and
+Miller, 1992).
+3 One reason for this is Portugal’s increased presence in international media (see
+www.jornaldenegocios.pt/empresas/media/detalhe/destino-portugal-bate-recorde-
+de-referencias-na-imprensa-estrangeira).
+4 The category of tourist is also complex, and its conceptualizations are debated (see, e.g.,
+McCabe, 2005; O’Reilly, 2003).
+5 Chinese interviewees stated they preferred not to be taped. We experienced this pre-
+viously in our long-term fieldwork with Chinese migrants in Portugal. This is not
+necessarily for political reasons: It is linked to self-protectiveness vis á vis strangers and
+non-Chinese (see Rodrigues, 2012).
+6 Decree-Law n. º 249/2009, September 23. https://dre.pt/application/file/a/157238304.
+7 A 2015 amendment lowered this requirement to ten people.
+8 See http://portugalglobal.pt/PT/Paginas/Index.aspx.
+9 We examined the 2020 website’s promotional film (images, text, and audio information)
+as well as written incentives for investing.
+10 In the Chinese case, rentals to co-nationals include short-term rentals to Chinese stu-
+dents in Portugal and Chinese workers. During the COVID-19 pandemic, GV holders’
+houses were also used by other Chinese to quarantine.
+11 See, e.g., www.scmp.com/business/article/3022507/portugals-golden-visa-program-
+swamped-inquiries-hongkongers-seeking.
+12 Additionally, as previous research on GV Programs indicates (Amante and Rodrigues,
+2020), the Portuguese GV Program – as compared to similar programs in other Euro-
+pean countries – is less expensive and more flexible in terms of working status and family
+reunification.
+13 Cascais is a fishing village near Lisbon, associated with economic and social elites.
+14 Compared to other nations’ Immigrant Investment Programs, Portugal’ GV is a relatively
+straightforward, low-cost option, requiring a real estate investment of half a million
+euros. This contrasts favorably with the United Kingdom’s program, where the mini-
+mum investment is one million pounds, and with France, which requires a minimum
+investment of €10 million in industrial or commercial assets and job creation.
+15 http://miraonline.pt/elite-brasileira-traz-novos-negocios-para-portugal/.
+16 A Brazilian state with a small area compared to others.
+
+================================================================================
+
+--- PÁGINA 21 ---
+
+Mobility Through Investment 235
+References
+Adorno, S. (2002) ‘Exclusão socioeconómica e violência urbana’, Sociologias, 8, pp. 84–135.
+Amante, M.F. and Rodrigues, I. (2020) ‘Mobility regimes and the crisis: The changing face
+of Chinese migration due to the Portuguese golden visa policy’, Journal of Ethnic and
+Migration Studies, 47(17), pp. 4081–4099.
+Amit, V. (ed.) (2007) Going first class: New approaches to privileged travel and movement. New
+York: Berghahn Books.
+Ampudia de Haro, F. and Gaspar, S. (2019) ‘Visados dorados para inversores en España
+y Portugal: residencia a cambio de dinero’, Arbor, 195(791). Available at: https://doi.
+org/10.3989/arbor.2019.791n1008.
+Benson, M. (2013) ‘Postcoloniality and privilege in new lifestyle flows: The case of North
+Americans in Panama’, Mobilities, 8(3), pp. 313–30.
+Benson, M. and O’Reilly, K. (2009a) ‘Migration and the search for a better way of life:
+A critical exploration of lifestyle migration’, The Sociological Review, 57(4), pp. 608–625.
+Benson, M. and O’Reilly, K. (eds.) (2009b) Lifestyle migration: Expectations, aspirations and
+experiences. Farnham: Ashgate.
+Benson, M. and O’Reilly, K. (2018) Lifestyle migration and colonial traces in Malaysia and
+Panama. London: Palgrave McMillan.
+Benson, M. and Osbaldiston, N. (eds.) (2014) Understanding lifestyle migration: Theoretical
+approaches to migration and the quest for a better way of life. London: Palgrave Macmillan.
+Bourdieu, P. (2010) Distinction. A social critique of the judgement of taste. London: Routledge.
+Brubaker, R. (2013) ‘Categories of analysis and categories of practice: A note on the study of
+Muslims in European countries of immigration’, Ethnic and Racial Studies, 36(1), pp. 1–8.
+Brubaker, R. and Cooper, F. (2000) ‘Beyond identity’, Theory and Society, 29, pp. 1–47.
+Cohen, S., Duncan, T. and Thulemark, M. (2015) ‘Lifestyle mobilities: The crossroads of
+travel, leisure and migration’, Mobilities, 10(1), pp. 155–172.
+Croucher, S. (2012) ‘Privileged mobility in an age of globality’, Societies, 2, pp. 1–13.
+Džankić, J. (2018) ‘Immigrant investor programs in the European Union (EU)’, Journal of
+Contemporary European Studies, 26(1), pp. 64–80.
+European Commission (2019) Investor citizenship and residence schemes in the European Union. Avail-
+able at: https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=COM:2019:0012:FIN.
+França, T. and Padilla, B. (2018) ‘Imigração brasileira para Portugal: entre o surgimento e a
+construção mediática de uma nova vaga’, Cadernos de Estudos Sociais, 33(2). Available at:
+https://core.ac.uk/download/pdf/302960634.pdf.
+Gamlen, A., Kutarna, C. and Monk, A. (2019) ‘Citizenship as sovereign wealth: Re-think-
+ing investor immigration’, Global Policy, 10(4), pp. 527–541.
+Gaspar, S. (2017) ‘Chinese migration to Portugal. Trends and perspectives’, Journal of Chinese
+Overseas, 13(1), pp. 48–69.
+Gaspar, S. (2019) ‘Chinese descendants’ professional pathways: Moving to new businesses?’,
+Portuguese Journal of Social Science, 18(1), pp. 91–108.
+Jackson, R.T. (1990) ‘VFR tourism: Is it underestimated?’, Journal of Tourism Studies, 1(2),
+pp. 10–17.
+Knowles, C. and Harper, D. (2009) Hong Kong: Migrant lives, landscapes and journeys. Chicago,
+IL: University of Chicago Press.
+Krähmer, K. and Santangelo, M. (2018) ‘Gentrification without gentrifiers? Tourism and
+real estate investment in Lisbon’, Sociabilidades Urbanas – Revista de Antropologia e Sociolo-
+gia, 2(6), pp. 151–165.
+Kunz, S. (2016) ‘Privileged mobilities: Locating the expatriate in migration scholarship’,
+Geography Compass, 10(3), pp. 89–101.
+
+================================================================================
+
+--- PÁGINA 22 ---
+
+236 Maria de Fátima Amante and Irene Rodrigues
+Larkins, E. (2015) The spectacular favela: Violence in modern Brazil. Berkeley, CA: University
+of California Press.
+Li, P.S. (2005) ‘The rise and fall of Chinese immigration to Canada: Newcomers from Hong
+Kong special administrative region of China and mainland China, 1980–2000’, Interna-
+tional Migration, 43(3), pp. 9–34.
+McCabe, S. (2005) ‘Who is a tourist?’ A critical review’, Tourism Studies, 5(1), pp. 85–106.
+McWatters, M. (2009) Residential tourism. (De)constructing paradise. Bristol: Channel View
+Publications.
+Mendes, L. (2017) ‘Gentrificação turística em Lisboa: neoliberalismo, financeirização e
+urbanismo austeritário em tempos de pós-crise capitalista 2008–2009’, Cadernos Metró-
+pole, 19(39), pp. 479–512.
+Monk, J. and Alexander, C. (1986) ‘Free port fallout: Gender, employment and migration
+on Margarita Island’, Annals of Tourism Research, 13, pp. 393–413.
+Montezuma, J. and McGarrigle, J. (2019) ‘What motivates international homebuyers? Inves-
+tor to lifestyle ‘migrants’ in a tourist city’, Tourism Geographies, 21(2), pp. 214–234.
+Morrison, A.M., Hsieh, S. and O’Leary, J.T. (1995) ‘Segmenting the visiting friends and rel-
+atives’ market by holiday activity participation’, Journal of Tourism Studies, 6(1), pp. 48–63.
+Moss, L. (2006) The amenity migrants. Oxfordshire: CAB Institute.
+Nader, L. (1972) ‘Up the Anthropologist: Perspectives gained from studying up’. Available
+at: https://eric.ed.gov/?id=ED065375.
+O’Reilly, K. (2003) ‘When is a tourist? The articulation of tourism and migration in Spain’s
+Costa del Sol’, Tourism Studies, 3(3), pp. 301–317.
+Ortner, S.B. (2010) ‘Access: Reflections on studying up in Hollywood’, Ethnography, 11(2),
+pp. 211–233.
+Padilla, B. (2006) ‘Brazilian migration to Portugal: Social networks and ethnic solidarity’,
+CIES e-Working Papers. Available at: https://repositorio.iscte-iul.pt/bitstream/10071/175/
+4/CIES-WP12_Padilla_.pdf.
+Parker, O. (2017) ‘Commercializing citizenship in crisis EU: The case of immigrant investor
+programs’, Journal of Common Market Studies, 55(2), pp. 332–384.
+Peixoto, J. (2002) ‘Strong markets, weak states: The case of recent foreign immigration in
+Portugal’, Journal of Ethnic and Migration Studies, 28(3), pp. 483–497.
+Penglase, R.B. (2011) ‘Lost bullets: Fetishes of urban violence in Rio de Janeiro, Brazil’,
+Anthropological Quarterly, 84(2), pp. 411–438.
+Pinho, F. (2014) Transformações na emigração brasileira para Portugal. De profissionais a trabal-
+hadores. Lisbon: ACM-IP.
+Powdermaker, H. (1966) Stranger and friend. The way of an anthropologist. New York: W.W.
+Norton & Company.
+Robertson, S. and Rogers, D. (2017) ‘Education, real estate, immigration: Brokerage assem-
+blages and Asian mobilities’, Journal of Ethnic and Migration Studies, 43(14), pp. 2393–2407.
+Robins, D. (2019) ‘Lifestyle migration from the Global South to the Global North: Indi-
+vidualism, social class, and freedom in a centre of “superdiversity” ’, Popul Space Place, 25.
+Available at: https://doi.org/10.1002/psp.2236.
+Rodrigues, I. (2012) ‘Ser laowai: o estrangeiro antropólogo e o estrangeiro para os migrantes
+chineses entre Portugal e a China’, Etnográfica, 16(3), pp. 547–567.
+Rodrigues, I. (2013) Flows of fortune: The economy of Chinese migration to Portugal. PhD thesis.
+Lisbon: University of Lisbon.
+Rodriguez, V. (2001) ‘Tourism as a recruiting post for retirement migration’, Tourism Geog-
+raphies, 3(1), pp. 52–63.
+Rogers, D., Lee, C.L. and Yan, D. (2015) ‘The politics of foreign investment in Australian
+housing: Chinese investors, translocal sales agents and local resistance’, Housing Studies,
+30(5), pp. 730–748.
+
+================================================================================
+
+--- PÁGINA 23 ---
+
+Mobility Through Investment 237
+Rose, N. and Miller, P. (1992) ‘Political power beyond the state: Problematics of govern-
+ment’, BJS, 43(2), pp. 173–205.
+Sayad, A. (2004) The suffering of the immigrant. Cambridge, MA and Malden, MA: Polity
+Press.
+Scheper-Hughes, N. (2006) Dangerous and endangered youth: Social structures and determinants
+of violence. London: Routledge.
+Schrooten, M., Salazar, N. and Dias, G. (2016) ‘Living in mobility: Trajectories of Brazilians
+in Belgium and the UK’, Journal of Ethnic and Migration Studies, 42(7), pp. 1199–1215.
+Scuzzarello, S. (2020) ‘Practicing privilege. How settling in Thailand enables older Western
+migrants to enact privilege over local people’, Journal of Ethnic and Migration Studies,
+46(8), pp. 1606–1628.
+SEF (2013–2018) ‘Relatório de Imigração, Fronteiras e Asilo (RIFA)’. Oeiras: Serviço de
+Estrangeiros e Fronteiras. Available at: https://sefstat.sef.pt/forms/Home.aspx
+SEF (2019) ‘Autorização de Residência para Atividade de Investimento (ARI)’. Oeiras:
+Serviço de Estrangeiros e Fronteiras. Available at: https://www.sef.pt/pt/pages/con-
+teudo-detalhe.aspx?nID=93
+SEF (2020) ‘Autorização de Residência para Atividade de Investimento (ARI)’. Oeiras:
+Serviço de Estrangeiros e Fronteiras. Available at: https://www.sef.pt/pt/pages/con-
+teudo-detalhe.aspx?nID=93
+SEF (2021) ‘Autorização de Residência para Atividade de Investimento (ARI)’. Oeiras:
+Serviço de Estrangeiros e Fronteiras. Available at: https://www.sef.pt/pt/pages/con-
+teudo-detalhe.aspx?nID=93
+Souleles, D. (2018) ‘How to study people who do not want to be studied: Practical reflec-
+tions on studying up’, PoLAR: Political and Legal Anthropology Review, 41(1), pp. 51–68.
+Torkington, K. (2012) ‘Place and lifestyle migration: The discursive construction of ‘glocal’
+place-identity’, Mobilities, 7(1), pp. 71–92.
+Torresan, A. (2011) ‘Strange bedfellows: Brazilian immigrants negotiating friendship in Lis-
+bon’, Ethnos, 76(2), pp. 233–253.
+Tsang, E.Y. (2013) ‘The quest for higher education by the Chinese middle class: Retrench-
+ing social mobility’, Higher Education, 66, pp. 653–668.
+Wacquant, L. (2003) ‘Toward a dictatorship over the poor? Notes on the penalization of
+poverty in Brazil’, Punishment & Society, 5(2), pp. 197–205.
+Waters, J.L. (2006) ‘Geographies of cultural capital: Education, international migration and
+family strategies between Hong Kong and Canada’, Transactions of the Institute of British
+Geographers, 31, pp. 179–192.
+Williams, A. and Hall, M.C. (2000) ‘Tourism and migration: New relationships between
+production and consumption’, Tourism Geographies, 2(1), pp. 5–27.
+Williams, A.M. and Hall, C.M. (2002) ‘Tourism, migration, circulation and mobility.
+The contingencies of time and place’ in Hall, C.M. and Williams, A.M. (eds.) Tourism
+and migration. New relationships between production and consumption. Dordrecht: Springer,
+pp. 1–52.
+
+================================================================================
+

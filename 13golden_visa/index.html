@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Actividad 13 · Movilidad a través de Inversión: Golden Visa en Portugal</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    :root{
+      --gold:#d4af37;
+      --gold-dark:#b8932f;
+      --purple:#6b46c1;
+      --amber:#ffb84d;
+      --cream:#fffaf0;
+      --ink:#1a1a2e;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#f9f7f4}
+    a{color:var(--purple);text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{position:relative;overflow:hidden;color:white}
+    .hero{
+      padding:3.5rem 1.25rem 2.75rem;
+      background: linear-gradient(135deg, rgba(107,70,193,.92), rgba(212,175,55,.90) 45%, rgba(255,184,77,.95) 85%), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="%23d4af37"/><stop offset="100%" stop-color="%236b46c1"/></linearGradient></defs><rect width="1200" height="400" fill="url(%23g)" opacity="0.25"/></svg>');
+      background-size:cover;
+      border-bottom:8px solid var(--gold);
+    }
+    .hero-inner{max-width:1000px;margin:0 auto}
+    .kicker{letter-spacing:.08em;text-transform:uppercase;font-weight:800;font-size:.9rem;opacity:.95}
+    .title{margin:.35rem 0 0;font-size:clamp(1.6rem,4.2vw,2.8rem);font-weight:900;line-height:1.1}
+    .subtitle{margin:.5rem 0 0;font-size:clamp(1rem,2.3vw,1.2rem);opacity:.95}
+    .container{max-width:1000px;margin:0 auto;padding:1rem 1.25rem}
+    .grid{display:grid;gap:1.2rem}
+    @media (min-width:760px){
+      .grid{grid-template-columns:repeat(12,1fr)}
+      .col-8{grid-column:span 8}
+      .col-4{grid-column:span 4}
+    }
+    .card{background:var(--cream);border-radius:18px;border:1px solid #e8e0d5;box-shadow:0 6px 18px rgba(212,175,55,.15);overflow:hidden}
+    .card-header{display:flex;align-items:center;gap:.6rem;padding:.9rem 1rem;background:linear-gradient(90deg,var(--gold),var(--amber));color:#1a1a2e;font-weight:800}
+    .pill{background:rgba(255,255,255,.92);padding:.2rem .6rem;border-radius:999px;font-size:.8rem;letter-spacing:.02em}
+    .card-body{padding:1.1rem 1rem 1.2rem}
+    .h3{margin:.2rem 0 .65rem;font-size:1.15rem}
+    .muted{color:#5a5470}
+    ul{margin:.4rem 0 .8rem;padding-left:1.2rem}
+    li{margin:.25rem 0}
+    .q-list{border-top:1px dashed #d4af37;padding-top:.75rem;margin-top:.75rem}
+    .panel{background:white;border:1px solid #e8e0d5;border-radius:16px;padding:1rem;position:sticky;top:1rem}
+    .badge{display:inline-block;background:var(--purple);color:white;border-radius:999px;padding:.28rem .55rem;font-size:.78rem;font-weight:700}
+    .meta{font-size:.92rem;color:#5a5470}
+    footer{margin-top:2rem;background:var(--purple);color:#f5f3ff}
+    .footer-inner{max-width:1000px;margin:0 auto;padding:1rem 1.25rem;display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:.6rem}
+    .brand .stripe{width:8px;height:28px;background:var(--gold);border-radius:3px}
+    .add{display:inline-flex;align-items:center;gap:.5rem;border:2px solid var(--purple);border-radius:999px;padding:.5rem .9rem;font-weight:700;background:white}
+    .add:hover{background:#f5f3ff}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <div class="hero-inner">
+        <div class="kicker">Actividad 13.</div>
+        <h1 class="title">Movilidad a través de Inversión: Golden Visa en Portugal</h1>
+        <p class="subtitle">Migración y Desarrollo · Guía de lectura basada en <em>Amante & Rodrigues (2023)</em> del volumen <em>Intersections of Tourism, Migration, and Exile</em>.</p>
+        <a href="presentacion.html" class="add">Modo Presentación</a>
+        <a href="../index.html" class="add" style="margin-left:1rem;">← Regresar a actividades del curso</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <section class="col-8">
+        
+        <!-- Tarjeta 1: Introducción y contexto -->
+        <button id="toggleCard1Btn" class="add" style="margin-bottom:1.5rem;">
+          Mostrar Tarjeta 1
+        </button>
+        <article class="card" id="t1" style="display:none;">
+          <div class="card-header">
+            <span class="pill">Tarjeta 1</span>
+            Introducción: ¿Quién es el "inversor"?
+          </div>
+          <div class="card-body">
+            <h3 class="h3">Ideas clave</h3>
+            <ul>
+              <li><strong>Movilidad privilegiada:</strong> el capítulo estudia a inversores chinos y brasileños con Golden Visa (GV) en Portugal, quienes representan una forma de movilidad basada en capital económico, ciudadanía y clase.</li>
+              <li><strong>Límites conceptuales:</strong> el estudio contribuye a difuminar las fronteras entre migrante y turista, mostrando cómo ambas categorías se superponen en la práctica.</li>
+              <li><strong>"Studying up":</strong> investigar a élites económicas permite destacar la naturaleza e implicaciones de la desigualdad global y deconstruir la imagen sesgada del migrante como "no occidental, no blanco, no élite".</li>
+              <li><strong>Golden Visa (GV):</strong> programa portugués (creado en 2012) que otorga permisos de residencia a cambio de inversión mínima (€500,000 en bienes raíces, €1 millón en capital, o creación de empleo).</li>
+              <li><strong>Perfil de los titulares:</strong> hasta 2020, se otorgaron 9,767 GV; chinos y brasileños son los grupos más numerosos, con inversión mayoritaria en sector inmobiliario.</li>
+            </ul>
+
+            <div class="q-list">
+              <h3 class="h3">Preguntas para discusión</h3>
+              <ul>
+                <li>¿Por qué es importante estudiar la movilidad privilegiada? ¿Qué revela sobre las desigualdades globales en los sistemas migratorios?</li>
+                <li>¿Cómo se relaciona el concepto de "movilidad privilegiada" con los debates sobre ciudadanía y nacionalidad que hemos visto en el curso?</li>
+                <li>El programa Golden Visa requiere solo 7-14 días de presencia anual en Portugal. ¿Qué implica esto sobre la relación entre residencia, inversión y pertenencia?</li>
+                <li>¿Qué diferencias existen entre la movilidad privilegiada de los inversores y la movilidad económica o forzada que hemos analizado en otras actividades?</li>
+              </ul>
+            </div>
+
+            <p class="muted"><strong>Contexto:</strong> Este capítulo es parte del volumen "Intersections of Tourism, Migration, and Exile" (Routledge, 2023) editado por Natalia Bloch y Kathleen M. Adams. Las autoras son Maria de Fátima Amante e Irene Rodrigues.</p>
+          </div>
+        </article>
+
+        <!-- Tarjeta 2: Inversores chinos -->
+        <button id="toggleCard2Btn" class="add" style="margin-bottom:1.5rem;">
+          Mostrar Tarjeta 2
+        </button>
+        <article class="card" id="t2" style="display:none;">
+          <div class="card-header">
+            <span class="pill">Tarjeta 2</span>
+            Narrativas de inversores chinos
+          </div>
+          <div class="card-body">
+            <h3 class="h3">Motivaciones principales (NO primariamente económicas)</h3>
+            <ul>
+              <li><strong>Salud y medio ambiente:</strong> la contaminación extrema en ciudades chinas (Beijing, Shanghai) y enfermedades respiratorias graves en niños impulsan la búsqueda de ambientes más saludables.</li>
+              <li><strong>Educación de los hijos:</strong> la presión intensa y competencia extrema del sistema educativo chino genera ansiedad en los niños; se busca un ambiente menos estresante y acceso a universidades occidentales prestigiosas.</li>
+              <li><strong>Razones políticas (tema sensible):</strong> aunque no se expresan abiertamente, los temores de inestabilidad en Hong Kong y Macau (especialmente tras la ley de seguridad nacional) hacen del GV un "seguro" migratorio.</li>
+              <li><strong>Portugal como segunda opción:</strong> la mayoría prefería Canadá, EE.UU. o Italia, pero Portugal resultó más accesible tras rechazos o procesos complicados en otros países.</li>
+              <li><strong>Ventaja geopolítica:</strong> pertenecer a la UE y al Acuerdo Schengen permite viajar libremente por Europa para turismo y negocios.</li>
+            </ul>
+
+            <h3 class="h3">Citas textuales destacadas</h3>
+            <ul>
+              <li><em>"Este deseo de ir al extranjero comenzó cuando nuestro segundo hijo tenía cinco años y contrajo una enfermedad respiratoria muy grave. Coincidió con un período de altos niveles de contaminación en Beijing, así que queríamos salir e ir a un lugar más saludable."</em> (Huang, titular chino GV)</li>
+              <li><em>"No sabíamos nada sobre Portugal, conocía a Ronaldo y sabía que estaba al lado de España... Luego, me di cuenta que era un país de la Unión Europea y que era parte del Acuerdo de Schengen, y que sería bueno para viajar e incluso hacer negocios."</em> (Huang)</li>
+            </ul>
+
+            <div class="q-list">
+              <h3 class="h3">Preguntas</h3>
+              <ul>
+                <li>¿Cómo se relacionan las motivaciones de salud y educación de los inversores chinos con las políticas de desarrollo y bienestar en China?</li>
+                <li>¿Qué papel juegan las agencias de emigración chinas en la construcción de Portugal como destino migratorio?</li>
+                <li>¿Qué implicaciones tiene que Portugal sea una "segunda opción" para estos inversores?</li>
+                <li>¿De qué manera la pertenencia al espacio Schengen transforma el valor del GV más allá de Portugal mismo?</li>
+              </ul>
+            </div>
+
+            <p class="muted"><strong>Perfil:</strong> Familias de clase media de grandes ciudades (Beijing, Shanghai, Changsha), profesionales y empresarios que mantienen negocios en China, lo que genera separaciones familiares transitorias.</p>
+          </div>
+        </article>
+
+        <!-- Tarjeta 3: Inversores brasileños -->
+        <button id="toggleCard3Btn" class="add" style="margin-bottom:1.5rem;">
+          Mostrar Tarjeta 3
+        </button>
+        <article class="card" id="t3" style="display:none;">
+          <div class="card-header">
+            <span class="pill">Tarjeta 3</span>
+            Narrativas de inversores brasileños
+          </div>
+          <div class="card-body">
+            <h3 class="h3">Contexto político y motivaciones</h3>
+            <ul>
+              <li><strong>Turbulencia política:</strong> la destitución de Dilma Rousseff, el gobierno de Temer y la elección de Bolsonaro generaron dos oleadas migratorias: primero, brasileños de derecha "huyendo" de la crisis; luego, personas más jóvenes en busca de estilos de vida alternativos.</li>
+              <li><strong>Seguridad y violencia urbana:</strong> tema ubicuo en las narrativas; la "banalidad de la violencia" en Brasil (robos, homicidios, inseguridad cotidiana) es el principal impulsor de la emigración.</li>
+              <li><strong>Competencia profesional menos intensa:</strong> en Brasil, "hay millones de candidatos" para cada trabajo; en Portugal, la presión laboral y escolar es percibida como menor.</li>
+              <li><strong>Búsqueda de mejor calidad de vida:</strong> estos inversores son "lifestyle migrants" — relativamente afluentes, pero no suficientemente ricos para dejar de trabajar; buscan un estilo de vida más despreocupado.</li>
+            </ul>
+
+            <h3 class="h3">Citas textuales destacadas</h3>
+            <ul>
+              <li><em>"La banalidad de la violencia en Brasil es absurda... el mejor lugar en Brasil ni siquiera se compara con el peor lugar aquí en Portugal."</em> (Débora, titular brasileña GV)</li>
+              <li><em>"Nosotros y nuestras hijas hemos estado en Portugal desde 2015... el próximo año nuestras hijas dejarán la escuela privada para asistir a una escuela pública... ¿puedes imaginar? Eso sería imposible en casa."</em> (Wilson, titular GV)</li>
+              <li><em>"En Brasil, hay muchas personas. Para cada trabajo que quieres obtener, hay millones de candidatos. Tienes que ser el primero, el mejor, en todo... Entonces, los que vinieron aquí son tiburones, no peces dorados."</em> (Débora)</li>
+            </ul>
+
+            <h3 class="h3">¿Por qué Portugal?</h3>
+            <ul>
+              <li><strong>Umbral de inversión más bajo:</strong> €500,000 en Portugal vs. £1 millón en Reino Unido o €10 millones en Francia.</li>
+              <li><strong>Lengua y cercanía cultural:</strong> aunque Portugal no figura en el imaginario brasileño como "país desarrollado del Primer Mundo" (y es objeto de bromas despectivas), la familiaridad lingüística y cultural facilita la adaptación.</li>
+              <li><strong>Ubicación central para viajar:</strong> Portugal es percibido como una "base europea" desde la cual viajar más que como un destino en sí mismo.</li>
+            </ul>
+
+            <div class="q-list">
+              <h3 class="h3">Preguntas</h3>
+              <ul>
+                <li>¿Cómo se relaciona la violencia urbana en Brasil con los procesos de desarrollo urbano y desigualdad económica del país?</li>
+                <li>¿Qué revela la frase "los que vinieron aquí son tiburones, no peces dorados" sobre la clase social y el perfil de los inversores brasileños?</li>
+                <li>¿De qué manera la percepción de Portugal como "retrógrado" o "menos desarrollado" coexiste con su elección como destino migratorio?</li>
+                <li>¿Cómo se relaciona la búsqueda de "calidad de vida" con las nociones de desarrollo y bienestar que hemos discutido en el curso?</li>
+              </ul>
+            </div>
+
+            <p class="muted"><strong>Perfil:</strong> Profesionales altamente cualificados con carreras exitosas en artes, finanzas, medios y publicidad; algunos continúan su línea de trabajo, otros abrazan caminos profesionales completamente diferentes.</p>
+          </div>
+        </article>
+
+        <!-- Tarjeta 4: Intersección con turismo -->
+        <button id="toggleCard4Btn" class="add" style="margin-bottom:1.5rem;">
+          Mostrar Tarjeta 4
+        </button>
+        <article class="card" id="t4" style="display:none;">
+          <div class="card-header">
+            <span class="pill">Tarjeta 4</span>
+            La intersección entre migración y turismo
+          </div>
+          <div class="card-body">
+            <h3 class="h3">Turismo en las narrativas estatales y de inversores</h3>
+            <ul>
+              <li><strong>Promoción estatal:</strong> la agencia AICEP (Portugal Global) combina argumentos económicos con imágenes turísticas estereotipadas (sol, mar, ocio, premios internacionales) para atraer inversores.</li>
+              <li><strong>Requisitos mínimos de residencia:</strong> el Estado solo exige 7-14 días anuales de presencia, sugiriendo que NO espera que los inversores vivan realmente en el país.</li>
+              <li><strong>Encuentros como turistas:</strong> muchos brasileños vinieron primero como turistas, exploraron posibilidades de reubicación y luego obtuvieron el GV. Algunos se convirtieron en promotores de turismo o agentes consultores.</li>
+              <li><strong>Portugal como base de viaje:</strong> ambos grupos (chinos y brasileños) valoran Portugal principalmente como punto de partida para viajar por Europa, maximizando posibilidades de turismo.</li>
+              <li><strong>"Viajar a Europa":</strong> los brasileños hablan de viajar "a" Europa (no "por" o "en"), expresando la percepción de que Portugal no es plenamente "Europa" en su imaginario.</li>
+            </ul>
+
+            <h3 class="h3">Cita textual destacada</h3>
+            <ul>
+              <li><em>"Portugal es del tamaño de Piauí, para nosotros todo está cerca... viajar dos horas y media, y estar allí, lejos... Viajar desde Portugal es mucho más fácil que desde Brasil. Mis padres compraron un apartamento aquí como forma de obtener su permiso de residencia. Viajan mucho. ¡Es genial para ellos!"</em> (Sandra, titular GV)</li>
+            </ul>
+
+            <div class="q-list">
+              <h3 class="h3">Preguntas</h3>
+              <ul>
+                <li>¿Cómo difumina el programa Golden Visa las fronteras entre turismo y migración?</li>
+                <li>¿Qué implica que el Estado promueva a Portugal como destino turístico para atraer inversores? ¿Es una estrategia efectiva o contradictoria?</li>
+                <li>¿De qué manera el uso de Portugal como "base de viaje" transforma la noción tradicional de residencia y pertenencia?</li>
+                <li>¿Qué diferencias existen entre la "migración emprendedora de turismo" y otras formas de migración laboral?</li>
+              </ul>
+            </div>
+
+            <p class="muted"><strong>Concepto clave:</strong> "Migración emprendedora de turismo" — caso especial de migración en busca de estilo de vida combinada con migración laboral, donde individuos están motivados primero por consideraciones de calidad de vida.</p>
+          </div>
+        </article>
+
+        <!-- Tarjeta 5: Conclusiones y reflexiones teóricas -->
+        <button id="toggleCard5Btn" class="add" style="margin-bottom:1.5rem;">
+          Mostrar Tarjeta 5
+        </button>
+        <article class="card" id="t5" style="display:none;">
+          <div class="card-header">
+            <span class="pill">Tarjeta 5</span>
+            Conclusiones: "Inversores de estilo de vida"
+          </div>
+          <div class="card-body">
+            <h3 class="h3">Hallazgos principales</h3>
+            <ul>
+              <li><strong>Similitudes entre chinos y brasileños:</strong> ambos buscan salir de sus países de origen y abandonar ciertos estilos de vida; Portugal NO es primera opción, pero es la más viable; valoran su ubicación geopolítica para viajar.</li>
+              <li><strong>Diferencias:</strong> los chinos verbalizan preocupaciones sobre educación y contaminación (cautelosos con temas políticos); los brasileños son vocales sobre violencia e inestabilidad política.</li>
+              <li><strong>Inversores como migrantes:</strong> buscan oportunidades para mejorar calidad de vida, NO solo para expatriar o maximizar capital; viven y trabajan en Portugal.</li>
+              <li><strong>Deconstrucción de estereotipos:</strong> los datos desafían la imagen de inversores como "super-ricos y ausentes"; al contrario, son profesionales activos que buscan cambiar cómo viven ellos y sus familias.</li>
+              <li><strong>Concepto propuesto:</strong> "inversores de estilo de vida" (lifestyle investors) — más interesados en cambiar estilos de vida que en maximizar capital.</li>
+            </ul>
+
+            <h3 class="h3">Reflexiones teóricas</h3>
+            <ul>
+              <li><strong>Categorías de análisis vs. categorías de práctica:</strong> lo que el Estado define como "inversor" NO necesariamente coincide con las construcciones subjetivas de los titulares GV.</li>
+              <li><strong>"Studying up":</strong> estudiar élites permite cuestionar narrativas dominantes sobre migración y visibilizar las desigualdades estructurales del sistema global.</li>
+              <li><strong>Bourdieu y el lifestyle:</strong> las opciones de estilo de vida resultan de relaciones entre capital económico, cultural y social en contextos específicos.</li>
+              <li><strong>Migración y turismo:</strong> el capítulo muestra cómo ambas categorías se superponen en la construcción subjetiva del "inversor".</li>
+            </ul>
+
+            <div class="q-list">
+              <h3 class="h3">Preguntas finales</h3>
+              <ul>
+                <li>¿Qué implicaciones tiene conceptualizar a los inversores GV como "lifestyle migrants" en lugar de "migrantes económicos"?</li>
+                <li>¿Cómo se relaciona el caso de los inversores GV con las teorías de migración y desarrollo que hemos discutido en el curso?</li>
+                <li>¿Qué revela el programa Golden Visa sobre las jerarquías globales de movilidad y ciudadanía?</li>
+                <li>Comparación: ¿Cómo difiere la movilidad de los inversores GV de la movilidad de trabajadores temporales agrícolas (como vimos en el caso canadiense de la Actividad 4)?</li>
+                <li>¿Qué cambios legislativos recientes (exclusión de áreas costeras como Lisboa y Porto a partir de 2022) sugieren sobre la sostenibilidad del programa?</li>
+              </ul>
+            </div>
+
+            <p class="muted"><strong>Nota legislativa:</strong> En febrero de 2021, el gobierno portugués publicó nueva legislación (DR 14/2021) que excluye todas las áreas costeras continentales (Lisboa, Porto, Algarve) como áreas elegibles para inversión inmobiliaria GV a partir de enero 2022. Solo Madeira y Azores permanecen elegibles.</p>
+          </div>
+        </article>
+
+        <!-- Sección de Videos recomendados -->
+        <section style="margin-top:2.5rem;">
+          <h2 style="margin-bottom:1.2rem;">Videos recomendados sobre Golden Visa y migración de inversión</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:1.2rem;">
+            <div style="width:280px;">
+              <iframe width="280" height="158" src="https://www.youtube.com/embed/8e-wDARjOVs" title="Video 1" frameborder="0" allowfullscreen style="border-radius:12px;"></iframe>
+              <div style="font-size:.98rem; margin-top:.4rem; font-weight:500;">Golden Visa en Europa</div>
+            </div>
+            <div style="width:280px;">
+              <iframe width="280" height="158" src="https://www.youtube.com/embed/DsQefxG-SyA?start=1542" title="Video 2" frameborder="0" allowfullscreen style="border-radius:12px;"></iframe>
+              <div style="font-size:.98rem; margin-top:.4rem; font-weight:500;">Programas de residencia por inversión</div>
+            </div>
+            <div style="width:280px;">
+              <iframe width="280" height="158" src="https://www.youtube.com/embed/d3fPvlJxios" title="Video 3" frameborder="0" allowfullscreen style="border-radius:12px;"></iframe>
+              <div style="font-size:.98rem; margin-top:.4rem; font-weight:500;">Migración de inversores</div>
+            </div>
+            <div style="width:280px;">
+              <iframe width="280" height="158" src="https://www.youtube.com/embed/chf3oFj8PAY" title="Video 4" frameborder="0" allowfullscreen style="border-radius:12px;"></iframe>
+              <div style="font-size:.98rem; margin-top:.4rem; font-weight:500;">Portugal Golden Visa</div>
+            </div>
+            <div style="width:280px;">
+              <iframe width="280" height="158" src="https://www.youtube.com/embed/V7ZqEGiE3PY?start=397" title="Video 5" frameborder="0" allowfullscreen style="border-radius:12px;"></iframe>
+              <div style="font-size:.98rem; margin-top:.4rem; font-weight:500;">Ciudadanía por inversión</div>
+            </div>
+          </div>
+          <p class="muted" style="margin-top:1rem;"><strong>Nota:</strong> El tercer enlace proporcionado es un archivo de Google Drive, no un video de YouTube, por lo que no puede ser embebido. <a href="https://drive.google.com/file/d/1ZOdpD2VkwSKiUUI8XclrHrTAaUgjIohR/view?usp=drive_link" target="_blank">Accede directamente aquí</a>.</p>
+        </section>
+      </section>
+
+      <aside class="col-4">
+        <div class="panel">
+          <span class="badge">Guía de lectura</span>
+          <h3 style="margin:.5rem 0 0">Movilidad Privilegiada</h3>
+          <p class="meta"><strong>Referencia:</strong> Amante, M. F., & Rodrigues, I. (2023). Mobility Through Investment: Economics, Tourism, or Lifestyle Migration? En N. Bloch & K. M. Adams (eds.), <em>Intersections of Tourism, Migration, and Exile</em> (pp. 217-239). Routledge.</p>
+          <p class="meta"><strong>Objetivo:</strong> Analizar cómo los programas Golden Visa difuminan las fronteras entre migración, turismo e inversión, y reflexionar sobre las jerarquías globales de movilidad.</p>
+          <p class="meta" style="margin-top:1.5rem;">
+            <a href="glosario.html" class="add" style="display:inline-block;margin-top:.5rem;">📖 Glosario de conceptos</a>
+          </p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="brand"><span class="stripe"></span>
+        <div>Dr. Jorge Cardiel Herrera, Facultad de Contaduría y Administración, 2025, UNAM.</div>
+      </div>
+      <div>Colores inspirados en Golden Visa · Routledge.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Funciones para mostrar/ocultar tarjetas
+    const cards = [
+      { btnId: 'toggleCard1Btn', cardId: 't1', name: 'Tarjeta 1' },
+      { btnId: 'toggleCard2Btn', cardId: 't2', name: 'Tarjeta 2' },
+      { btnId: 'toggleCard3Btn', cardId: 't3', name: 'Tarjeta 3' },
+      { btnId: 'toggleCard4Btn', cardId: 't4', name: 'Tarjeta 4' },
+      { btnId: 'toggleCard5Btn', cardId: 't5', name: 'Tarjeta 5' }
+    ];
+
+    cards.forEach(({ btnId, cardId, name }) => {
+      const btn = document.getElementById(btnId);
+      const card = document.getElementById(cardId);
+      let visible = false;
+      
+      btn.addEventListener('click', () => {
+        visible = !visible;
+        card.style.display = visible ? 'block' : 'none';
+        btn.textContent = visible ? `Ocultar ${name}` : `Mostrar ${name}`;
+      });
+    });
+  </script>
+</body>
+</html>

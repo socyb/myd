@@ -1,0 +1,256 @@
+:root {
+  --gold: #d4af37; /* dorado principal */
+  --gold-dark: #b8932f;
+  --purple: #6b46c1; /* morado profundo */
+  --amber: #ffb84d;
+  --cream: #fffaf0;
+  --ink: #1a1a2e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: #f9f7f4;
+}
+
+a {
+  color: var(--purple);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+header {
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.hero {
+  padding: 3.5rem 1.25rem 2.75rem;
+  background: linear-gradient(135deg, rgba(107, 70, 193, .92), rgba(212, 175, 55, .90) 45%, rgba(255, 184, 77, .95) 85%), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="%23d4af37"/><stop offset="100%" stop-color="%236b46c1"/></linearGradient></defs><rect width="1200" height="400" fill="url(%23g)" opacity="0.25"/></svg>');
+  background-size: cover;
+  border-bottom: 8px solid var(--gold);
+}
+
+.hero-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.kicker {
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: .9rem;
+  opacity: .95;
+}
+
+.title {
+  margin: .35rem 0 0;
+  font-size: clamp(1.6rem, 4.2vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin: .5rem 0 0;
+  font-size: clamp(1rem, 2.3vw, 1.2rem);
+  opacity: .95;
+}
+
+/* Layout */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.2rem;
+}
+
+@media (min-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .col-8 {
+    grid-column: span 8;
+  }
+  .col-4 {
+    grid-column: span 4;
+  }
+}
+
+/* Card */
+.card {
+  background: var(--cream);
+  border-radius: 18px;
+  border: 1px solid #e8e0d5;
+  box-shadow: 0 6px 18px rgba(212, 175, 55, .15);
+  overflow: hidden;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .9rem 1rem;
+  background: linear-gradient(90deg, var(--gold), var(--amber));
+  color: #1a1a2e;
+  font-weight: 800;
+}
+
+.pill {
+  background: rgba(255, 255, 255, .92);
+  padding: .2rem .6rem;
+  border-radius: 999px;
+  font-size: .8rem;
+  letter-spacing: .02em;
+}
+
+.card-body {
+  padding: 1.1rem 1rem 1.2rem;
+}
+
+.h3 {
+  margin: .2rem 0 .65rem;
+  font-size: 1.15rem;
+}
+
+.muted {
+  color: #5a5470;
+}
+
+ul {
+  margin: .4rem 0 .8rem;
+  padding-left: 1.2rem;
+}
+
+li {
+  margin: .25rem 0;
+}
+
+.q-list {
+  border-top: 1px dashed #d4af37;
+  padding-top: .75rem;
+  margin-top: .75rem;
+}
+
+/* Side panel (meta) */
+.panel {
+  background: white;
+  border: 1px solid #e8e0d5;
+  border-radius: 16px;
+  padding: 1rem;
+  position: sticky;
+  top: 1rem;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--purple);
+  color: white;
+  border-radius: 999px;
+  padding: .28rem .55rem;
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.meta {
+  font-size: .92rem;
+  color: #5a5470;
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+  background: var(--purple);
+  color: #f5f3ff;
+}
+
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.brand .stripe {
+  width: 8px;
+  height: 28px;
+  background: var(--gold);
+  border-radius: 3px;
+}
+
+/* Add button */
+.add {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  border: 2px solid var(--purple);
+  border-radius: 999px;
+  padding: .5rem .9rem;
+  font-weight: 700;
+  background: white;
+}
+
+.add:hover {
+  background: #f5f3ff;
+}
+
+/* Presentation Mode Styles */
+.presentation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 2rem;
+  text-align: center;
+}
+
+.presentation h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.presentation p {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.presentation button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background: var(--purple);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.presentation button:hover {
+  background: var(--gold-dark);
+}

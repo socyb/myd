@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modo Presentación · Golden Visa</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    :root{
+      --gold:#d4af37;
+      --gold-dark:#b8932f;
+      --purple:#6b46c1;
+      --amber:#ffb84d;
+      --cream:#fffaf0;
+      --ink:#1a1a2e;
+    }
+    body {
+      background: var(--purple);
+      color: #fff;
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .presentation-container {
+      width: 100vw;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 2.5vh;
+      margin-bottom: 0;
+    }
+    .card-flip {
+      width: 100%;
+      max-width: 900px;
+      min-width: 0;
+      min-height: 220px;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .flip-inner {
+      width: 100%;
+      min-height: 220px;
+      position: relative;
+      transition: transform 0.7s cubic-bezier(.4,2,.3,1);
+      transform-style: preserve-3d;
+    }
+    .slide-face {
+      width: 100%;
+      max-width: 900px;
+      box-sizing: border-box;
+      background: rgba(255,250,240,0.97);
+      color: var(--ink);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(212,175,55,.18);
+      padding: 2rem 1.2rem;
+      font-size: 2.2rem;
+      text-align: center;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-y: auto;
+      word-break: break-word;
+    }
+    .slide-face.active {
+      display: flex;
+      animation: fadeIn .4s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .slide-face h1, .slide-face h2 {
+      color: var(--purple);
+      margin-bottom: 1.2rem;
+      font-size: 2.1rem;
+      font-weight: 900;
+      letter-spacing: .03em;
+    }
+    .controls {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2rem;
+      margin-top: 1.2rem;
+      position: static;
+      z-index: auto;
+    }
+    .btn {
+      background: var(--amber);
+      color: var(--ink);
+      border: none;
+      border-radius: 999px;
+      padding: 1rem 2.2rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: var(--gold);
+    }
+    @media (max-width: 700px) {
+      .slide-face {
+        font-size: 1.5rem;
+        padding: 1.5rem 1rem;
+      }
+      .slide-face h1, .slide-face h2 {
+        font-size: 1.6rem;
+      }
+      .btn {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="presentation-container">
+    <div class="card-flip">
+      <div class="flip-inner" id="flipInner">
+        <div class="slide-face front active" id="frontFace"></div>
+        <div class="slide-face back" id="backFace"></div>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="btn" id="prevBtn">Anterior</button>
+      <button class="btn" id="nextBtn">Siguiente</button>
+      <button class="btn" id="randomBtn" title="Pregunta aleatoria" style="font-size:1.4rem;display:flex;align-items:center;gap:.5rem;">
+        <span aria-hidden="true">🎲</span> Aleatoria
+      </button>
+      <a href="index.html" class="btn" id="backBtn" style="text-decoration:none;">Regresar a notas</a>
+    </div>
+  </div>
+<script>
+  const slides = [
+    {
+      front: '<h1>🌍 Movilidad a través de Inversión</h1><p style="font-size:1.5rem;">Golden Visa en Portugal: ¿Migración, Turismo o Inversión?</p><p style="font-size:1.2rem;margin-top:1rem;color:#5a5470;">Amante & Rodrigues (2023)</p>',
+      back: '<h2>Objetivo del estudio</h2><p style="font-size:1.4rem;">Analizar las motivaciones, expectativas y experiencias de inversores chinos y brasileños con Golden Visa en Portugal, contribuyendo a la discusión sobre los límites conceptuales entre migrantes y turistas.</p>'
+    },
+    {
+      front: '<h2>¿Qué es un Golden Visa?</h2><p style="font-size:1.6rem;margin-top:1rem;">Programa de residencia por inversión creado en Portugal en 2012</p>',
+      back: '<h2>Requisitos del programa</h2><ul style="font-size:1.3rem;text-align:left;"><li>€500,000 en bienes raíces</li><li>€1 millón en capital</li><li>Crear 30 empleos (10 desde 2015)</li><li>Solo 7-14 días de presencia anual</li></ul><p style="font-size:1.2rem;margin-top:1rem;color:#5a5470;">Hasta 2020: 9,767 GV otorgadas (94% en sector inmobiliario)</p>'
+    },
+    {
+      front: '<h2>¿Quiénes obtienen GV en Portugal?</h2><p style="font-size:1.6rem;">Principales nacionalidades</p>',
+      back: '<h2>Ranking de nacionalidades</h2><ol style="font-size:1.5rem;text-align:left;"><li>🇨🇳 Chinos (grupo más numeroso)</li><li>🇧🇷 Brasileños (segundo grupo)</li><li>🇹🇷 Turcos (tercer grupo)</li></ol>'
+    },
+    {
+      front: '<h2>Movilidad Privilegiada</h2><p style="font-size:1.5rem;margin-top:1rem;">¿Qué significa este concepto?</p>',
+      back: '<h2>Definición</h2><p style="font-size:1.3rem;">Forma de movilidad que deriva de <strong>ciudadanía, clase y capital cultural</strong>. NO incluye privación económica ni vidas en peligro.</p><p style="font-size:1.2rem;margin-top:1rem;color:#5a5470;">Categorías: profesionales cualificados, estudiantes, jubilados, expatriados, inversores.</p>'
+    },
+    {
+      front: '<h2>¿Por qué estudiar la movilidad privilegiada?</h2>',
+      back: '<h2>Importancia del "studying up"</h2><p style="font-size:1.3rem;">Permite <strong>destacar mejor la naturaleza e implicaciones de la desigualdad global</strong> y deconstruir la imagen sesgada del migrante como "no occidental, no blanco, no élite".</p><p style="font-size:1.2rem;margin-top:1rem;color:#5a5470;">(Nader, 1972; Ortner, 2010)</p>'
+    },
+    {
+      front: '<h2>🇨🇳 Inversores chinos</h2><p style="font-size:1.5rem;">¿Qué los motiva a dejar China?</p>',
+      back: '<h2>Motivaciones principales</h2><ul style="font-size:1.3rem;text-align:left;"><li>🏭 Contaminación extrema y salud familiar</li><li>📚 Presión del sistema educativo</li><li>⚖️ Razones políticas (Hong Kong)</li><li>🌍 Portugal = segunda opción viable</li><li>✈️ Acceso al espacio Schengen</li></ul>'
+    },
+    {
+      front: '<h2>Salud y medio ambiente</h2><p style="font-size:1.4rem;">"Este deseo de ir al extranjero comenzó cuando nuestro segundo hijo contrajo una enfermedad respiratoria muy grave..."</p>',
+      back: '<h2>Cita completa (Huang, titular chino GV)</h2><p style="font-size:1.2rem;text-align:left;">"...Coincidió con un período de altos niveles de contaminación en Beijing, así que queríamos salir e ir a un lugar más saludable."</p>'
+    },
+    {
+      front: '<h2>Educación de los hijos</h2><p style="font-size:1.4rem;">"Decidimos dejar China por el ambiente, pero fue principalmente por la educación..."</p>',
+      back: '<h2>Presión educativa (Zhang, esposa de titular GV)</h2><p style="font-size:1.2rem;text-align:left;">"...Estaba sufriendo gran ansiedad debido a la presión de las clasificaciones — los niños chinos sufren mucho."</p><p style="font-size:1.1rem;margin-top:1rem;color:#5a5470;">Importancia creciente de certificados de universidades occidentales para acumulación de capital social.</p>'
+    },
+    {
+      front: '<h2>Portugal: segunda opción</h2><p style="font-size:1.4rem;">"No sabíamos nada sobre Portugal, conocía a Ronaldo..."</p>',
+      back: '<h2>Cita completa (Huang)</h2><p style="font-size:1.15rem;text-align:left;">"...Luego, me di cuenta que era un país de la UE y parte del Acuerdo de Schengen, y que sería bueno para viajar e incluso hacer negocios."</p><p style="font-size:1.1rem;margin-top:1rem;color:#5a5470;">Primera opción: Canadá, EE.UU., Italia (rechazados o procesos muy largos)</p>'
+    },
+    {
+      front: '<h2>Perfil de familias chinas</h2><p style="font-size:1.5rem;">¿Quiénes son estos inversores?</p>',
+      back: '<h2>Características</h2><ul style="font-size:1.3rem;text-align:left;"><li>De grandes ciudades: Beijing, Shanghai, Changsha</li><li>Clase media: profesionales o empresarios</li><li>Sin muchos recursos para entrar a EE.UU./Canadá</li><li>Vienen como familias (niños + abuelos)</li><li>Algunos mantienen negocios en China</li></ul>'
+    },
+    {
+      front: '<h2>🇧🇷 Inversores brasileños</h2><p style="font-size:1.5rem;">¿Qué los motiva a dejar Brasil?</p>',
+      back: '<h2>Motivaciones principales</h2><ul style="font-size:1.3rem;text-align:left;"><li>⚠️ Seguridad y violencia urbana</li><li>🏛️ Turbulencia política (Dilma, Bolsonaro)</li><li>💼 Competencia profesional menos intensa</li><li>🌅 Búsqueda de mejor calidad de vida</li><li>💰 Umbral de inversión más bajo</li></ul>'
+    },
+    {
+      front: '<h2>La "banalidad de la violencia"</h2><p style="font-size:1.4rem;">"La banalidad de la violencia en Brasil es absurda..."</p>',
+      back: '<h2>Cita completa (Débora, titular brasileña GV)</h2><p style="font-size:1.1rem;text-align:left;">"...el mejor lugar en Brasil ni siquiera se compara con el peor lugar aquí en Portugal. Yo vivía en Copacabana... cuando salía del trabajo por la noche, la acera frente al edificio se transformaba en un dormitorio para personas sin hogar, mendigos."</p>'
+    },
+    {
+      front: '<h2>Seguridad y vida cotidiana</h2><p style="font-size:1.4rem;">"Nosotros y nuestras hijas hemos estado en Portugal desde 2015..."</p>',
+      back: '<h2>Cambio de vida (Wilson, titular GV)</h2><p style="font-size:1.2rem;text-align:left;">"...En estos cuatro años, nos adaptamos a una vida más calmada. El próximo año nuestras hijas dejarán la escuela privada para asistir a una escuela pública... ¿puedes imaginar? Eso sería imposible en casa."</p>'
+    },
+    {
+      front: '<h2>Competencia profesional</h2><p style="font-size:1.4rem;">"En Brasil, hay muchas personas..."</p>',
+      back: '<h2>Cita completa (Débora)</h2><p style="font-size:1.2rem;text-align:left;">"...Para cada trabajo que quieres obtener, hay millones de candidatos. Tienes que ser el primero, el mejor, en todo. Estamos acostumbrados a ello. El nivel de competencia en Brasil es más alto... Entonces, los que vinieron aquí son tiburones, no peces dorados."</p>'
+    },
+    {
+      front: '<h2>Contexto político brasileño</h2><p style="font-size:1.5rem;">Dos oleadas migratorias</p>',
+      back: '<h2>Cronología política</h2><p style="font-size:1.2rem;text-align:left;"><strong>Primera oleada (2015-2016):</strong> Destitución de Dilma Rousseff → brasileños de derecha "huyendo"<br><br><strong>Segunda oleada (2018+):</strong> Elección de Bolsonaro → personas más jóvenes buscando estilos de vida alternativos</p>'
+    },
+    {
+      front: '<h2>¿Por qué Portugal?</h2><p style="font-size:1.5rem;">(Para brasileños)</p>',
+      back: '<h2>Tres razones principales</h2><ul style="font-size:1.3rem;text-align:left;"><li><strong>Inversión más baja:</strong> €500k vs. £1M (UK) o €10M (Francia)</li><li><strong>Lengua y cultura:</strong> Familiaridad (aunque Portugal = "retrógrado")</li><li><strong>Base de viaje:</strong> Ubicación central en Europa</li></ul>'
+    },
+    {
+      front: '<h2>Portugal como base de viaje</h2><p style="font-size:1.4rem;">"Portugal es del tamaño de Piauí..."</p>',
+      back: '<h2>Cita completa (Sandra)</h2><p style="font-size:1.1rem;text-align:left;">"...para nosotros todo está cerca... Viajar desde Portugal es mucho más fácil que desde Brasil. Mis padres compraron un apartamento aquí como forma de obtener su permiso de residencia. Viajan mucho. ¡Es genial para ellos! Cuando nació mi hija, se suponía que se quedaran un año, pero durante ese período también reservaron 'mil' viajes a Europa."</p>'
+    },
+    {
+      front: '<h2>Perfil de brasileños</h2><p style="font-size:1.5rem;">¿Quiénes son estos inversores?</p>',
+      back: '<h2>Características</h2><ul style="font-size:1.3rem;text-align:left;"><li>Altamente cualificados</li><li>Status económico privilegiado (pero NO super-ricos)</li><li>Profesionalmente activos: artes, finanzas, medios, publicidad</li><li>Algunos continúan su carrera, otros cambian completamente</li></ul>'
+    },
+    {
+      front: '<h2>🏖️ La intersección con turismo</h2><p style="font-size:1.5rem;">¿Cómo se relacionan migración y turismo?</p>',
+      back: '<h2>Tres conexiones clave</h2><ul style="font-size:1.3rem;text-align:left;"><li><strong>Promoción estatal:</strong> AICEP mezcla economía + turismo</li><li><strong>Encuentros iniciales:</strong> Brasileños vienen como turistas primero</li><li><strong>Base de viaje:</strong> Portugal como punto de partida europeo</li></ul>'
+    },
+    {
+      front: '<h2>Promoción estatal</h2><p style="font-size:1.5rem;">AICEP - Portugal Global</p>',
+      back: '<h2>Estrategia de atracción</h2><p style="font-size:1.2rem;">Combina <strong>argumentos económicos</strong> con <strong>imágenes turísticas estereotipadas</strong> (sol, mar, ocio, premios internacionales).</p><p style="font-size:1.1rem;margin-top:1rem;color:#5a5470;">Película promocional: velero + Praça do Comércio + indicadores económicos</p>'
+    },
+    {
+      front: '<h2>Requisitos mínimos de residencia</h2><p style="font-size:1.5rem;">7-14 días por año</p>',
+      back: '<h2>¿Qué implica esto?</h2><p style="font-size:1.3rem;">El Estado portugués <strong>NO espera que los inversores vivan realmente en el país</strong>. Pero en la práctica, muchos titulares GV residen en Portugal más tiempo del requerido.</p><p style="font-size:1.1rem;margin-top:1rem;color:#5a5470;">Contraste: expectativas estatales vs. experiencias de inversores</p>'
+    },
+    {
+      front: '<h2>"Migración emprendedora de turismo"</h2><p style="font-size:1.5rem;">¿Qué es este concepto?</p>',
+      back: '<h2>Definición</h2><p style="font-size:1.2rem;">Caso especial de migración en busca de estilo de vida combinada con migración laboral, donde individuos están motivados primero por <strong>consideraciones de calidad de vida</strong> y luego invierten en actividades turísticas.</p><p style="font-size:1.1rem;margin-top:1rem;color:#5a5470;">Ejemplo: brasileños que abren agencias de viaje en Portugal</p>'
+    },
+    {
+      front: '<h2>💡 Conclusiones del estudio</h2><p style="font-size:1.5rem;">¿Qué aprendimos?</p>',
+      back: '<h2>Hallazgos principales</h2><ul style="font-size:1.2rem;text-align:left;"><li>Inversores buscan <strong>cambiar estilos de vida</strong>, no solo expatriar capital</li><li>Portugal = segunda opción viable (no primera)</li><li>Viven y trabajan en Portugal (no son ausentes)</li><li>Valoran ubicación geopolítica para viajar</li></ul>'
+    },
+    {
+      front: '<h2>Similitudes entre chinos y brasileños</h2>',
+      back: '<h2>Puntos en común</h2><ul style="font-size:1.2rem;text-align:left;"><li>Deseo fuerte de salir de países de origen</li><li>Buscan estilos de vida sin problemas de origen</li><li>Portugal = opción más viable (no primera)</li><li>Ubicación ventajosa para viajar</li><li>Motivaciones se asemejan a migrantes (no solo inversores)</li></ul>'
+    },
+    {
+      front: '<h2>Diferencias principales</h2>',
+      back: '<h2>Contrastes clave</h2><ul style="font-size:1.2rem;text-align:left;"><li><strong>Chinos:</strong> Verbalizan educación/contaminación; cautelosos con política</li><li><strong>Brasileños:</strong> Muy vocales sobre violencia/inestabilidad política</li><li><strong>Vínculos históricos:</strong> Brasil tiene proximidad lingüística/cultural fuerte; China no</li></ul>'
+    },
+    {
+      front: '<h2>"Lifestyle Investors"</h2><p style="font-size:1.5rem;">Concepto propuesto</p>',
+      back: '<h2>Inversores de estilo de vida</h2><p style="font-size:1.2rem;">Personas <strong>más interesadas en cambiar cómo ellos y sus familias viven</strong> que en maximizar o esconder su capital.</p><p style="font-size:1.1rem;margin-top:1rem;color:#5a5470;">Deconstruye imagen de inversores como super-ricos y ausentes.</p>'
+    },
+    {
+      front: '<h2>Deconstrucción de estereotipos</h2>',
+      back: '<h2>Lo que el estudio revela</h2><p style="font-size:1.2rem;">Los datos desafían concepciones del inversor como categoría enteramente económica. Ubican al inversor en territorio <strong>borroso e interseccional de migración y turismo</strong>.</p>'
+    },
+    {
+      front: '<h2>📍 Cambios legislativos 2021</h2><p style="font-size:1.5rem;">Nueva regulación del programa</p>',
+      back: '<h2>Enmienda de febrero 2021 (DR 14/2021)</h2><p style="font-size:1.2rem;text-align:left;">A partir de enero 2022: <strong>exclusión de todas las áreas costeras continentales</strong> (Lisboa, Porto, Algarve) como áreas elegibles para inversión inmobiliaria GV.</p><p style="font-size:1.1rem;margin-top:1rem;">Solo Madeira y Azores permanecen elegibles.</p>'
+    },
+    {
+      front: '<h2>🤔 Pregunta para reflexión 1</h2><p style="font-size:1.4rem;">¿Por qué es importante estudiar la movilidad privilegiada?</p>',
+      back: '<h2>Posible respuesta</h2><p style="font-size:1.2rem;">Permite <strong>destacar la naturaleza e implicaciones de la desigualdad global</strong> en los sistemas migratorios y deconstruir la imagen sesgada del migrante como "no occidental, no blanco, no élite".</p>'
+    },
+    {
+      front: '<h2>🤔 Pregunta para reflexión 2</h2><p style="font-size:1.4rem;">¿Qué implica que Portugal requiera solo 7-14 días de presencia anual?</p>',
+      back: '<h2>Implicaciones</h2><p style="font-size:1.2rem;">Cuestiona las nociones tradicionales de <strong>residencia, inversión y pertenencia</strong>. Sugiere que el Estado no espera integración real, pero en práctica muchos inversores viven más tiempo del requerido.</p>'
+    },
+    {
+      front: '<h2>🤔 Pregunta para reflexión 3</h2><p style="font-size:1.4rem;">¿Cómo se relacionan las motivaciones de salud y educación de los chinos con las políticas de desarrollo en China?</p>',
+      back: '<h2>Conexión con desarrollo</h2><p style="font-size:1.2rem;">La contaminación extrema y la presión educativa reflejan <strong>costos sociales del modelo de desarrollo acelerado chino</strong>: crecimiento económico a expensas de calidad de vida y bienestar.</p>'
+    },
+    {
+      front: '<h2>🤔 Pregunta para reflexión 4</h2><p style="font-size:1.4rem;">¿De qué manera la violencia urbana en Brasil se relaciona con procesos de desarrollo?</p>',
+      back: '<h2>Desarrollo y violencia</h2><p style="font-size:1.2rem;">La "banalización de la violencia" está vinculada a <strong>desigualdad económica extrema, urbanización desigual y exclusión social</strong> — problemas estructurales del modelo de desarrollo brasileño.</p>'
+    },
+    {
+      front: '<h2>🤔 Pregunta para reflexión 5</h2><p style="font-size:1.4rem;">¿Cómo difiere la movilidad de inversores GV de la movilidad de trabajadores temporales agrícolas?</p>',
+      back: '<h2>Jerarquías de movilidad</h2><p style="font-size:1.2rem;">Inversores GV: capital económico → acceso privilegiado, libre circulación Schengen, camino a residencia permanente.<br><br>Trabajadores agrícolas: labor esencial → movilidad restringida, sin camino a permanencia, condiciones precarias.</p>'
+    },
+    {
+      front: '<h2>🤔 Pregunta para reflexión 6</h2><p style="font-size:1.4rem;">¿Qué revela el programa Golden Visa sobre las jerarquías globales de ciudadanía?</p>',
+      back: '<h2>Ciudadanía como mercancía</h2><p style="font-size:1.2rem;">El GV muestra cómo la <strong>ciudadanía y la residencia pueden ser "compradas"</strong> por quienes tienen capital, mientras que otros enfrentan barreras insuperables — evidencia de desigualdad estructural global.</p>'
+    },
+    {
+      front: '<h2>🎯 Concepto clave final</h2><p style="font-size:1.5rem;">Lifestyle Migration</p>',
+      back: '<h2>Definición</h2><p style="font-size:1.2rem;">"Individuos relativamente afluentes de todas las edades, moviéndose a tiempo parcial o completo a lugares que, por varias razones, <strong>significan para el migrante una mejor calidad de vida</strong>."</p><p style="font-size:1.1rem;margin-top:1rem;color:#5a5470;">(Benson y O\'Reilly, 2018)</p>'
+    }
+  ];
+
+  let currentIndex = 0;
+  const frontFace = document.getElementById('frontFace');
+  const backFace = document.getElementById('backFace');
+  const flipInner = document.getElementById('flipInner');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const randomBtn = document.getElementById('randomBtn');
+
+  function showSlide(index) {
+    frontFace.classList.remove('active');
+    backFace.classList.remove('active');
+    
+    setTimeout(() => {
+      frontFace.innerHTML = slides[index].front;
+      backFace.innerHTML = slides[index].back;
+      frontFace.classList.add('active');
+    }, 100);
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  function randomSlide() {
+    const randomIndex = Math.floor(Math.random() * slides.length);
+    currentIndex = randomIndex;
+    showSlide(currentIndex);
+  }
+
+  prevBtn.addEventListener('click', prevSlide);
+  nextBtn.addEventListener('click', nextSlide);
+  randomBtn.addEventListener('click', randomSlide);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextSlide();
+    if (e.key === 'ArrowLeft') prevSlide();
+    if (e.key === ' ') {
+      e.preventDefault();
+      frontFace.classList.toggle('active');
+      backFace.classList.toggle('active');
+    }
+  });
+
+  // Inicializar primera diapositiva
+  showSlide(0);
+</script>
+</body>
+</html>
