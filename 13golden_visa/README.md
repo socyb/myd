@@ -1,5 +1,7 @@
 # Actividad 13: Movilidad a través de Inversión - Golden Visa en Portugal
 
+🌐 **[Ver actividad en línea](https://socyb.github.io/myd/13golden_visa/index.html)**
+
 ## Descripción
 
 Esta actividad explora el programa Golden Visa de Portugal y las narrativas de inversores chinos y brasileños que lo utilizan. El material está basado en el capítulo "Mobility Through Investment: Economics, Tourism, or Lifestyle Migration?" de Maria de Fátima Amante e Irene Rodrigues (2023).
