@@ -7,7 +7,9 @@ Esta actividad explora el programa Golden Visa de Portugal y las narrativas de i
 ## Estructura
 
 - **index.html**: Página principal con tarjetas desplegables que contienen el análisis de la lectura
-- **presentacion.html**: Modo presentación para discusión en clase
+- **presentacion.html**: Preguntas para discutir con dos vistas (individual y completa)
+- **slides.html**: Presentación animada de 13 diapositivas con SVG, videos integrados y elementos interactivos
+- **guion-presentacion.html**: Guión detallado para el profesor con puntos clave de cada diapositiva (archivo no vinculado)
 - **glosario.html**: Glosario de conceptos clave
 - **css/styles.css**: Estilos visuales con tema dorado/morado
 

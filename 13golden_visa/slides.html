@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Presentación · Golden Visa en Portugal</title>
+  <style>
+    :root{
+      --gold:#d4af37;
+      --gold-dark:#b8932f;
+      --purple:#6b46c1;
+      --amber:#ffb84d;
+      --cream:#fffaf0;
+      --ink:#1a1a2e;
+    }
+    * {box-sizing: border-box; margin: 0; padding: 0;}
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: linear-gradient(135deg, var(--purple) 0%, #4a2f7a 100%);
+      color: white;
+      overflow: hidden;
+      height: 100vh;
+    }
+    .slide-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .slide {
+      display: none;
+      width: 90%;
+      max-width: 1200px;
+      height: 85vh;
+      background: rgba(255, 250, 240, 0.98);
+      border-radius: 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      padding: 3rem 4rem;
+      position: relative;
+      overflow-y: auto;
+      animation: slideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .slide.active {
+      display: block;
+    }
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    .slide-title {
+      color: var(--purple);
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .slide-subtitle {
+      color: var(--gold-dark);
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+    .slide-content {
+      color: var(--ink);
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+    .term {
+      color: var(--purple);
+      font-weight: 700;
+      cursor: help;
+      border-bottom: 2px dotted var(--gold);
+      position: relative;
+      transition: all 0.3s;
+    }
+    .term:hover {
+      background: rgba(212, 175, 55, 0.1);
+      padding: 0 4px;
+    }
+    .question-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--amber);
+      color: var(--ink);
+      border: none;
+      border-radius: 999px;
+      padding: 0.5rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin: 0.5rem 0;
+      transition: all 0.3s;
+    }
+    .question-btn:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      max-width: 600px;
+      z-index: 1000;
+      animation: popupIn 0.3s forwards;
+    }
+    .popup.active {
+      display: block;
+    }
+    @keyframes popupIn {
+      to {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 999;
+    }
+    .popup-overlay.active {
+      display: block;
+    }
+    .popup-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--purple);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .popup h3 {
+      color: var(--purple);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    .popup p {
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    .nav-controls {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 1rem;
+      z-index: 100;
+    }
+    .nav-btn {
+      background: var(--amber);
+      color: var(--ink);
+      border: none;
+      border-radius: 999px;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .nav-btn:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+    }
+    .nav-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .slide-number {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      background: var(--purple);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .stat-box {
+      background: linear-gradient(135deg, var(--purple), var(--gold));
+      color: white;
+      padding: 1.5rem;
+      border-radius: 15px;
+      text-align: center;
+      animation: fadeInUp 0.6s ease-out;
+    }
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 900;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .stat-label {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .video-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .video-card iframe {
+      width: 100%;
+      height: 200px;
+    }
+    .video-title {
+      padding: 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ink);
+      background: var(--cream);
+    }
+    ul.key-points {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+    ul.key-points li {
+      padding: 0.75rem 0.75rem 0.75rem 3rem;
+      position: relative;
+      margin: 0.75rem 0;
+      background: rgba(107, 70, 193, 0.05);
+      border-left: 4px solid var(--gold);
+      border-radius: 8px;
+      animation: fadeInUp 0.5s ease-out;
+      animation-fill-mode: both;
+    }
+    ul.key-points li:nth-child(1) { animation-delay: 0.1s; }
+    ul.key-points li:nth-child(2) { animation-delay: 0.2s; }
+    ul.key-points li:nth-child(3) { animation-delay: 0.3s; }
+    ul.key-points li:nth-child(4) { animation-delay: 0.4s; }
+    ul.key-points li:nth-child(5) { animation-delay: 0.5s; }
+    ul.key-points li::before {
+      content: '✓';
+      position: absolute;
+      left: 1rem;
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 1.3rem;
+    }
+    .svg-container {
+      margin: 2rem 0;
+      display: flex;
+      justify-content: center;
+    }
+    .flow-arrow {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+    .icon-large {
+      font-size: 4rem;
+      text-align: center;
+      margin: 1rem 0;
+      animation: bounce 1s ease-in-out infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .comparison-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .comparison-col {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 15px;
+      border: 3px solid var(--gold);
+    }
+    .comparison-col h3 {
+      color: var(--purple);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    .comparison-col ul {
+      list-style: none;
+    }
+    .comparison-col li {
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed #ddd;
+    }
+    .comparison-col li:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    
+    <!-- Slide 1: Título -->
+    <div class="slide active" data-slide="1">
+      <div class="slide-number">1/13</div>
+      <div style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div class="icon-large">🌍💰</div>
+        <h1 class="slide-title">Movilidad a través de Inversión:<br>Golden Visa en Portugal</h1>
+        <p class="slide-subtitle">¿Migración, Turismo o Inversión?</p>
+        <svg width="400" height="120" style="margin: 2rem 0;">
+          <circle cx="70" cy="60" r="40" fill="#6b46c1" opacity="0.7">
+            <animate attributeName="r" values="40;45;40" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <text x="70" y="70" text-anchor="middle" fill="white" font-size="30" font-weight="bold">🇨🇳</text>
+          
+          <circle cx="200" cy="60" r="40" fill="#d4af37" opacity="0.7">
+            <animate attributeName="r" values="40;45;40" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+          </circle>
+          <text x="200" y="70" text-anchor="middle" fill="white" font-size="30" font-weight="bold">🇵🇹</text>
+          
+          <circle cx="330" cy="60" r="40" fill="#6b46c1" opacity="0.7">
+            <animate attributeName="r" values="40;45;40" dur="2s" repeatCount="indefinite" begin="1s"/>
+          </circle>
+          <text x="330" y="70" text-anchor="middle" fill="white" font-size="30" font-weight="bold">🇧🇷</text>
+          
+          <line x1="110" y1="60" x2="160" y2="60" stroke="#ffb84d" stroke-width="3">
+            <animate attributeName="x2" values="110;160;110" dur="1.5s" repeatCount="indefinite"/>
+          </line>
+          <line x1="240" y1="60" x2="290" y2="60" stroke="#ffb84d" stroke-width="3">
+            <animate attributeName="x2" values="240;290;240" dur="1.5s" repeatCount="indefinite"/>
+          </line>
+        </svg>
+        <p style="color: var(--gold-dark); font-size: 1.2rem; font-weight: 600; text-align: center;">
+          Amante & Rodrigues (2023) · <em>Intersections of Tourism, Migration, and Exile</em>
+        </p>
+      </div>
+    </div>
+
+    <!-- Slide 2: ¿Qué es el Golden Visa? -->
+    <div class="slide" data-slide="2">
+      <div class="slide-number">2/13</div>
+      <h1 class="slide-title">¿Qué es el <span class="term" data-term="golden-visa">Golden Visa</span>?</h1>
+      <div class="slide-content">
+        <p style="font-size: 1.3rem; text-align: center; margin: 2rem 0; color: var(--purple); font-weight: 600;">
+          Programa de residencia por inversión creado en Portugal en 2012
+        </p>
+        
+        <div class="two-col" style="margin: 2rem 0;">
+          <div class="stat-box" style="animation-delay: 0.2s;">
+            <span class="stat-number">€500K</span>
+            <span class="stat-label">Inversión en<br>bienes raíces</span>
+          </div>
+          <div class="stat-box" style="animation-delay: 0.3s;">
+            <span class="stat-number">€1M</span>
+            <span class="stat-label">Inversión en<br>capital</span>
+          </div>
+          <div class="stat-box" style="animation-delay: 0.4s;">
+            <span class="stat-number">10-30</span>
+            <span class="stat-label">Empleos<br>creados</span>
+          </div>
+          <div class="stat-box" style="animation-delay: 0.5s;">
+            <span class="stat-number">7-14</span>
+            <span class="stat-label">Días presencia<br>anual</span>
+          </div>
+        </div>
+
+        <div style="background: white; padding: 1.5rem; border-radius: 15px; margin: 2rem 0;">
+          <p style="font-size: 1.1rem; color: var(--purple); font-weight: 700; text-align: center;">
+            📊 Hasta 2020: <span style="color: var(--gold); font-size: 1.5rem;">9,767</span> Golden Visas otorgadas
+          </p>
+          <p style="text-align: center; margin-top: 0.5rem; color: var(--ink);">
+            (94% en sector inmobiliario)
+          </p>
+        </div>
+
+        <button class="question-btn" onclick="showQuestion('q1')">💭 ¿Qué revela sobre jerarquías globales?</button>
+      </div>
+    </div>
+
+    <!-- Slide 3: Movilidad Privilegiada -->
+    <div class="slide" data-slide="3">
+      <div class="slide-number">3/13</div>
+      <h1 class="slide-title"><span class="term" data-term="movilidad-privilegiada">Movilidad Privilegiada</span></h1>
+      <div class="slide-content">
+        <p style="font-size: 1.3rem; text-align: center; margin: 2rem 0; font-style: italic; color: var(--gold-dark);">
+          "Forma de movilidad que deriva de ciudadanía, clase y capital cultural"
+        </p>
+
+        <div class="svg-container">
+          <svg width="600" height="300">
+            <!-- Centro -->
+            <circle cx="300" cy="150" r="60" fill="#d4af37" opacity="0.9"/>
+            <text x="300" y="145" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Movilidad</text>
+            <text x="300" y="165" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Privilegiada</text>
+            
+            <!-- Ciudadanía -->
+            <circle cx="150" cy="80" r="50" fill="#6b46c1" opacity="0.8">
+              <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <text x="150" y="85" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Ciudadanía</text>
+            
+            <!-- Clase -->
+            <circle cx="450" cy="80" r="50" fill="#6b46c1" opacity="0.8">
+              <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" begin="1s"/>
+            </circle>
+            <text x="450" y="85" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Clase</text>
+            
+            <!-- Capital Cultural -->
+            <circle cx="300" cy="260" r="50" fill="#6b46c1" opacity="0.8">
+              <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" begin="2s"/>
+            </circle>
+            <text x="300" y="255" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Capital</text>
+            <text x="300" y="270" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Cultural</text>
+            
+            <!-- Líneas conectoras -->
+            <line x1="180" y1="110" x2="260" y2="130" stroke="#ffb84d" stroke-width="3" class="flow-arrow"/>
+            <line x1="420" y1="110" x2="340" y2="130" stroke="#ffb84d" stroke-width="3" class="flow-arrow"/>
+            <line x1="300" y1="210" x2="300" y2="170" stroke="#ffb84d" stroke-width="3" class="flow-arrow"/>
+          </svg>
+        </div>
+
+        <ul class="key-points">
+          <li><strong>No hay</strong> adversidad económica ni vidas en peligro</li>
+          <li>Categorías: profesionales cualificados, estudiantes, jubilados, expatriados, inversores</li>
+          <li>Importancia del <span class="term" data-term="studying-up">"studying up"</span>: destacar desigualdades globales</li>
+        </ul>
+
+        <button class="question-btn" onclick="showQuestion('q2')">💭 ¿Por qué estudiar movilidad privilegiada?</button>
+      </div>
+    </div>
+
+    <!-- Slide 4: Principales nacionalidades -->
+    <div class="slide" data-slide="4">
+      <div class="slide-number">4/13</div>
+      <h1 class="slide-title">¿Quiénes obtienen Golden Visa?</h1>
+      <div class="slide-content">
+        <p style="font-size: 1.3rem; text-align: center; margin: 2rem 0; color: var(--purple); font-weight: 600;">
+          Principales nacionalidades de titulares
+        </p>
+
+        <div style="margin: 2rem 0;">
+          <div style="display: flex; align-items: center; margin: 1.5rem 0; background: white; padding: 1.5rem; border-radius: 15px; border-left: 8px solid #d4af37;">
+            <span style="font-size: 3rem; margin-right: 1.5rem;">🇨🇳</span>
+            <div style="flex: 1;">
+              <h3 style="color: var(--purple); font-size: 1.5rem; margin-bottom: 0.5rem;">1° Chinos</h3>
+              <div style="background: linear-gradient(90deg, #d4af37 0%, #d4af37 45%, #f0f0f0 45%); height: 30px; border-radius: 10px; position: relative;">
+                <span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-weight: 700; color: var(--ink);">Grupo más numeroso</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; margin: 1.5rem 0; background: white; padding: 1.5rem; border-radius: 15px; border-left: 8px solid #6b46c1;">
+            <span style="font-size: 3rem; margin-right: 1.5rem;">🇧🇷</span>
+            <div style="flex: 1;">
+              <h3 style="color: var(--purple); font-size: 1.5rem; margin-bottom: 0.5rem;">2° Brasileños</h3>
+              <div style="background: linear-gradient(90deg, #6b46c1 0%, #6b46c1 35%, #f0f0f0 35%); height: 30px; border-radius: 10px; position: relative;">
+                <span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-weight: 700; color: white;">Segundo grupo</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; margin: 1.5rem 0; background: white; padding: 1.5rem; border-radius: 15px; border-left: 8px solid #ffb84d;">
+            <span style="font-size: 3rem; margin-right: 1.5rem;">🇹🇷</span>
+            <div style="flex: 1;">
+              <h3 style="color: var(--purple); font-size: 1.5rem; margin-bottom: 0.5rem;">3° Turcos</h3>
+              <div style="background: linear-gradient(90deg, #ffb84d 0%, #ffb84d 20%, #f0f0f0 20%); height: 30px; border-radius: 10px; position: relative;">
+                <span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-weight: 700; color: var(--ink);">Tercer grupo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p style="text-align: center; font-size: 1.2rem; margin-top: 2rem; font-weight: 600; color: var(--gold-dark);">
+          🎯 Enfoque del estudio: Chinos y Brasileños
+        </p>
+      </div>
+    </div>
+
+    <!-- Slide 5: Inversores Chinos -->
+    <div class="slide" data-slide="5">
+      <div class="slide-number">5/13</div>
+      <h1 class="slide-title">🇨🇳 Inversores Chinos</h1>
+      <div class="slide-content">
+        <p class="slide-subtitle">¿Por qué dejan China?</p>
+
+        <ul class="key-points">
+          <li>🏭 <strong>Contaminación extrema</strong> y salud familiar</li>
+          <li>📚 <strong>Presión educativa</strong>: ansiedad por clasificaciones</li>
+          <li>⚖️ <strong>Razones políticas</strong> (especialmente Hong Kong)</li>
+          <li>🌍 <strong>Portugal = segunda opción</strong> (primera: Canadá, EE.UU., Italia)</li>
+          <li>✈️ <strong>Acceso Schengen</strong>: viajar y hacer negocios</li>
+        </ul>
+
+        <div style="background: white; padding: 1.5rem; border-radius: 15px; margin: 2rem 0; border-left: 5px solid var(--gold);">
+          <p style="font-style: italic; color: var(--ink); margin-bottom: 1rem;">
+            💬 "Este deseo de ir al extranjero comenzó cuando nuestro segundo hijo contrajo una enfermedad respiratoria muy grave... Coincidió con un período de altos niveles de contaminación en Beijing"
+          </p>
+          <p style="text-align: right; font-weight: 700; color: var(--purple);">— Huang, titular GV</p>
+        </div>
+
+        <div style="background: rgba(107, 70, 193, 0.1); padding: 1.5rem; border-radius: 15px;">
+          <p style="font-weight: 700; color: var(--purple); margin-bottom: 0.5rem;">👨‍👩‍👧‍👦 Perfil típico:</p>
+          <p>Familias de clase media de grandes ciudades (Beijing, Shanghai, Changsha), profesionales o empresarios</p>
+        </div>
+
+        <button class="question-btn" onclick="showQuestion('q3')">💭 ¿Relación con desarrollo en China?</button>
+      </div>
+    </div>
+
+    <!-- Slide 6: Inversores Brasileños -->
+    <div class="slide" data-slide="6">
+      <div class="slide-number">6/13</div>
+      <h1 class="slide-title">🇧🇷 Inversores Brasileños</h1>
+      <div class="slide-content">
+        <p class="slide-subtitle">¿Por qué dejan Brasil?</p>
+
+        <ul class="key-points">
+          <li>⚠️ <strong>Violencia urbana</strong>: "banalidad de la violencia"</li>
+          <li>🏛️ <strong>Turbulencia política</strong> (Dilma, Bolsonaro)</li>
+          <li>💼 <strong>Competencia profesional</strong> menos intensa</li>
+          <li>🌅 <strong>Calidad de vida</strong>: vida más calmada</li>
+          <li>💰 <strong>Inversión más baja</strong> que UK (£1M) o Francia (€10M)</li>
+        </ul>
+
+        <div style="background: white; padding: 1.5rem; border-radius: 15px; margin: 2rem 0; border-left: 5px solid var(--gold);">
+          <p style="font-style: italic; color: var(--ink); margin-bottom: 1rem;">
+            💬 "La banalidad de la violencia en Brasil es absurda... el mejor lugar en Brasil ni siquiera se compara con el peor lugar aquí en Portugal"
+          </p>
+          <p style="text-align: right; font-weight: 700; color: var(--purple);">— Débora, titular GV</p>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(107, 70, 193, 0.1), rgba(212, 175, 55, 0.1)); padding: 1.5rem; border-radius: 15px;">
+          <p style="font-weight: 700; color: var(--purple); margin-bottom: 1rem;">📅 Dos oleadas migratorias:</p>
+          <p><strong>2015-2016:</strong> Destitución de Dilma → derecha "huyendo"</p>
+          <p style="margin-top: 0.5rem;"><strong>2018+:</strong> Elección de Bolsonaro → jóvenes buscando estilos alternativos</p>
+        </div>
+
+        <button class="question-btn" onclick="showQuestion('q4')">💭 ¿Violencia y desarrollo en Brasil?</button>
+      </div>
+    </div>
+
+    <!-- Slide 7: Comparación Chinos vs Brasileños -->
+    <div class="slide" data-slide="7">
+      <div class="slide-number">7/13</div>
+      <h1 class="slide-title">Comparación: 🇨🇳 vs 🇧🇷</h1>
+      <div class="slide-content">
+        
+        <div class="comparison-table">
+          <div class="comparison-col">
+            <h3>✅ Similitudes</h3>
+            <ul>
+              <li>✓ Deseo fuerte de salir del país</li>
+              <li>✓ Buscan mejor calidad de vida</li>
+              <li>✓ Portugal = opción viable (no primera)</li>
+              <li>✓ Valoran ubicación para viajar</li>
+              <li>✓ Motivaciones de "migrantes"</li>
+            </ul>
+          </div>
+
+          <div class="comparison-col">
+            <h3>🔄 Diferencias</h3>
+            <ul>
+              <li><strong>🇨🇳:</strong> Educación/contaminación</li>
+              <li><strong>🇧🇷:</strong> Violencia/política</li>
+              <li><strong>🇨🇳:</strong> Cautelosos con política</li>
+              <li><strong>🇧🇷:</strong> Muy vocales sobre política</li>
+              <li><strong>🇧🇷:</strong> Proximidad lingüística/cultural</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="background: white; padding: 1.5rem; border-radius: 15px; margin: 2rem 0; text-align: center;">
+          <p style="font-size: 1.2rem; font-weight: 700; color: var(--purple); margin-bottom: 0.5rem;">
+            🔑 Concepto clave: <span class="term" data-term="lifestyle-investors">"Lifestyle Investors"</span>
+          </p>
+          <p style="color: var(--ink); font-style: italic;">
+            Más interesados en cambiar cómo viven que en maximizar capital
+          </p>
+        </div>
+
+        <button class="question-btn" onclick="showQuestion('q5')">💭 ¿Cómo difiere de trabajadores agrícolas?</button>
+      </div>
+    </div>
+
+    <!-- Slide 8: Intersección Turismo-Migración -->
+    <div class="slide" data-slide="8">
+      <div class="slide-number">8/13</div>
+      <h1 class="slide-title">🏖️ ¿Turista o Migrante?</h1>
+      <div class="slide-content">
+        <p style="font-size: 1.2rem; text-align: center; margin: 2rem 0; color: var(--gold-dark); font-weight: 600;">
+          Territorio borroso e interseccional
+        </p>
+
+        <div class="svg-container">
+          <svg width="600" height="250">
+            <!-- Círculo Turismo -->
+            <circle cx="200" cy="125" r="100" fill="#6b46c1" opacity="0.4">
+              <animate attributeName="opacity" values="0.4;0.6;0.4" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <text x="140" y="130" text-anchor="middle" fill="#1a1a2e" font-size="18" font-weight="bold">TURISMO</text>
+            
+            <!-- Círculo Migración -->
+            <circle cx="400" cy="125" r="100" fill="#d4af37" opacity="0.4">
+              <animate attributeName="opacity" values="0.4;0.6;0.4" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+            </circle>
+            <text x="460" y="130" text-anchor="middle" fill="#1a1a2e" font-size="18" font-weight="bold">MIGRACIÓN</text>
+            
+            <!-- Intersección -->
+            <text x="300" y="125" text-anchor="middle" fill="#1a1a2e" font-size="16" font-weight="bold">Golden</text>
+            <text x="300" y="145" text-anchor="middle" fill="#1a1a2e" font-size="16" font-weight="bold">Visa</text>
+          </svg>
+        </div>
+
+        <ul class="key-points">
+          <li>📢 <strong>AICEP</strong>: promoción mezcla economía + turismo</li>
+          <li>🛫 Brasileños vienen como <strong>turistas primero</strong></li>
+          <li>🗺️ Portugal como <strong>base para viajar</strong> en Europa</li>
+          <li>⏱️ Solo <strong>7-14 días</strong> requeridos, pero muchos viven permanentemente</li>
+        </ul>
+
+        <div style="background: rgba(212, 175, 55, 0.15); padding: 1.5rem; border-radius: 15px; margin-top: 2rem;">
+          <p style="font-weight: 700; color: var(--purple); margin-bottom: 0.5rem;">
+            💼 <span class="term" data-term="turismo-emprendedor">"Migración emprendedora de turismo"</span>
+          </p>
+          <p style="color: var(--ink);">
+            Motivados por calidad de vida, luego invierten en actividades turísticas (ej: agencias de viaje)
+          </p>
+        </div>
+
+        <button class="question-btn" onclick="showQuestion('q6')">💭 ¿Papel de AICEP?</button>
+      </div>
+    </div>
+
+    <!-- Slide 9: Videos de contexto -->
+    <div class="slide" data-slide="9">
+      <div class="slide-number">9/13</div>
+      <h1 class="slide-title">📹 Contexto Visual</h1>
+      <div class="slide-content">
+        <p style="text-align: center; margin-bottom: 2rem; font-size: 1.2rem; color: var(--purple); font-weight: 600;">
+          Videos relacionados con programas de inversión y migración
+        </p>
+
+        <div class="video-grid">
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/XZyYA1sN7GY" frameborder="0" allowfullscreen></iframe>
+            <div class="video-title">Investor Visas: Residency & Citizenship by Investment Programs</div>
+          </div>
+          
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/R0AsHT2JJpE" frameborder="0" allowfullscreen></iframe>
+            <div class="video-title">China se apodera de Europa | El megaproyecto de China</div>
+          </div>
+          
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/iiMccL7YdPY" frameborder="0" allowfullscreen></iframe>
+            <div class="video-title">España: los estadounidenses huir del país de Donald Trump</div>
+          </div>
+          
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/TZ-lWr0NK0g?start=1321" frameborder="0" allowfullscreen></iframe>
+            <div class="video-title">Tracks: Marrueccos: Surfistas vs la gentrificación</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 10: Conclusiones del estudio -->
+    <div class="slide" data-slide="10">
+      <div class="slide-number">10/13</div>
+      <h1 class="slide-title">💡 Conclusiones</h1>
+      <div class="slide-content">
+        <p class="slide-subtitle">Hallazgos principales del estudio</p>
+
+        <ul class="key-points">
+          <li>Inversores buscan <strong>cambiar estilos de vida</strong>, no solo expatriar capital</li>
+          <li>Portugal = <strong>segunda opción viable</strong> (no destino de primera elección)</li>
+          <li><strong>Viven y trabajan</strong> en Portugal (no son ausentes)</li>
+          <li>Valoran <strong>ubicación geopolítica</strong> para viajar por Europa</li>
+          <li>Motivaciones se asemejan a <strong>migrantes</strong> (no solo inversores)</li>
+        </ul>
+
+        <div style="background: linear-gradient(135deg, var(--purple), var(--gold)); color: white; padding: 2rem; border-radius: 20px; margin: 2rem 0; text-align: center;">
+          <p style="font-size: 1.5rem; font-weight: 900; margin-bottom: 1rem;">
+            🎯 Concepto Central
+          </p>
+          <p style="font-size: 1.2rem; font-style: italic;">
+            Los datos desafían concepciones del inversor como categoría enteramente económica
+          </p>
+          <p style="font-size: 1.1rem; margin-top: 1rem; opacity: 0.95;">
+            Ubican al inversor en territorio <strong>borroso e interseccional</strong> de migración y turismo
+          </p>
+        </div>
+
+        <button class="question-btn" onclick="showQuestion('q7')">💭 ¿Desafío a concepciones tradicionales?</button>
+      </div>
+    </div>
+
+    <!-- Slide 11: Implicaciones teóricas -->
+    <div class="slide" data-slide="11">
+      <div class="slide-number">11/13</div>
+      <h1 class="slide-title">📚 Implicaciones Teóricas</h1>
+      <div class="slide-content">
+        
+        <div style="background: white; padding: 2rem; border-radius: 20px; margin: 2rem 0;">
+          <h3 style="color: var(--purple); font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">
+            🔍 Deconstrucción de estereotipos
+          </h3>
+          
+          <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center;">
+            <div style="background: rgba(255, 75, 75, 0.1); padding: 1rem; border-radius: 10px; text-align: center;">
+              <p style="font-weight: 700; color: #ff4b4b; margin-bottom: 0.5rem;">❌ Estereotipo</p>
+              <p style="color: var(--ink); font-size: 0.95rem;">Migrante = no occidental, no blanco, no élite</p>
+            </div>
+            
+            <div style="font-size: 2rem;">→</div>
+            
+            <div style="background: rgba(107, 193, 70, 0.1); padding: 1rem; border-radius: 10px; text-align: center;">
+              <p style="font-weight: 700; color: #4CAF50; margin-bottom: 0.5rem;">✅ Realidad</p>
+              <p style="color: var(--ink); font-size: 0.95rem;">También migran élites occidentales y asiáticas</p>
+            </div>
+          </div>
+        </div>
+
+        <ul class="key-points">
+          <li><strong>Amplía definición</strong> de "quién es un migrante"</li>
+          <li><strong>"Studying up"</strong>: investigar élites económicas revela desigualdades</li>
+          <li>Muestra <strong>jerarquías de ciudadanía</strong> (ciudadanía como mercancía)</li>
+          <li>Contribuye a teoría de <span class="term" data-term="lifestyle-migration">migración de estilo de vida</span></li>
+        </ul>
+
+        <div style="background: rgba(212, 175, 55, 0.15); padding: 1.5rem; border-radius: 15px; margin-top: 2rem;">
+          <p style="font-style: italic; color: var(--ink); text-align: center; font-size: 1.1rem;">
+            "Individuos relativamente afluentes moviéndose a lugares que significan para el migrante una <strong>mejor calidad de vida</strong>"
+          </p>
+          <p style="text-align: right; margin-top: 0.5rem; color: var(--purple); font-weight: 700;">
+            — Benson y O'Reilly (2018)
+          </p>
+        </div>
+
+        <button class="question-btn" onclick="showQuestion('q8')">💭 ¿Contribución a deconstruir estereotipos?</button>
+      </div>
+    </div>
+
+    <!-- Slide 12: Cambios legislativos -->
+    <div class="slide" data-slide="12">
+      <div class="slide-number">12/13</div>
+      <h1 class="slide-title">📍 Cambios Legislativos 2021</h1>
+      <div class="slide-content">
+        
+        <div style="background: linear-gradient(135deg, rgba(255, 75, 75, 0.15), rgba(255, 182, 77, 0.15)); padding: 2rem; border-radius: 20px; margin: 2rem 0; border: 3px solid var(--coral);">
+          <h3 style="color: var(--purple); font-size: 1.5rem; margin-bottom: 1rem; text-align: center;">
+            ⚠️ Enmienda DR 14/2021
+          </h3>
+          <p style="text-align: center; font-size: 1.2rem; color: var(--ink); margin-bottom: 1rem;">
+            A partir de enero 2022
+          </p>
+          <p style="font-size: 1.3rem; font-weight: 700; text-align: center; color: var(--purple);">
+            Exclusión de áreas costeras continentales
+          </p>
+        </div>
+
+        <div class="two-col">
+          <div style="background: white; padding: 1.5rem; border-radius: 15px; border: 3px solid #ff4b4b;">
+            <h4 style="color: #ff4b4b; margin-bottom: 1rem; text-align: center; font-size: 1.2rem;">❌ NO elegibles</h4>
+            <ul style="list-style: none; color: var(--ink);">
+              <li style="padding: 0.5rem 0; border-bottom: 1px dashed #ddd;">📍 Lisboa</li>
+              <li style="padding: 0.5rem 0; border-bottom: 1px dashed #ddd;">📍 Porto</li>
+              <li style="padding: 0.5rem 0;">📍 Algarve</li>
+            </ul>
+          </div>
+
+          <div style="background: white; padding: 1.5rem; border-radius: 15px; border: 3px solid #4CAF50;">
+            <h4 style="color: #4CAF50; margin-bottom: 1rem; text-align: center; font-size: 1.2rem;">✅ Elegibles</h4>
+            <ul style="list-style: none; color: var(--ink);">
+              <li style="padding: 0.5rem 0; border-bottom: 1px dashed #ddd;">🏝️ Madeira</li>
+              <li style="padding: 0.5rem 0;">🏝️ Azores</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="background: rgba(107, 70, 193, 0.1); padding: 1.5rem; border-radius: 15px; margin-top: 2rem;">
+          <p style="font-weight: 700; color: var(--purple); margin-bottom: 0.5rem;">🏘️ Contexto:</p>
+          <p style="color: var(--ink);">
+            Respuesta a <strong>presión inmobiliaria</strong> y <strong>gentrificación</strong> en las principales ciudades portuguesas
+          </p>
+        </div>
+
+        <button class="question-btn" onclick="showQuestion('q9')">💭 ¿Implicaciones de esta enmienda?</button>
+      </div>
+    </div>
+
+    <!-- Slide 13: Reflexión final -->
+    <div class="slide" data-slide="13">
+      <div class="slide-number">13/13</div>
+      <div style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
+        <h1 class="slide-title">🤔 Para reflexionar...</h1>
+        <div class="slide-content">
+          
+          <div style="background: white; padding: 2rem; border-radius: 20px; margin: 2rem 0;">
+            <p style="font-size: 1.3rem; color: var(--purple); font-weight: 700; text-align: center; margin-bottom: 1.5rem;">
+              Preguntas centrales del estudio
+            </p>
+            
+            <div style="display: grid; gap: 1rem;">
+              <button class="question-btn" onclick="showQuestion('q10')" style="width: 100%; text-align: center; justify-content: center;">
+                💭 ¿Migrante, turista o inversor?
+              </button>
+              <button class="question-btn" onclick="showQuestion('q11')" style="width: 100%; text-align: center; justify-content: center;">
+                💭 ¿Qué significa ciudadanía como mercancía?
+              </button>
+              <button class="question-btn" onclick="showQuestion('q12')" style="width: 100%; text-align: center; justify-content: center;">
+                💭 ¿Implicaciones de jerarquías de movilidad?
+              </button>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin: 3rem 0;">
+            <p style="font-size: 1.5rem; font-weight: 900; color: var(--gold); margin-bottom: 1rem;">
+              Gracias por su atención
+            </p>
+            <p style="font-size: 1.1rem; color: var(--purple); font-weight: 600;">
+              Amante, M.F. & Rodrigues, I. (2023)<br>
+              <em>Intersections of Tourism, Migration, and Exile</em><br>
+              Routledge
+            </p>
+          </div>
+
+          <div style="text-align: center; margin-top: 2rem;">
+            <a href="index.html" class="question-btn" style="text-decoration: none; font-size: 1.1rem;">
+              📚 Ver notas completas
+            </a>
+            <a href="glosario.html" class="question-btn" style="text-decoration: none; font-size: 1.1rem; margin-left: 1rem;">
+              📖 Consultar glosario
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controles de navegación -->
+  <div class="nav-controls">
+    <button class="nav-btn" id="prevBtn" onclick="prevSlide()">← Anterior</button>
+    <button class="nav-btn" id="nextBtn" onclick="nextSlide()">Siguiente →</button>
+  </div>
+
+  <!-- Overlay y popup -->
+  <div class="popup-overlay" id="popupOverlay" onclick="closePopup()"></div>
+  <div class="popup" id="popup">
+    <button class="popup-close" onclick="closePopup()">×</button>
+    <div id="popupContent"></div>
+  </div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 13;
+
+    // Glosario
+    const glossary = {
+      'golden-visa': {
+        title: 'Golden Visa',
+        content: 'Programa de residencia por inversión que otorga permisos de residencia a cambio de inversión mínima en bienes raíces, capital o creación de empleo. Portugal lo creó en 2012 con requisitos de solo 7-14 días de presencia anual.'
+      },
+      'movilidad-privilegiada': {
+        title: 'Movilidad Privilegiada',
+        content: 'Forma de movilidad internacional que deriva de ciudadanía, clase y capital cultural. NO incluye privación económica ni vidas en peligro. Categorías: profesionales cualificados, estudiantes, jubilados, expatriados, inversores.'
+      },
+      'studying-up': {
+        title: 'Studying Up',
+        content: 'Aproximación metodológica que consiste en estudiar élites y grupos privilegiados (en lugar de solo grupos marginalizados). Permite destacar mejor la naturaleza e implicaciones de la desigualdad global.'
+      },
+      'lifestyle-investors': {
+        title: 'Lifestyle Investors',
+        content: 'Concepto propuesto por Amante & Rodrigues: personas más interesadas en cambiar cómo ellos y sus familias viven que en maximizar o esconder su capital. Deconstruye la imagen de inversores como super-ricos y ausentes.'
+      },
+      'turismo-emprendedor': {
+        title: 'Migración Emprendedora de Turismo',
+        content: 'Caso especial de migración en busca de estilo de vida combinada con migración laboral, donde individuos están motivados primero por consideraciones de calidad de vida y luego invierten en actividades turísticas.'
+      },
+      'lifestyle-migration': {
+        title: 'Lifestyle Migration',
+        content: '"Individuos relativamente afluentes de todas las edades, moviéndose a tiempo parcial o completo a lugares que, por varias razones, significan para el migrante una mejor calidad de vida" (Benson y O\'Reilly, 2018).'
+      }
+    };
+
+    // Preguntas
+    const questions = {
+      'q1': {
+        title: '¿Qué revela sobre jerarquías globales de ciudadanía?',
+        content: 'El Golden Visa muestra cómo la ciudadanía y la residencia pueden ser "compradas" por quienes tienen capital, mientras que otros enfrentan barreras insuperables. Es evidencia clara de desigualdad estructural global en los sistemas migratorios.'
+      },
+      'q2': {
+        title: '¿Por qué es importante estudiar la movilidad privilegiada?',
+        content: 'Permite destacar la naturaleza e implicaciones de la desigualdad global en los sistemas migratorios y deconstruir la imagen sesgada del migrante como "no occidental, no blanco, no élite".'
+      },
+      'q3': {
+        title: '¿Relación con políticas de desarrollo en China?',
+        content: 'La contaminación extrema y la presión educativa reflejan costos sociales del modelo de desarrollo acelerado chino: crecimiento económico a expensas de calidad de vida y bienestar.'
+      },
+      'q4': {
+        title: '¿Violencia urbana y desarrollo en Brasil?',
+        content: 'La "banalización de la violencia" está vinculada a desigualdad económica extrema, urbanización desigual y exclusión social — problemas estructurales del modelo de desarrollo brasileño.'
+      },
+      'q5': {
+        title: '¿Diferencia con trabajadores agrícolas?',
+        content: '<strong>Inversores GV:</strong> Capital económico → acceso privilegiado, libre circulación Schengen, camino a residencia permanente.<br><br><strong>Trabajadores agrícolas:</strong> Labor esencial → movilidad restringida, sin camino a permanencia, condiciones precarias.'
+      },
+      'q6': {
+        title: '¿Papel de AICEP en difuminar fronteras?',
+        content: 'AICEP - Portugal Global combina argumentos económicos con imágenes turísticas estereotipadas (sol, mar, ocio, premios internacionales). El Estado mismo borra límites entre inversión y turismo en su estrategia promocional.'
+      },
+      'q7': {
+        title: '¿Desafío a concepciones tradicionales?',
+        content: 'El concepto "lifestyle investors" muestra que estos inversores están más interesados en cambiar cómo viven que en maximizar capital. Desafía la concepción del inversor como categoría enteramente económica.'
+      },
+      'q8': {
+        title: '¿Contribución a deconstruir estereotipos?',
+        content: 'El estudio muestra que los migrantes NO son solo "no occidentales, no blancos, no élite". Los inversores GV son occidentales privilegiados (brasileños) y élites económicas asiáticas (chinos) que también migran por razones complejas: seguridad, educación, calidad de vida.'
+      },
+      'q9': {
+        title: '¿Implicaciones de la enmienda 2021?',
+        content: 'La exclusión de áreas costeras refleja una respuesta a la presión inmobiliaria y gentrificación causada por el programa. Muestra tensión entre atracción de inversión extranjera y protección de mercados locales de vivienda.'
+      },
+      'q10': {
+        title: '¿Migrante, turista o inversor?',
+        content: 'Los inversores GV habitan un territorio borroso e interseccional entre estas tres categorías. Requisitos mínimos sugieren turistas, pero muchos viven permanentemente. Son "lifestyle investors" que buscan cambiar cómo viven.'
+      },
+      'q11': {
+        title: '¿Qué significa ciudadanía como mercancía?',
+        content: 'El programa Golden Visa convierte la ciudadanía/residencia en algo que puede comprarse con capital económico. Esto evidencia jerarquías globales donde el acceso a derechos depende de recursos económicos, no de necesidad o pertenencia.'
+      },
+      'q12': {
+        title: '¿Implicaciones de jerarquías de movilidad?',
+        content: 'Existen jerarquías claras: inversores con capital tienen libre circulación y camino a permanencia, mientras trabajadores migrantes enfrentan restricciones y precariedad. Esto perpetúa desigualdades estructurales globales.'
+      }
+    };
+
+    function showSlide(n) {
+      const slides = document.querySelectorAll('.slide');
+      slides.forEach(slide => slide.classList.remove('active'));
+      
+      currentSlide = n;
+      if (currentSlide > totalSlides) currentSlide = 1;
+      if (currentSlide < 1) currentSlide = totalSlides;
+      
+      slides[currentSlide - 1].classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (currentSlide === 1);
+      document.getElementById('nextBtn').disabled = (currentSlide === totalSlides);
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    function showQuestion(id) {
+      const q = questions[id];
+      if (q) {
+        document.getElementById('popupContent').innerHTML = `
+          <h3>${q.title}</h3>
+          <p>${q.content}</p>
+        `;
+        document.getElementById('popup').classList.add('active');
+        document.getElementById('popupOverlay').classList.add('active');
+      }
+    }
+
+    function closePopup() {
+      document.getElementById('popup').classList.remove('active');
+      document.getElementById('popupOverlay').classList.remove('active');
+    }
+
+    // Navegación con teclado
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+      if (e.key === 'Escape') closePopup();
+    });
+
+    // Términos del glosario
+    document.querySelectorAll('.term').forEach(term => {
+      term.addEventListener('click', function() {
+        const key = this.getAttribute('data-term');
+        const entry = glossary[key];
+        if (entry) {
+          document.getElementById('popupContent').innerHTML = `
+            <h3>${entry.title}</h3>
+            <p>${entry.content}</p>
+          `;
+          document.getElementById('popup').classList.add('active');
+          document.getElementById('popupOverlay').classList.add('active');
+        }
+      });
+    });
+
+    // Inicializar
+    showSlide(1);
+  </script>
+</body>
+</html>
