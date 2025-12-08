@@ -1,0 +1,141 @@
+digraph Mapa_IA_Migracion {
+    rankdir=LR;
+    bgcolor="#ffffff";
+
+    node [shape=box, style="rounded,filled", fillcolor="#f9f3ff",
+          color="#555555", fontname="Helvetica", fontsize=11];
+    edge [color="#555555", fontname="Helvetica", fontsize=9];
+
+    // NODO CENTRAL
+    Centro [label="Inteligencia artificial,\nmigración y movilidad",
+            shape=oval, fillcolor="#ffe6e6", fontsize=13];
+
+    // 1. CONCEPTOS Y DEFINICIONES
+    subgraph cluster_conceptos {
+        label="Conceptos y definiciones de IA";
+        color="#ffb3b3";
+        style="rounded";
+
+        C_def [label="IA = programación de computadoras\npara realizar tareas que normalmente\nrequerirían inteligencia humana\n(IA 'estrecha' más que IA general)"];
+
+        C_tipos [label="Corrientes y técnicas:\n• aprendizaje automático\n• aprendizaje profundo\n• redes neuronales\n• reconocimiento facial y de voz\n• procesamiento de lenguaje natural\n• robótica"];
+
+        C_terminos [label="Términos clave:\n• algoritmos\n• macrodatos (big data)\n• identidad digital\n• chatbots\n• biometría\n• sistemas de predicción"];
+
+        C_digitalizacion [label="Digitalización:\n• condición necesaria para usar IA\n• no toda digitalización implica IA\n• brechas de capacidad entre países"];
+    }
+
+    // 2. USOS A LO LARGO DEL CICLO MIGRATORIO
+    subgraph cluster_ciclo {
+        label="Uso de IA a lo largo del ciclo migratorio";
+        color="#b3c6ff";
+        style="rounded";
+
+        U_antes [label="Antes de la partida:\n• plataformas electrónicas de visado\n• controles automáticos de seguridad\n• análisis de perfiles de riesgo\n• chatbots de información sobre visados"];
+
+        U_entrada [label="Entrada / fronteras:\n• puertas automatizadas con biometría\n• verificación de identidad\n• sistemas anticipados de pasajeros (API)\n• drones y sensores para vigilancia\n• análisis de comportamiento para\n  detectar 'intenciones hostiles'"];
+
+        U_estancia [label="Estancia:\n• chatbots de información migratoria\n• decisión automatizada en casos simples\n• reasentamiento de refugiados\n  (matching por IA)\n• vigilancia masiva con reconocimiento\n  facial para localizar migrantes"];
+
+        U_retorno [label="Retorno:\n• uso limitado de IA\n• detección de personas para retorno\n  forzoso mediante bases de datos y\n  corredores de datos privados\n• decisiones basadas en análisis de voz\n  u otros algoritmos (caso RU)"];
+
+        U_prediccion [label="Pronóstico y análisis predictivo:\n• uso de big data (por ejemplo DTM OIM)\n• predicción de crisis humanitarias y\n  desplazamientos\n• modelos para 'futuro del trabajo' y\n  cambios en demanda de migrantes"];
+    }
+
+    // 3. DERECHOS HUMANOS, SESGOS Y RIESGOS
+    subgraph cluster_derechos {
+        label="Derechos humanos, sesgos y riesgos";
+        color="#b3ffd9";
+        style="rounded";
+
+        D_ventajas [label="Ventajas potenciales:\n• mayor eficiencia y rapidez\n• reducción de tiempos de trámite\n• mejor gestión de grandes volúmenes\nde solicitudes\n• posible mejora en acceso a servicios"];
+
+        D_sesgos [label="Sesgos algorítmicos:\n• históricos\n• de representatividad\n• de medición\n• de agregación\n• de evaluación\n• de despliegue\n→ pueden traducirse en\n  discriminación sistemática"];
+
+        D_ejemplo_rostros [label="Ejemplo:\n• reconocimiento facial menos preciso\n  en mujeres de piel oscura\n• mayores tasas de error con personas\n  negras en bases policiales\n→ riesgo de rechazo indebido de visados\n  y criminalización selectiva"];
+
+        D_privacidad [label="Privacidad y protección de datos:\n• recolección masiva de biometría\n• almacenamiento e interoperabilidad\n• riesgo de errores propagados en cascada\n• necesidad de bases legales, necesidad\ny proporcionalidad"];
+
+        D_debido_proceso [label="Debido proceso:\n• opacidad ('caja negra') de algoritmos\n• sesgo de automatización (se confía\ndemasiado en la máquina)\n• decisiones difíciles de impugnar\n→ se requieren vías de recurso y revisión\n  humana significativa"];
+    }
+
+    // 4. GESTIÓN FRONTERIZA, VIGILANCIA Y DATAFICACIÓN
+    subgraph cluster_gestion {
+        label="Gestión fronteriza, vigilancia y dataficación";
+        color="#ffd9b3";
+        style="rounded";
+
+        G_seguridad [label="Seguridad fronteriza y migratoria:\n• identificación y control automatizado\n• análisis de patrones y perfiles\n• detección de amenazas\n→ puede aumentar eficiencia"];
+
+        G_vigilancia [label="Vigilancia por IA:\n• drones, torres, 'muros virtuales'\n• ciudades seguras/inteligentes\n• reconocimiento facial en espacios\n  públicos\n→ riesgo de vigilancia masiva\n  desproporcionada"];
+
+        G_dataficacion [label="Dataficación de la migración:\n• recopilación de enormes volúmenes\n  de datos (biométricos, geolocalización,\n  redes sociales)\n• potencial para usos secundarios,\n  monetización y abusos"];
+
+        G_publico_privado [label="Relación público–privado:\n• empresas tecnológicas diseñan y\n  operan sistemas\n• acceso de privados a datos sensibles\n• tensiones entre lucro, interés público\n  y protección de migrantes"];
+
+        G_asimetrias [label="Asimetrías entre Estados:\n• países con alta capacidad de IA\n  vs. países con baja capacidad digital\n• posibilidad de nueva línea divisoria:\n  'Estados con IA' y 'Estados sin IA'\n• riesgo de reforzar brecha Norte–Sur,\n  pero también oportunidad para\n  que el Sur desarrolle capacidades"];
+    }
+
+    // 5. OPORTUNIDADES, IDENTIDAD DIGITAL Y FUTURO DEL TRABAJO
+    subgraph cluster_oportunidades {
+        label="Oportunidades, identidad digital y futuro del trabajo";
+        color="#e6e6e6";
+        style="rounded";
+
+        O_identidad [label="Identidad digital:\n• atributos biométricos + datos oficiales\n• 'billeteras de identidad' y blockchain\n• puede facilitar acceso a servicios\n  (bancos, salud, educación)\n→ pero con riesgos si se vulneran\n  bases de datos"];
+
+        O_servicios [label="Apoyo a gestión de migración:\n• chatbots jurídicos y psicológicos\n• plataformas para visados rápidos\n• sistemas de matching para reasentamiento\n• potencial para nivelar desigualdades\n  de acceso, si hay conectividad"];
+
+        O_limites_tecnicos [label="Límites de la tecnosolución:\n• la tecnología no 'resuelve' por sí sola\n  la complejidad de la migración\n• riesgo de burocratizar o deshumanizar\n  procesos humanitarios"];
+
+        O_futuro_trabajo [label="IA y futuro del trabajo:\n• automatización de empleos rutinarios\n• posible reducción de demanda de\n  trabajadores migrantes en ciertos\n  sectores\n• impacto mayor en migrantes poco\n  cualificados (ej. países del Golfo)"];
+
+        O_marco_DDHH [label="Marco de derechos humanos:\n• IA puede debilitar o reforzar derechos\n• necesidad de reglas sobre transparencia,\n  minimización de datos, rendición de\n  cuentas y reparación\n• importancia de incluir intereses de\n  migrantes en el diseño de sistemas"];
+    }
+
+    // CONEXIONES DESDE EL NODO CENTRAL
+    Centro -> C_def;
+    Centro -> U_antes;
+    Centro -> D_sesgos;
+    Centro -> G_seguridad;
+    Centro -> O_futuro_trabajo;
+
+    // RELACIONES EN CONCEPTOS
+    C_def -> C_tipos       [label="evoluciona en"];
+    C_tipos -> C_terminos  [label="usa"];
+    C_def  -> C_digitalizacion [label="requiere datos y capacidad digital"];
+
+    // RELACIONES EN CICLO MIGRATORIO
+    U_antes   -> U_entrada   [label="continúa en"];
+    U_entrada -> U_estancia  [label="continúa en"];
+    U_estancia-> U_retorno   [label="puede culminar en"];
+    U_estancia-> U_prediccion[label="alimenta datos para"];
+    U_prediccion -> O_futuro_trabajo [label="revela impacto de largo plazo"];
+
+    // DERECHOS HUMANOS
+    D_ventajas -> D_sesgos        [label="contrastan con"];
+    D_sesgos   -> D_ejemplo_rostros [label="ilustrado por"];
+    D_sesgos   -> D_privacidad    [label="se agravan con\nacumulación de datos"];
+    D_privacidad -> D_debido_proceso [label="relacionada con"];
+    D_debido_proceso -> O_marco_DDHH [label="exige"];
+
+    // GESTIÓN Y DATAFICACIÓN
+    G_seguridad -> G_vigilancia   [label="puede derivar en"];
+    G_vigilancia -> D_privacidad  [label="amenaza"];
+    G_dataficacion -> G_publico_privado [label="intensifica"];
+    G_publico_privado -> O_marco_DDHH   [label="requiere regulación"];
+    G_dataficacion -> D_sesgos   [label="alimenta modelos\ncon datos sesgados"];
+    G_asimetrias -> O_futuro_trabajo    [label="condiciona"];
+
+    // OPORTUNIDADES Y RIESGOS
+    O_identidad -> O_servicios   [label="facilita"];
+    O_identidad -> G_dataficacion[label="incrementa"];
+    O_servicios -> O_limites_tecnicos   [label="pero también"];
+    O_futuro_trabajo -> U_prediccion    [label="analizado con"];
+
+    // VÍNCULOS TRANSVERSALES
+    U_entrada -> G_seguridad [label="implementa IA en"];
+    U_estancia -> G_vigilancia [label="favorece"];
+    U_retorno -> D_debido_proceso [label="plantea problemas de"];
+    C_digitalizacion -> G_asimetrias [label="acentúa"];
+}
