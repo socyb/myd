@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Taller: Estados del Arte · Migración y Desarrollo</title>
+  <style>
+    :root{
+      --teal:#a67c52;
+      --teal-dark:#7a5539;
+      --sun:#d4a574;
+      --coral:#b85c3e;
+      --cream:#f5ede1;
+      --ink:#3d2817;
+      --purple:#9b7653;
+    }
+    * {box-sizing: border-box; margin: 0; padding: 0;}
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: linear-gradient(135deg, #d4a574 0%, #c9a882 50%, #b89968 100%);
+      color: white;
+      overflow: hidden;
+      height: 100vh;
+    }
+    .slide-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .slide {
+      display: none;
+      width: 90%;
+      max-width: 1200px;
+      height: 85vh;
+      background: rgba(255, 250, 240, 0.98);
+      border-radius: 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      padding: 3rem 4rem;
+      position: relative;
+      overflow-y: auto;
+      animation: slideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .slide.active {
+      display: block;
+    }
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    .slide-title {
+      color: var(--teal-dark);
+      font-size: 2.8rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .slide-subtitle {
+      color: var(--coral);
+      font-size: 1.4rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+    .slide-content {
+      color: var(--ink);
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+    .phase-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--coral), var(--sun));
+      color: white;
+      padding: 0.6rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 12px rgba(255, 75, 75, 0.3);
+    }
+    .duration {
+      display: inline-block;
+      background: var(--teal);
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-left: 1rem;
+    }
+    .instruction-box {
+      background: white;
+      border-left: 5px solid var(--coral);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .instruction-box h3 {
+      color: var(--teal-dark);
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+    }
+    .question-box {
+      background: linear-gradient(135deg, rgba(11, 138, 143, 0.1), rgba(107, 70, 193, 0.1));
+      border-left: 5px solid var(--purple);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 12px;
+    }
+    .question-box h4 {
+      color: var(--purple);
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    ul.key-list {
+      list-style: none;
+      margin: 1rem 0;
+    }
+    ul.key-list li {
+      padding: 0.6rem 0.6rem 0.6rem 2.5rem;
+      position: relative;
+      margin: 0.5rem 0;
+      background: rgba(11, 138, 143, 0.05);
+      border-left: 3px solid var(--sun);
+      border-radius: 6px;
+    }
+    ul.key-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0.8rem;
+      color: var(--sun);
+      font-weight: 900;
+      font-size: 1.2rem;
+    }
+    .product-box {
+      background: linear-gradient(135deg, var(--sun), var(--coral));
+      color: white;
+      padding: 1.5rem;
+      border-radius: 15px;
+      margin: 1.5rem 0;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(255, 182, 77, 0.3);
+    }
+    .product-box h4 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      font-weight: 800;
+    }
+    .product-box p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+    .nav-controls {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 1rem;
+      z-index: 100;
+    }
+    .nav-btn {
+      background: var(--coral);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .nav-btn:hover {
+      background: var(--sun);
+      transform: translateY(-2px);
+    }
+    .nav-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .slide-number {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      background: var(--teal);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+    .highlight {
+      background: linear-gradient(120deg, rgba(255, 182, 77, 0.3) 0%, rgba(255, 182, 77, 0.3) 100%);
+      background-size: 100% 40%;
+      background-repeat: no-repeat;
+      background-position: 0 80%;
+      font-weight: 700;
+      color: var(--teal-dark);
+    }
+    .tip-box {
+      background: rgba(107, 70, 193, 0.08);
+      border: 2px dashed var(--purple);
+      padding: 1.2rem;
+      margin: 1.5rem 0;
+      border-radius: 12px;
+    }
+    .tip-box strong {
+      color: var(--purple);
+      font-size: 1.1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    th {
+      background: linear-gradient(135deg, var(--teal), var(--purple));
+      color: white;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 700;
+    }
+    td {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .examples {
+      background: var(--cream);
+      padding: 1.2rem;
+      border-radius: 10px;
+      margin: 1rem 0;
+      font-style: italic;
+      color: var(--ink);
+    }
+    .icon-large {
+      font-size: 4rem;
+      text-align: center;
+      margin: 1rem 0;
+      animation: bounce 2s ease-in-out infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    
+    <!-- Slide 1: Portada -->
+    <div class="slide active" data-slide="1">
+      <div class="slide-number">1/6</div>
+      <div style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div class="icon-large">🗺️🔍📊</div>
+        <h1 class="slide-title">Taller de Estados del Arte</h1>
+        <p class="slide-subtitle">Mapeo crítico de actores, poder y desarrollo</p>
+        
+        <div style="background: white; padding: 2rem; border-radius: 20px; margin: 2rem 0; max-width: 700px;">
+          <h3 style="color: var(--teal-dark); font-size: 1.5rem; margin-bottom: 1rem; text-align: center;">
+            🎯 Objetivo del taller
+          </h3>
+          <ul style="color: var(--ink); list-style: none; font-size: 1.1rem; line-height: 1.8;">
+            <li style="margin: 0.5rem 0;">✓ Mapear actores y relaciones de poder en su caso</li>
+            <li style="margin: 0.5rem 0;">✓ Identificar chokepoints técnicos y político-organizacionales</li>
+            <li style="margin: 0.5rem 0;">✓ Revisar críticamente "soluciones" y sus efectos no-deseados</li>
+            <!--<li style="margin: 0.5rem 0;">✓ Conectar con: <span style="color: var(--coral); font-weight: 700;">"¿Migración y desarrollo para quién y a costa de quién?"</span></li>-->
+          </ul>
+        </div>
+
+        <!--<div style="background: linear-gradient(135deg, var(--coral), var(--sun)); color: white; padding: 1.2rem 2rem; border-radius: 999px; font-size: 1.2rem; font-weight: 700;">
+          ⏱️ Duración total: 1.5 - 2 horas
+        </div>-->
+      </div>
+    </div>
+
+    <!-- Slide 2: Fase 0 - Arranque -->
+    <div class="slide" data-slide="2">
+      <div class="slide-number">2/6</div>
+      <span class="phase-badge">Arranque</span>
+      <!--<span class="duration">⏱️ 10 minutos</span>-->
+      <h1 class="slide-title">Los equipos y sus investigaciones</h1>
+      
+      <div class="slide-content">
+        <table style="margin: 1.5rem 0; font-size: 0.98rem;">
+          <thead>
+            <tr>
+              <th style="width: 35%;">📚 Tema</th>
+              <th style="width: 65%;">🔍 Pregunta de investigación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Segundas generaciones de migrantes en Francia</strong></td>
+              <td>¿Cuál es el papel de las segundas generaciones de migrantes en la construcción de nuevas identidades culturales en Francia?</td>
+            </tr>
+            <tr>
+              <td><strong>Fuga de cerebros: Filipinas vs. Japón</strong></td>
+              <td>¿De qué manera la fuga de cerebros afecta de forma distinta a un país en desarrollo como Filipinas y a un país desarrollado como Japón?</td>
+            </tr>
+            <tr>
+              <td><strong>Tráfico de migrantes y lucro en México</strong></td>
+              <td>¿De qué manera se ha lucrado en México (2020-2024) con el tránsito de personas migrantes hacia Estados Unidos, y qué implicaciones tiene esto para sus derechos humanos?</td>
+            </tr>
+            <tr>
+              <td><strong>Descendencia migrante mexicana (2G/3G) en EE.UU.</strong></td>
+              <td>¿Cómo construyen su identidad cultural los descendientes mexicanos de segunda y tercera generación en Estados Unidos?</td>
+            </tr>
+            <tr>
+              <td><strong>Migración de retorno y crecimiento personal</strong></td>
+              <td>¿Cómo los migrantes latinoamericanos retornados reinterpretan su experiencia migratoria como un proceso de crecimiento personal que potencia su calidad de vida?</td>
+            </tr>
+            <tr>
+              <td><strong>México frente al éxodo haitiano</strong></td>
+              <td>¿Qué papel jugaron las políticas migratorias de México en la gestión de la migración haitiana a partir de 2021?</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="question-box" style="margin-top: 2rem;">
+          <h4 style="font-size: 1.6rem; text-align: center; color: var(--coral);">
+            💭 ¿Qué tienen en común estos temas sobre migración y desarrollo?
+          </h4>
+        </div>
+
+        <div class="instruction-box" style="margin-top: 2rem;">
+          <h3>📋 Dinámica</h3>
+          <p style="margin-top: 1rem; font-size: 1.1rem;">
+            Este taller es para <span class="highlight">afinar sus investigaciones</span> antes de las presentaciones finales del próximo mes.
+          </p>
+          <p style="margin-top: 1rem; font-size: 1.1rem;">
+            Vamos a trabajar en <strong>breakout rooms</strong> por equipos, usando su propio Estado del Arte como punto de partida.
+          </p>
+        </div>
+
+        <div class="tip-box">
+          <strong>💡 Pista inicial:</strong>
+          <p style="margin-top: 0.5rem;">
+            Aunque sus casos parezcan muy diferentes, 
+            todos comparten patrones sobre <strong>quién tiene poder, quiénes quedan excluidos, y cómo se justifica 
+            esto con narrativas de "desarrollo"</strong>.
+          </p>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem; font-size: 1.2rem; color: var(--teal-dark); font-weight: 700;">
+          Prepárense para entrar a sus breakout rooms
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Fase 1 - Mapa de actores -->
+    <div class="slide" data-slide="3">
+      <div class="slide-number">3/6</div>
+      <span class="phase-badge">FASE 1 · Mapa de actores y poder</span>
+      <!--<span class="duration">⏱️ 30 minutos</span>-->
+      <h1 class="slide-title">¿Quién tiene el poder?</h1>
+      
+      <div class="slide-content">
+        <div class="instruction-box">
+          <h3>📐 Actividad</h3>
+          <p style="margin-top: 0.5rem;">
+            Trabajen en un documento compartido<strong></strong>:
+          </p>
+        </div>
+
+        <div class="question-box">
+          <h4>🔍 Preguntas guía</h4>
+          <ul class="key-list" style="margin-top: 1rem;">
+            <li><strong>¿Cuáles son los principales actores?</strong> (Estados, municipios, agencias, empresas, ONGs, redes criminales, organismos internacionales, diásporas, familias, etc.)</li>
+            <li><strong>¿Qué actores concentran poder y cuáles están excluidos</strong> de la toma de decisiones?</li>
+            <li><strong>Tipos de poder:</strong> económico, político, militar, técnico, simbólico, moral</li>
+            <li><strong>¿Qué niveles de gobierno participan</strong> y cómo se reparten la responsabilidad (o la transfieren unos a otros)?</li>
+          </ul>
+        </div>
+
+       <!--<div class="question-box" style="border-left: 5px solid var(--coral);">
+          <h4 style="color: var(--coral);">💡 Pregunta transversal de Migración y Desarrollo</h4>
+          <p style="margin-top: 0.8rem; font-size: 1.15rem; font-style: italic;">
+            "¿Quién presenta la migración como <strong>oportunidad de desarrollo</strong> y quién la vive como <strong>pérdida o riesgo</strong>?"
+          </p>
+        </div>
+    -->
+
+      </div>
+    </div>
+
+    <!-- Slide 4: Fase 2 - Mercados y chokepoints -->
+    <div class="slide" data-slide="4" style="padding-top: 4rem;">
+      <div class="slide-number">4/6</div>
+      <div style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+        <span class="phase-badge">FASE 2 · Flujos, mercados y chokepoints</span>
+        <!--<span class="duration">⏱️ 30 minutos</span>-->
+      </div>
+      <h1 class="slide-title" style="margin-top: 0.5rem; margin-bottom: 2rem;">¿Dónde están los cuellos de botella?</h1>
+      
+      <div class="slide-content">
+        <div class="instruction-box">
+          <h3>🔗 Parte 1: Mercados y economía política</h3>
+          <ul class="key-list" style="margin-top: 1rem;">
+            <li><strong>¿Qué mercados aparecen en la literatura de su tema?</strong><br><br>
+            <span class="examples">Ejemplos: mercado laboral, de salud, educativo, de tráfico humano, de conocimiento, de vivienda, etc.</span></li>
+            <li><strong>¿Cómo influyen los mercados internacionales?</strong><br><br>
+            <span class="examples">Precios, demanda de mano de obra, acuerdos comerciales, cadenas de valor, competencia por talento</span></li>
+          </ul>
+        </div>
+
+        <div class="instruction-box">
+          <h3>🚧 Parte 2: Chokepoints / Puntos críticos</h3>
+          <p style="margin-top: 0.8rem; font-size: 1.15rem;">
+            <strong>¿Dónde están los cuellos de botella?</strong> Los lugares, procesos o momentos donde el flujo migratorio se atora, se complica o se controla.
+          </p>
+          <div class="examples" style="margin-top: 1rem;">
+            Fronteras específicas • Trámites • Visados • Homologación de títulos • Reconocimiento de ciudadanía • Acceso a servicios • Permisos laborales
+          </div>
+        </div>
+
+        <!--<div class="question-box">
+          <h4>🏷️ Clasifiquen cada chokepoint</h4>
+          <ul class="key-list" style="margin-top: 1rem;">
+            <li><strong>Técnico:</strong> infraestructura, sistemas, capacidad administrativa</li>
+            <li><strong>Político/organizacional:</strong> decisiones, falta de voluntad, intereses, corrupción, racismo, burocracia deliberada</li>
+          </ul>
+        </div>-->
+
+        <div class="question-box" style="border-left: 5px solid var(--coral);">
+          <h4 style="color: var(--coral);">💰 Para cada chokepoint, pregúntense:</h4>
+          <p style="margin-top: 0.8rem; font-size: 1.15rem;">
+            <strong>¿Para quién es un problema y para quién es una oportunidad</strong> de negocio o de control?
+          </p>
+        </div>
+
+       <!-- <div class="product-box">
+          <h4>📦 PRODUCTO</h4>
+          <p>Tabla con 3 columnas:<br><strong>Chokepoint / Tipo (técnico – político) / Quién gana – quién pierde</strong></p>
+        </div>-->
+      </div>
+    </div>
+
+    <!-- Slide 5: Fase 3 - Soluciones y paradojas -->
+    <div class="slide" data-slide="5" style="padding-top: 4rem;">
+      <div class="slide-number">5/6</div>
+      <div style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+        <span class="phase-badge">FASE 3 · Soluciones, paradojas y desarrollo</span>
+        <!--<span class="duration">⏱️ 30 minutos</span>-->
+      </div>
+      <h1 class="slide-title" style="margin-top: 0.5rem; margin-bottom: 2rem;">¿Las soluciones resuelven o crean nuevos problemas?</h1>
+      
+      <div class="slide-content">
+        <div class="instruction-box">
+          <h3>💡 Parte 1: Identificar soluciones</h3>
+          <p style="margin-top: 0.8rem;">
+            <strong>¿Qué soluciones propone la literatura?</strong>
+          </p>
+          <div class="examples" style="margin-top: 1rem;">
+            Políticas públicas • Programas • Acuerdos internacionales • Iniciativas de ONG • Programas de retorno • Visas especiales • Reformas migratorias • Capacitación • Regularización
+          </div>
+        </div>
+
+        <div class="question-box">
+          <h4>Para cada solución, identifiquen:</h4>
+          <ul class="key-list" style="margin-top: 1rem;">
+            <li><strong>¿Qué barreras impiden adoptarla o hacerla funcionar?</strong><br><br>
+            <span class="examples">Falta de presupuesto, resistencia política, racismo, intereses económicos, burocracia, falta de coordinación</span></li>
+            <li><strong>¿Se presentan soluciones que a su vez crean nuevos problemas?</strong> (Efectos no-previstos)<br><br>
+           <!-- <span class="examples">Identifiquen al menos UN ejemplo por tema</span></li>-->
+          </ul>
+        </div>
+
+        <div style="background: rgba(255, 75, 75, 0.1); border: 2px solid var(--coral); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0;">
+          <h4 style="color: var(--coral); margin-bottom: 1rem; font-size: 1.3rem;">⚠️ Ejemplos de efectos no-previstos:</h4>
+          <ul style="list-style: none;">
+            <li style="margin: 0.5rem 0;">❌ Políticas de contención → hacinamiento y violencia</li>
+            <li style="margin: 0.5rem 0;">❌ Atracción de talento → vacían sistemas de salud en países pobres</li>
+            <li style="margin: 0.5rem 0;">❌ Programas de retorno → refuerzan estigma o precariedad</li>
+            <li style="margin: 0.5rem 0;">❌ Regularización selectiva → aumenta desigualdades entre migrantes</li>
+          </ul>
+        </div>
+
+        <!--<div class="question-box" style="border-left: 5px solid var(--purple);">
+          <h4 style="color: var(--purple);">🔍 Preguntas transversales de Migración y Desarrollo</h4>
+          <ul class="key-list" style="margin-top: 1rem;">
+            <li><strong>¿Qué visión de "desarrollo" está implícita en esas soluciones?</strong><br>
+            <span class="examples">crecimiento económico, seguridad, derechos humanos, competitividad, bienestar, orden público</span></li>
+            <li><strong>Si tuvieras que agrupar las soluciones en dos tipos:</strong> "parches" vs "cambios estructurales", ¿dónde cae cada una?</li>
+          </ul>
+        </div>-->
+
+        <!--<div class="product-box">
+          <h4>📦 PRODUCTO</h4>
+          <p>Matriz: <strong>Solución / Barreras / Nuevos problemas / Tipo (parche vs. estructural)</strong></p>
+        </div>-->
+      </div>
+    </div>
+
+    <!-- Slide 6: Cierre en plenaria -->
+    <div class="slide" data-slide="6">
+      <div class="slide-number">6/6</div>
+      <div style="margin-top: 0.5rem; margin-bottom: 1.5rem;">
+        <span class="phase-badge">CIERRE · Plenaria</span>
+        <!--<span class="duration">⏱️ 20-25 minutos</span>-->
+      </div>
+      <h1 class="slide-title" style="margin-top: 1rem; margin-bottom: 2rem;">Preparen y compartan sus hallazgos</h1>
+      
+      <!--<div class="slide-content">
+        <div class="instruction-box">
+          <h3>📝 Antes de regresar a la plenaria</h3>
+          <p style="margin-top: 1rem; font-size: 1.15rem;">
+            Cada equipo debe preparar <strong>2 hallazgos</strong> para compartir:
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+          <div style="background: white; padding: 2rem; border-radius: 15px; border-top: 5px solid var(--teal);">
+            <h4 style="color: var(--teal-dark); font-size: 1.4rem; margin-bottom: 1rem;">1️⃣ Un patrón común</h4>
+            <p style="color: var(--ink);">
+              Algo que encontraron entre actores, poder y chokepoints que se repite o conecta con otros casos.
+            </p>
+            <div class="examples" style="margin-top: 1rem;">
+              Ej: "Los actores internacionales proponen soluciones, pero los estados nacionales son quienes las bloquean"
+            </div>
+          </div>
+
+          <div style="background: white; padding: 2rem; border-radius: 15px; border-top: 5px solid var(--coral);">
+            <h4 style="color: var(--coral); font-size: 1.4rem; margin-bottom: 1rem;">2️⃣ Una paradoja</h4>
+            <p style="color: var(--ink);">
+              Una contradicción o efecto perverso que encontraron en las "soluciones".
+            </p>
+            <div class="examples" style="margin-top: 1rem;">
+              Ej: "Políticas que dicen proteger, pero en la práctica contienen y vulneran"
+            </div>
+          </div>
+        </div>-->
+
+        <!--<div class="tip-box">
+          <strong>💬 Consejo:</strong>
+          <p style="margin-top: 0.5rem;">
+            Elijan los hallazgos que les parezcan más sorprendentes o reveladores sobre la estructura de poder en su caso.
+          </p>
+        </div>-->
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <div style="background: linear-gradient(135deg, var(--teal), var(--purple)); color: white; padding: 1.5rem; border-radius: 15px; font-size: 1.2rem;">
+            ⏰ En unos minutos regresaremos a la sesión principal para compartir
+          </div>
+        </div>
+
+        <hr style="border: none; border-top: 2px solid var(--sun); margin: 3rem 0; opacity: 0.5;">
+
+        <h2 class="slide-title" style="font-size: 2rem; margin-top: 2rem; margin-bottom: 1.5rem;">🎤 Dinámica de cierre en plenaria</h2>
+        
+        <p style="margin-top: 1rem; font-size: 1.15rem; color: var(--ink); text-align: center;">
+          Cada equipo comparte brevemente sus <strong> hallazgos</strong>:
+        </p>
+
+        <!--<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 1.5rem 0;">
+          <div class="question-box">
+            <h4>1️⃣ Patrón común</h4>
+            <p style="margin-top: 0.8rem;">
+              Entre actores, poder y chokepoints
+            </p>
+          </div>
+
+          <div class="question-box" style="border-left: 5px solid var(--coral);">
+            <h4 style="color: var(--coral);">2️⃣ Paradoja</h4>
+            <p style="margin-top: 0.8rem;">
+              Efecto perverso de las "soluciones"
+            </p>
+          </div>
+        </div>-->
+
+        <!--<div style="background: rgba(255, 182, 77, 0.15); padding: 2rem; border-radius: 15px; margin: 2rem 0;">
+          <h4 style="color: var(--teal-dark); font-size: 1.4rem; margin-bottom: 1rem; text-align: center;">
+            💡 Tipos de paradojas en Migración y Desarrollo
+          </h4>
+          <ul style="list-style: none; color: var(--ink); font-size: 1.1rem;">
+            <li style="margin: 0.8rem 0;">🔄 "Políticas que dicen proteger, pero en la práctica contienen y vulneran"</li>
+            <li style="margin: 0.8rem 0;">🔄 "Migración que se presenta como desarrollo, pero genera dependencia o desigualdad"</li>
+            <li style="margin: 0.8rem 0;">🔄 "Programas que ayudan a algunos y dejan aún más expuestos a otros"</li>
+            <li style="margin: 0.8rem 0;">🔄 "Soluciones técnicas para problemas que son fundamentalmente políticos"</li>
+          </ul>
+        </div>-->
+
+        <div class="tip-box">
+          <strong>📌 Mientras escuchan a otros equipos:</strong>
+          <p style="margin-top: 0.5rem; color:black;">
+            Identifiquen conexiones y patrones que se repiten entre casos diferentes. 
+            Desde Haití hasta la fuga de cerebros o las segundas generaciones, 
+            <span class="highlight">¿se repiten ciertos esquemas de actores, control y soluciones que generan nuevos problemas?</span>
+          </p>
+        </div>
+
+        <!--<div style="text-align: center; margin-top: 2rem; font-size: 1.2rem; color: var(--teal-dark); font-weight: 700;">
+          🎯 Esto es justo lo que queremos que aparezca en sus presentaciones finales
+        </div>-->
+
+        <hr style="border: none; border-top: 2px solid var(--sun); margin: 3rem 0; opacity: 0.5;">
+
+        <!--<h2 class="slide-title" style="font-size: 2rem; margin-top: 2rem; margin-bottom: 1.5rem;">Para llevar a casa 🎒</h2>
+        
+        <div style="background: white; padding: 2.5rem; border-radius: 20px; margin: 2rem 0; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+          <h3 style="color: var(--teal-dark); font-size: 1.6rem; margin-bottom: 1.5rem; text-align: center;">
+            🎯 Lo que aprendimos hoy
+          </h3>
+          <ul class="key-list">
+            <li>Los casos de migración y desarrollo NO son solo historias individuales, son <strong>estructuras de poder</strong></li>
+            <li>Hay actores visibles e invisibles, hay quienes ganan y quienes pierden</li>
+            <li>Los <strong>chokepoints</strong> (técnicos y políticos) revelan dónde se ejerce control y dónde se generan oportunidades de negocio</li>
+            <li>Las "soluciones" propuestas muchas veces tienen <strong>efectos perversos</strong> que reproducen o agudizan problemas</li>
+            <li>La pregunta clave siempre es: <span class="highlight">"¿Para quién y a costa de quién?"</span></li>
+          </ul>
+        </div>-->
+
+        <div style="background: linear-gradient(135deg, var(--coral), var(--sun)); color: white; padding: 2rem; border-radius: 20px; margin: 2rem 0; text-align: center;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 800;">
+            📢 Para sus presentaciones finales
+          </h3>
+          <p style="font-size: 1.2rem; line-height: 1.7; opacity: 0.95;">
+           <strong>Muestren la estructura de poder y las paradojas</strong> de "migración y desarrollo". 
+            Usen su mapa de actores e identifiquen los chokepoints.
+          </p>
+        </div>
+
+        <!--<div style="background: rgba(107, 70, 193, 0.1); padding: 2rem; border-radius: 15px; margin: 2rem 0; text-align: center;">
+          <h4 style="color: var(--purple); font-size: 1.4rem; margin-bottom: 1rem;">
+            🔍 Pregunta permanente
+          </h4>
+          <p style="font-size: 1.3rem; font-style: italic; color: var(--ink); font-weight: 600; line-height: 1.6;">
+            "¿Migración y desarrollo para quién y a costa de quién?"
+          </p>
+        </div>-->
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <p style="font-size: 1.5rem; font-weight: 900; color: var(--teal-dark);">
+            ¡Excelente trabajo! 🎉
+          </p>
+          <p style="font-size: 1.1rem; color: var(--ink); margin-top: 0.5rem;">
+            Nos vemos en las presentaciones finales
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controles de navegación -->
+  <div class="nav-controls">
+    <button class="nav-btn" id="prevBtn" onclick="prevSlide()">← Anterior</button>
+    <button class="nav-btn" id="nextBtn" onclick="nextSlide()">Siguiente →</button>
+  </div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 6;
+
+    function showSlide(n) {
+      const slides = document.querySelectorAll('.slide');
+      slides.forEach(slide => slide.classList.remove('active'));
+      
+      currentSlide = n;
+      if (currentSlide > totalSlides) currentSlide = 1;
+      if (currentSlide < 1) currentSlide = totalSlides;
+      
+      slides[currentSlide - 1].classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (currentSlide === 1);
+      document.getElementById('nextBtn').disabled = (currentSlide === totalSlides);
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    // Navegación con teclado
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    // Inicializar
+    showSlide(1);
+  </script>
+</body>
+</html>
